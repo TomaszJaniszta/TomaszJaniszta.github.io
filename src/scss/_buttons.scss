@@ -1,4 +1,4 @@
-$pink: #E4C1AE;
+$pink: #dba4ff;
 $red: #8b0000;
 
 #button {
@@ -16,9 +16,11 @@ $red: #8b0000;
 	text-align: center;
 	-webkit-box-shadow: 1px 1px 2px 1px gray;
 	box-shadow: 1px 1px 2px 1px gray;
+	border: 3px outset gray;
 	&:hover {
 		color: black;
 		transform: scale(1.05);
+		background-color: #c267ff;
 	}
 	&:active {
 		color: $red;
@@ -48,7 +50,7 @@ $red: #8b0000;
 	border-radius: 32px;
 	font-weight: 700;
 	font-size: 1rem;
-	background: #E4C1AE;
+	background: $pink;
 	width: auto;
 	height: 40px;
 	transition: transform 1s;
@@ -58,6 +60,7 @@ $red: #8b0000;
 	box-shadow: 1px 1px 2px 1px gray;
 	-webkit-transform: scale(1);
 	margin-left: 3vw;
+	border: 3px outset gray;
 }
 
 .r-active {
@@ -66,6 +69,7 @@ $red: #8b0000;
 	&:hover {
 		color: black;
 		transform: scale(1.05);
+		background-color: #c267ff;
 	}
 	&:active {
 		color: #8b0000;

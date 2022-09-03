@@ -14,38 +14,37 @@
     </head>
     <body onload="initFunction()">
       <main>
-  
-        <div class="img-container">
-          <img alt="Tomasz Janiszta photo"
-            srcset="
-          ./images/me.jpg,
-                sizes="max-width: 400px"
-           />
+        <div class="part1">
+          <div class="img-container">
+            <img class="img" alt="Tomasz Janiszta photo"
+              src="./images/me.jpg"
+              width="300" 
+              height="300"
+            />
+          </div>
+          <div class="content-container">
+            <h1>Example pop-up counter</h1>
+            <p>
+              Example pop-up counter. Made during one of the small projects. After the 6th click, the counter can be reset.
+            </p>
+          <button type="button" id="button"> Button </button>
+          </div>
+    
+          <div class="popup" id="popup">
+    
+            <button type="button" class="btnX" id="btnX">&#10005</button>
+            <h2>Alert!</h2>
+            <p>
+              You have clicked this button
+              <span id="counter"></span>
+              time(s).
+              <button type="button" class="reset" id="reset">Reset counter</button>
+            </p>
+          </div>
+    
+          <div class="overl" id="overlay"></div>
         </div>
-        <div class="content-container">
-          <h1>Example pop-up counter</h1>
-          <p>
-            Example pop-up counter. Made during one of the small projects. After the 6th click, the counter can be reset.
-          </p>
-        <button type="button" id="button"> Button </button>
-        </div>
-  
-        <div class="popup" id="popup">
-  
-          <button type="button" class="btnX" id="btnX">&#10005</button>
-          <h2>Alert!</h2>
-          <p>
-            You have clicked this button
-            <span id="counter"></span>
-            time(s).
-            <button type="button" class="reset" id="reset">Reset counter</button>
-          </p>
-        </div>
-  
-        <div class="overl" id="overlay"></div>
-  
-        <hr align=center size=1 WIDTH=80% color="red">
-  
+        <hr align=center size=1 WIDTH=80% color="gray">
       </main>
     </body>
   </html>
