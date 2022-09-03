@@ -1,0 +1,14 @@
+.overl {
+	position: absolute;
+	top: 0;
+	left: 0;
+}
+
+.o-active {
+	width: 100vw;
+	height: 100vh;
+	background: white;
+	pointer-events: all;
+	opacity: 0.5;
+	z-index: 1;
+}

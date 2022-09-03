@@ -1,0 +1,75 @@
+$pink: #E4C1AE;
+$red: #8b0000;
+
+#button {
+	color: white;
+	cursor: pointer;
+	border: none;
+	border-radius: 32px;
+	font-weight: 700;
+	font-size: 1rem;
+	background: $pink;
+	width: 120px;
+	height: 50px;
+	transition: transform 1s;
+	padding: 10px;
+	text-align: center;
+	-webkit-box-shadow: 1px 1px 2px 1px gray;
+	box-shadow: 1px 1px 2px 1px gray;
+	&:hover {
+		color: black;
+		transform: scale(1.05);
+	}
+	&:active {
+		color: $red;
+		background: white;
+		transform: scale(1.10);
+	}
+}
+
+.btnX {
+	font-size: (1.5rem);
+	outline: none;
+	border: none;
+	background: none;
+	position: absolute;
+	right: 15px;
+	top: 15px;
+	cursor: pointer;
+}
+
+.reset {
+	visibility: hidden;
+	-webkit-transform: scale(0);
+	transform: scale(0);
+	color: #8b0000;
+	cursor: pointer;
+	border: none;
+	border-radius: 32px;
+	font-weight: 700;
+	font-size: 1rem;
+	background: #E4C1AE;
+	width: auto;
+	height: 40px;
+	transition: transform 1s;
+	padding: 10px;
+	text-align: center;
+	-webkit-box-shadow: 1px 1px 2px 1px gray;
+	box-shadow: 1px 1px 2px 1px gray;
+	-webkit-transform: scale(1);
+	margin-left: 3vw;
+}
+
+.r-active {
+	visibility: visible;
+	transform: scale(1);
+	&:hover {
+		color: black;
+		transform: scale(1.05);
+	}
+	&:active {
+		color: #8b0000;
+		background: white;
+		transform: scale(1.10);
+	}
+}

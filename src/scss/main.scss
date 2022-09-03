@@ -1,0 +1,26 @@
+@import "./media";
+@import "./overlay";
+@import "./buttons";
+@import "./popup";
+@import "https://fonts.googleapis.com/css2?family=Roboto&display=swap";
+
+$pink: #E4C1AE;
+$red: #8b0000;
+$white: #FFFFFF; 
+$shadow: 5px 5px 5px 1px gray;
+
+html {
+	font-family: "Roboto", sans-serif;
+	font-size: 16px;
+}
+
+body {
+	background-color: $white;
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+
+	-webkit-box-pack: center;
+	-ms-flex-pack: center;
+	justify-content: center;
+}
