@@ -1,26 +1,31 @@
-$pink: #dba4ff;
+$blue1: #7abfff;
+$blue2: #56adff;
 $red: #8b0000;
 
-#button {
-	color: white;
+button {
+	color: rgb(77, 77, 77);
 	cursor: pointer;
-	border: none;
+}
+
+#button {
 	border-radius: 32px;
 	font-weight: 700;
 	font-size: 1rem;
-	background: $pink;
+	background: $blue1;
 	width: 120px;
 	height: 50px;
 	transition: transform 1s;
 	padding: 10px;
 	text-align: center;
-	-webkit-box-shadow: 1px 1px 2px 1px gray;
-	box-shadow: 1px 1px 2px 1px gray;
+
 	border: 3px outset gray;
+
+	-webkit-box-shadow: 1px 1px 2px 1px gray;
+	box-shadow: 1px 1px 2px 1px black;
 	&:hover {
 		color: black;
 		transform: scale(1.05);
-		background-color: #c267ff;
+		background-color: $blue2;
 	}
 	&:active {
 		color: $red;
@@ -44,18 +49,17 @@ $red: #8b0000;
 	visibility: hidden;
 	-webkit-transform: scale(0);
 	transform: scale(0);
-	color: #8b0000;
-	cursor: pointer;
-	border: none;
 	border-radius: 32px;
 	font-weight: 700;
 	font-size: 1rem;
-	background: $pink;
+	background: $blue1;
 	width: auto;
-	height: 40px;
+	height: 50px;
 	transition: transform 1s;
-	padding: 10px;
-	text-align: center;
+	padding-block: auto ;
+	// align-items: center;
+	// text-align: center;
+	// justify-content: center;
 	-webkit-box-shadow: 1px 1px 2px 1px gray;
 	box-shadow: 1px 1px 2px 1px gray;
 	-webkit-transform: scale(1);
@@ -69,7 +73,7 @@ $red: #8b0000;
 	&:hover {
 		color: black;
 		transform: scale(1.05);
-		background-color: #c267ff;
+		background-color: $blue2;
 	}
 	&:active {
 		color: #8b0000;

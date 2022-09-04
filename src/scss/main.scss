@@ -14,11 +14,6 @@ html {
 	font-size: 16px;
 }
 
-// body {
-// 	display: flex;
-// 	align-content: center;
-// }
-
 main {
 	background-color: $white;
 	display: -webkit-box;
@@ -29,4 +24,11 @@ main {
 	-ms-flex-pack: center;
 	justify-items: center;
 	align-items: center;
+}
+
+.hr {
+	margin-block: 20px;
+	size: 1;
+	width: 80%;
+	color: "gray";
 }
