@@ -8,6 +8,8 @@ $pink: #E4C1AE;
 $red: #8b0000;
 $white: #FFFFFF; 
 $shadow: 5px 5px 5px 1px gray;
+$gray: rgb(165, 165, 165);
+$itroShadow: inset 0px 0px 5px 1px $gray, 0px 0px 5px 1px $gray;
 
 html {
 	font-family: "Roboto", sans-serif;
@@ -24,6 +26,40 @@ main {
 	-ms-flex-pack: center;
 	justify-items: center;
 	align-items: center;
+}
+
+#intro {
+	display: flex;
+	background-color: rgb(230, 249, 255);
+	align-items: center;
+	margin-inline: 5%;
+
+	-webkit-box-shadow: $itroShadow;
+	-moz-box-shadow: $itroShadow;
+	box-shadow: $itroShadow;
+
+	border: 1px solid gray;
+	border-radius: 15px;
+	>.center {
+		h1 {
+			text-align: center;
+			// 	margin: 0;
+			// 	position: absolute;
+			// 	top: 2%;
+			// -ms-transform: translateY(-50%);
+			// transform: translateY(-50%);
+		}
+		p {
+			font-style: italic;
+			margin-inline: 3%;
+			margin-bottom: 3%;
+		}
+		// background-color: green;
+		display: flex;
+		flex-direction: column;
+		text-align: justify;
+		margin-inline: 20px;
+	}
 }
 
 .hr {
