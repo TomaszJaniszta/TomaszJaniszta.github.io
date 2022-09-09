@@ -18,12 +18,12 @@ html {
 
 main {
 	background-color: $white;
-	display: -webkit-box;
-	display: -ms-flexbox;
+	// display: -webkit-box;
+	// display: -ms-flexbox;
 	display: flex;
 	flex-direction: column;
-	-webkit-box-pack: center;
-	-ms-flex-pack: center;
+	// -webkit-box-pack: center;
+	// -ms-flex-pack: center;
 	justify-items: center;
 	align-items: center;
 }
@@ -31,11 +31,12 @@ main {
 #intro {
 	display: flex;
 	background-color: rgb(230, 249, 255);
+	background-image: linear-gradient(rgb(87, 146, 255), rgb(230, 249, 255)5%, 99%, rgb(64, 131, 255)) ;
 	align-items: center;
 	margin-inline: 5%;
 
-	-webkit-box-shadow: $itroShadow;
-	-moz-box-shadow: $itroShadow;
+	// -webkit-box-shadow: $itroShadow;
+	// -moz-box-shadow: $itroShadow;
 	box-shadow: $itroShadow;
 
 	border: 1px solid gray;
@@ -58,7 +59,7 @@ main {
 		display: flex;
 		flex-direction: column;
 		text-align: justify;
-		margin-inline: 20px;
+		margin-inline: 3%;
 	}
 }
 

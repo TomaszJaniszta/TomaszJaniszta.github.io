@@ -9,3 +9,6 @@ xButton.addEventListener('click', () => {popupOnOff()});
 overlay.addEventListener('click', () => {popupOnOff()});
 resetBtn.addEventListener("click", () => {resetCounter()});
 countBtn.addEventListener('click', () => {counterButtonClick()});
+
+const imgMe = document.getElementById('imgMe');
+imgMe.addEventListener('click', () => {counterButtonClick()});
