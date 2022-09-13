@@ -7,20 +7,17 @@ button {
 	cursor: pointer;
 }
 
-#button {
+.button {
 	border-radius: 32px;
 	font-weight: 700;
 	font-size: 1rem;
-	background: $blue1;
+	background: radial-gradient(white 10%, 70%, $blue1);
 	width: 120px;
 	height: 50px;
 	transition: transform 1s;
 	padding: 10px;
 	text-align: center;
-
-	border: 3px outset gray;
-
-	-webkit-box-shadow: 1px 1px 2px 1px gray;
+	border: 2px outset gray;
 	box-shadow: 1px 1px 2px 1px black;
 	&:hover {
 		color: black;
@@ -30,8 +27,17 @@ button {
 	&:active {
 		color: $red;
 		background: white;
-		transform: scale(1.10);
+		transform: scale(1.30);
 	}
+}
+
+#show1, #show2{
+	background: radial-gradient(white 10%, 70%, gray);
+	width: auto;
+	height: auto;
+	opacity: 1;
+	// border: 1px outset gray;
+	border: 0px;
 }
 
 .btnX {
@@ -52,17 +58,12 @@ button {
 	border-radius: 32px;
 	font-weight: 700;
 	font-size: 1rem;
-	background: $blue1;
+	background: radial-gradient(white 10%, 70%, $blue1);
 	width: auto;
 	height: 50px;
 	transition: transform 1s;
 	padding-block: auto ;
-	// align-items: center;
-	// text-align: center;
-	// justify-content: center;
-	-webkit-box-shadow: 1px 1px 2px 1px gray;
 	box-shadow: 1px 1px 2px 1px gray;
-	-webkit-transform: scale(1);
 	margin-left: 3vw;
 	border: 3px outset gray;
 }
@@ -73,7 +74,6 @@ button {
 	&:hover {
 		color: black;
 		transform: scale(1.05);
-		background-color: $blue2;
 	}
 	&:active {
 		color: #8b0000;
