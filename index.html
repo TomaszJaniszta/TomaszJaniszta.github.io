@@ -11,6 +11,7 @@
         <script defer src="src/js/elements.js"></script>
         <script defer src="src/js/functionsAndVariables.js"></script>
         <script defer src="src/js/boardBall.js"></script>
+        <script defer src="src/js/ball2.js"></script>
         <noscript> No JavaScript support. Content will not display correctly :( </noscript>    
     </head>
     <body onload="initFunction()">
@@ -46,7 +47,7 @@
               Example pop-up counter. Made during one of the small projects. Click on the button or my image. 
 	            After the 6th click, the counter can be reset.
             </p>
-            <div class="center"><button class="button" id="button"> Button </button></div>
+            <div class="center"><button class="button" id="buttonCnt"> Button </button></div>
           </div>
     
           <div class="popup" id="popup">
@@ -69,25 +70,28 @@
 
 
     <div class="showAndHideMenu"><p><b>Ball bouncy simulator v.2.</b></p><button id="show2" class="button"> Show / Hide </button></div>
-    <div id="part2" style="display:block">
-      <div class="part2">
+    <div id="part2" style="display:none">
         <hr class="hr">
-        <h2>Ball bouncy simulator v.2.</h2>
-        <p>
-          The program is to show how the object would travel and bounce against the walls.
-          "?" blocks change the direction of the ball to random. 
-          The program is to end when object comes back to original position.
-          Ball v.2 version based on Webdings font.
-        </p>
+        <div class="part2">
+        <div class=".introBall2">
+          <h2> Ball bouncy simulator v.2.</h2>
+          <p>
+            The program is to show how the object would travel and bounce against the walls.
+            "?" blocks change the direction of the ball to random. 
+            The program is to end when object comes back to original position.
+            Ball v.2 version based on Webdings font.
+          </p>
+        </div>
 
-          <div class="boardBall" id="boardContainer">
+          <div class="boardBall2" id="boardContainer">
             <div id="board">Ball</div>
           </div>
 
-        <button type="button" class="button" id="resetBall">Reset ball</button>  
+        <span><button id="ball2button" class="button">Start</button><button id="resetBtnBall2" class="button">Reset</button></span>
+        <br/>
+        <div>Time (s): <p id="timeBall2"></p></div>
       </div>
     </div>
-
         <hr class="hr">
 
       </main>
