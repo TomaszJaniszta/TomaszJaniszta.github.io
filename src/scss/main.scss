@@ -2,15 +2,17 @@
 @import "./overlay";
 @import "./buttons";
 @import "./popup";
-@import "./Ball2";
+@import "./ball2";
 @import "https://fonts.googleapis.com/css2?family=Roboto&display=swap";
 
 $pink: #E4C1AE;
 $red: #8b0000;
 $white: #FFFFFF; 
 $shadow: 5px 5px 5px 1px gray;
-$gray: rgb(165, 165, 165);
-$itroShadow: inset 0px 0px 5px 1px $gray, 0px 0px 5px 1px $gray;
+$gray: rgb(100, 100, 100);
+$itroShadow: inset 0px 0px 7px 1px $gray, 0px 0px 7px 1px $gray;
+$linear: linear-gradient(0.25turn, #b4b4b4, 10%, #ebf8e1, #616161);
+$linear2: linear-gradient(0.25turn, #b4b4b4, 10%, #caf9ff, #5599ff);
 
 html {
 	font-family: "Roboto", sans-serif;
@@ -29,10 +31,10 @@ html {
 
 #intro {
 	display: flex;
-	background-color: rgb(230, 249, 255);
-	background-image: linear-gradient(rgb(147, 185, 255), rgb(230, 249, 255) 5%, 95%, rgb(147, 185, 255));
+	// background-color: rgb(230, 249, 255);
+	background-image: linear-gradient(rgb(255, 255, 255), rgb(221, 246, 253), rgb(255, 255, 255), rgb(221, 221, 221), rgb(255, 255, 255));
 	align-items: center;
-	margin-top: 1%;
+	margin-block: 1%;
 	margin-inline: 5%;
 	box-shadow: $itroShadow;
 
@@ -59,15 +61,39 @@ html {
 	border-radius: 10px;
 	cursor: pointer;
 }
+
 .showAndHideMenu {
 	display: flex;
 	justify-content: flex-end;
 	align-items: center;
+	background: $linear;
+	padding-right: 3%;
+	color: rgb(61, 61, 61);
 	p, button{
-	margin-inline: 10px;
+		margin-inline: 10px;
 	}
-	margin-right: 3%;
 }
+
+#language {
+	display:flex;
+	flex-direction:row;
+	justify-content:flex-end;
+	background: $linear2;
+	font-size:12px;
+	text-align:center;
+	padding-right: 3%;
+	height: auto;
+	p { 
+		font-weight: 700;
+		border: 1px solid;
+		width: auto;
+		padding-inline:5px;
+	 	background-color:white;
+		cursor:pointer;
+	}
+}
+
+
 
 body{
 	main {
@@ -76,8 +102,8 @@ body{
 		flex-direction: column;
 		justify-items: center;
 		// background-color: $gray;
+		}
 	}
-}
 
 .part1 {
 	display: flex;
@@ -107,20 +133,13 @@ body{
 			margin-bottom: 2vh;
 		}
 	}
-
 }
 
-.part2 {
-	display: flex;
-	flex-direction: column;
-	justify-content: center;
-	background-image: linear-gradient(white, lightgreen, white);
-	h2 {
-		text-align: center;
-	}
-	p {
-		text-align: center;
-		margin-inline: 10%;
-		text-justify: distribute;
-	}
+.end {
+	text-align: right;
+	font-size: 14px;
+	background: $linear2;
+	padding-right: 4%;
+	color: rgb(0, 0, 0);
+	padding-block: 5px;
 }

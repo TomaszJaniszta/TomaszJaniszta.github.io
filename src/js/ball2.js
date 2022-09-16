@@ -2,6 +2,7 @@
   let start = 0;
   let started = false;
   let time = 0;
+  let boardCopy = JSON.parse(JSON.stringify(board));
 
   class BallGenerator {
     constructor(board) {
@@ -112,15 +113,15 @@
         } else {
           this.moveBall();
         }
-        setTime(time += 1);
-
+        time++;
         updateBoard(); // update board
 
         if (this.ball.x === this.startingX && this.ball.y === this.startingY) {
           clearInterval(play);
           alert('Game done!');
-          console.log('Game over');
-          window.location.reload();
+          // window.location.reload();
+		  let ball = document.getElementById('ball');
+          ball.setAttribute("class", "Ball");
         }
       }, 1000);
     }
@@ -132,43 +133,19 @@
   let game = new Game(movingBall, board);
 
   let timeBall2 = document.getElementById('timeBall2');
-
-  gameReset = () => {
-    clearInterval(play);
-    window.location.reload();
-  };
-
-  handleButtonDown = () => {
-    console.log('Button pressed');
-    if (start < 1) {
-      game.start();
-      console.log("started");
-      start += 1;
-      started = !started;
-      ball2button.innerHTML === "Start" ? ball2button.innerHTML = "Stop" : ball2button.innerHTML = "Start";
-    } else {
-      start -= 1;
-      started = !started;
-      ball2button.innerHTML === "Start" ? ball2button.innerHTML = "Stop" : ball2button.innerHTML = "Start";
-      clearInterval(play);
-    }
-  };
-
-  // cleanup this component
-  // ??
-  // clearInterval(play);
-  // element.removeEventListener('click', handleButtonDown);
-
-const updateBoard = () => {
+  
+  const updateBoard = () => {
   timeBall2.innerHTML = time;
 		let divRow = 0;
 		let boardContainer = document.getElementById('boardContainer');
-	  // boardContainer.remove(); 
+		
+	    boardContainer.innerHTML = '';
 
     board.map((indexTable) => {
       divRow++;
       let boardRow = document.createElement("div");
       boardRow.setAttribute("id", "divRow"+divRow);
+	    boardRow.setAttribute("style", "display: flex; flex-direction: column;");
       boardContainer.appendChild(boardRow);
 
       indexTable.map((element) => {
@@ -202,5 +179,45 @@ const updateBoard = () => {
 
       boardContainer.appendChild(boardRow);
     });
-
 };
+
+updateBoard();
+
+  let ball2button = document.getElementById('ball2button');
+  ball2button.addEventListener('click', () => {handleButtonDown()});
+
+  let resetBtnBall2 = document.getElementById('resetBtnBall2');
+  resetBtnBall2.addEventListener('click', () => {gameReset()});
+  
+  let gameReset = () => {
+    clearInterval(play);
+	alert('Game reset');
+
+	time = 0;
+	started = false;
+	start = 0;
+	board = JSON.parse(JSON.stringify(boardCopy));
+	
+	startBall = new BallGenerator(board).generateBall();
+    myVector = new Vector(1, 1);
+    movingBall = new Ball(startBall.y, startBall.x, myVector);
+    game = new Game(movingBall, board);
+	
+	updateBoard();
+	ball2button.innerHTML = "Start";
+  };
+
+  let handleButtonDown = () => {
+    if (start < 1) {
+      game.start();
+      console.log("started");
+      start += 1;
+      started = !started;
+      ball2button.innerHTML === "Start" ? ball2button.innerHTML = "Stop" : ball2button.innerHTML = "Start";
+    } else {
+      start -= 1;
+      started = !started;
+      ball2button.innerHTML === "Start" ? ball2button.innerHTML = "Stop" : ball2button.innerHTML = "Start";
+      clearInterval(play);
+    }
+  };

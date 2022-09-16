@@ -61,10 +61,19 @@ $--rg: (
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: flex-start;
+  // justify-content: flex-start;
+  // justify-content: center;
   text-align: center;
   background-image: radial-gradient(#ff8765, #ffffff, #97fdff);
-  height: auto;
+  // height: auto;
+  h2 {
+		text-align: center;
+	}
+	p {
+		text-align: center;
+		margin-inline: 10%;
+		text-justify: distribute;
+	}
 }
 
 .boardBall2 {
@@ -72,12 +81,13 @@ $--rg: (
   text-align: center;
   align-items: center;
   justify-content: center;
-  margin-top: 3%;
-  width: 90%;
-  height: 60%;
+  margin-top: 1%;
+  margin-bottom: 2%;
+  width: auto;
+  height: auto;
   font-family: Webdings;
   font-size: 2vw;
-  margin-bottom: 5%;
+  // margin-bottom: 5%;
 }
 
 .Air {

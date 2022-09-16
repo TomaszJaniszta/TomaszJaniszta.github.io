@@ -12,21 +12,27 @@
         <script defer src="src/js/functionsAndVariables.js"></script>
         <script defer src="src/js/boardBall.js"></script>
         <script defer src="src/js/ball2.js"></script>
+	      <script defer src="src/js/boardChess.js"></script>
+		    <script defer src="src/js/Chess.js"></script>
         <noscript> No JavaScript support. Content will not display correctly :( </noscript>    
     </head>
     <body onload="initFunction()">
       <main>
+        <span id="language"><p id="pl">PL</p><p id="en">EN</p></span>
 
-        <div id="intro">
-          <div class="center">
-            <h1>Intro</h1>
-            <p>Hello, my name is Tomasz Janiszta. I program in JavaScript. Front-end: React, Angular. Back-end: Node.js.
-                The page contains examples of code I made as a quick presentation.
-                You can familiarize yourself with the end/usage layers of the code visible here.
-                Enjoy watching, but... I also invite you to take a look at the js files :)
-            </p>
+          <div style="background-image: linear-gradient(rgb(255, 255, 255), rgb(156, 156, 156), rgb(255, 255, 255));">
+            <div id="intro">
+              <div class="center">
+                <h1>Intro</h1>
+                <hr class="hr">
+                <p>Hello, my name is Tomasz Janiszta. I program in JavaScript. Front-end: React, Angular. Back-end: Node.js.
+                    The page contains examples of code I made as a quick presentation.
+                    You can familiarize yourself with the end/usage layers of the code visible here.
+                    Enjoy watching, but... I also invite you to take a look at the js files :)
+                </p>
+              </div>
+            </div>
           </div>
-        </div>
 
 		<div class="showAndHideMenu"><p><b>Example pop-up counter</b></p><button id="show1" class="button"> Show / Hide </button></div>
 		<div id="part1" style="display:block">
@@ -38,9 +44,9 @@
               src="./images/me.jpg"
               width="300" 
               height="300"
-
             />
           </div>
+
           <div class="content-container">
             <h2>Example pop-up counter</h2>
             <p>
@@ -51,7 +57,6 @@
           </div>
     
           <div class="popup" id="popup">
-    
             <button type="button" class="btnX" id="btnX">&#10005</button>
             <h2>Alert!</h2>
             <p>
@@ -70,10 +75,9 @@
 
 
     <div class="showAndHideMenu"><p><b>Ball bouncy simulator v.2.</b></p><button id="show2" class="button"> Show / Hide </button></div>
-    <div id="part2" style="display:none">
+    <div id="part2" style="display:none;">
         <hr class="hr">
         <div class="part2">
-        <div class=".introBall2">
           <h2> Ball bouncy simulator v.2.</h2>
           <p>
             The program is to show how the object would travel and bounce against the walls.
@@ -81,20 +85,41 @@
             The program is to end when object comes back to original position.
             Ball v.2 version based on Webdings font.
           </p>
-        </div>
-
-          <div class="boardBall2" id="boardContainer">
-            <div id="board">Ball</div>
-          </div>
-
+        <div class="boardBall2" id="boardContainer"></div>
         <span><button id="ball2button" class="button">Start</button><button id="resetBtnBall2" class="button">Reset</button></span>
         <br/>
         <div>Time (s): <p id="timeBall2"></p></div>
       </div>
     </div>
-        <hr class="hr">
+	
+	    <hr class="hr">
+			
+      <div class="showAndHideMenu"><p><b>Chess (simple)</b></p><button id="show3" class="button"> Show / Hide </button></div>
+        <div id="part3" style="display:none;">
+            <hr class="hr">
+          <div class="part2">
+        
+            <div class=".introBall2">
+              <h2> Chess (simple) </h2>
+              <p>Program is to choose at random one of the chess piece (except the pawn) and place it at the random spot on the board.
+                After placing any piece (except first one) check all present pieces move ranges and see if any can reach other piece.
+                If so Give that pieces position and quit program. FACTORY (with class hierarhy) + SINGLETON pattern in code.
+              </p>
+            <br/>
+            </div>
 
-        <p style="color: red; text-align: center;"> Content still in progress... </p>
+            <div class="boardChess" id="chessBoardContainer"></div>
+            <br/>
+            <span><button id="chessButton" class="button">Add figure</button><button id="resetBtnChess" class="button">Reset</button></span>
+          <div id="resultChess" style="width: 100%;"></div>
+        </div>
+      </div>
+
+        <br/>
+        <hr class="hr">
+        <p style="color: rgb(70, 0, 0); text-align: center;"> Content still in progress... </p>
+        <br/>
+        <p class="end">Tomasz Janiszta, 2022r. ©</p>
 
       </main>
     </body>
