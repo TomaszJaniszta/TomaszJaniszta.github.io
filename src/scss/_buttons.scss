@@ -8,12 +8,12 @@ button {
 }
 
 .button {
-	border-radius: 32px;
+	border-radius: 15px;
 	font-weight: 700;
 	font-size: 1rem;
 	background: radial-gradient(white 10%, 70%, $blue1);
-	width: 120px;
-	height: 50px;
+	width: auto;
+	height: auto;
 	transition: transform 1s;
 	padding: 10px;
 	text-align: center;
@@ -22,22 +22,28 @@ button {
 	&:hover {
 		color: black;
 		transform: scale(1.05);
-		background-color: $blue2;
+		background: white;
 	}
 	&:active {
 		color: $red;
-		background: white;
+		background: rgb(255, 139, 139);
 		transform: scale(1.30);
 	}
 }
 
-#show1, #show2, #show3{
+#show1, #show2, #show3, #show4, #show5 {
 	background: radial-gradient(white 10%, 70%, gray);
 	width: auto;
 	height: auto;
 	opacity: 1;
 	// border: 1px outset gray;
 	border: 0px;
+	&:hover {
+		background: white;
+	}
+	&:active {
+		background: rgb(255, 139, 139);
+	}
 }
 
 .btnX {
@@ -55,7 +61,7 @@ button {
 	visibility: hidden;
 	-webkit-transform: scale(0);
 	transform: scale(0);
-	border-radius: 32px;
+	border-radius: 15px;
 	font-weight: 700;
 	font-size: 1rem;
 	background: radial-gradient(white 10%, 70%, $blue1);
@@ -74,10 +80,11 @@ button {
 	&:hover {
 		color: black;
 		transform: scale(1.05);
+		background: white;
 	}
 	&:active {
 		color: #8b0000;
-		background: white;
+		background: rgb(255, 139, 139);
 		transform: scale(1.10);
 	}
 }

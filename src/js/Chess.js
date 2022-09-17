@@ -18,42 +18,42 @@ const updateBoardChess = () => {
       indexTable.map((element) => {
         if (element === 'B') {
         let boardElement = document.createElement("span");
-          boardElement.innerHTML = '<img src="./images/chess/black100.gif" alt="Black field" />'
+          boardElement.innerHTML = '<img src="./images/chess/black100.gif" alt="Black field" width="100%" height:auto/>'
         let divContainer = document.getElementById("divRowChess"+divRow);
           divContainer.appendChild(boardElement);
         } else if (element === 'W') {
         let boardElement = document.createElement("span");
-          boardElement.innerHTML = '<img src="./images/chess/white100.gif" alt="White field" />'
+          boardElement.innerHTML = '<img src="./images/chess/white100.gif" alt="White field" width="100%" height:auto/>'
         let divContainer = document.getElementById("divRowChess"+divRow);
           divContainer.appendChild(boardElement);
         } else if (element === 'T') {
         let boardElement = document.createElement("span");
-          boardElement.innerHTML = '<img src="./images/chess/tower100.gif" alt="Tower" />'
+          boardElement.innerHTML = '<img src="./images/chess/tower100.gif" alt="Tower" width="100%" height:auto/>'
         let divContainer = document.getElementById("divRowChess"+divRow);
           divContainer.appendChild(boardElement);
         } else if (element === 'H') {
         let boardElement = document.createElement("span");
-          boardElement.innerHTML = '<img src="./images/chess/horse.gif" alt="Horse" />'
+          boardElement.innerHTML = '<img src="./images/chess/horse.gif" alt="Horse" width="100%" height:auto/>'
         let divContainer = document.getElementById("divRowChess"+divRow);
           divContainer.appendChild(boardElement);
         } else if (element === 'L') {
         let boardElement = document.createElement("span");
-          boardElement.innerHTML = '<img src="./images/chess/laufer.gif" alt="Laufer" />'
+          boardElement.innerHTML = '<img src="./images/chess/laufer.gif" alt="Laufer" width="100%" height:auto/>'
         let divContainer = document.getElementById("divRowChess"+divRow);
           divContainer.appendChild(boardElement);
         } else if (element === 'K') {
         let boardElement = document.createElement("span");
-          boardElement.innerHTML = '<img src="./images/chess/king.gif" alt="King" />'
+          boardElement.innerHTML = '<img src="./images/chess/king.gif" alt="King" width="100%" height:auto/>'
         let divContainer = document.getElementById("divRowChess"+divRow);
           divContainer.appendChild(boardElement);
         } else if (element === 'Q') {
         let boardElement = document.createElement("span");
-          boardElement.innerHTML = '<img src="./images/chess/queen.gif" alt="Queen" />'
+          boardElement.innerHTML = '<img src="./images/chess/queen.gif" alt="Queen" width="100%" height:auto/>'
         let divContainer = document.getElementById("divRowChess"+divRow);
           divContainer.appendChild(boardElement);
         } else if (element === 'X') {
         let boardElement = document.createElement("span");
-          boardElement.innerHTML = '<img src="./images/chess/red100.gif" alt="Red field" />'
+          boardElement.innerHTML = '<img src="./images/chess/red100.gif" alt="Red field" width="80%" height:auto/>'
         let divContainer = document.getElementById("divRowChess"+divRow);
           divContainer.appendChild(boardElement);
         }

@@ -20,62 +20,61 @@
     <body onload="initFunction()">
       <main>
 	  
-        <span id="languageAndMenu">
-			<div class="menu">
-				<h3>Menu</h3>
-				<div>
-					<ol>
-						<li>
-							<a href="../../main/main">Main page</a>
-						</li>
-						<li>
-							<a>Buyer apps</a>
-							<ul>
-								<li>
-									<a href="#">Buyer v.1</a>
-								</li>
-								<li>
-									<a href="../../products/dashboard">Buyer v.2</a>
-								</li>
-							</ul>
-						</li>
-						<li>
-							<a>Ball apps</a>
-							<ul>
-								<li>
-									<a href="../../ball1/ball_v1">Ball v.1</a>
-								</li>
-								<li>
-									<a href="../../ball2/ball_v2">Ball v.2</a>
-								</li>
-							</ul>
-						</li>
-						<li>
-							<a>Other apps</a>
-							<ul>
-								<li>
-									<a href="#show3">Chess</a>
-								</li>
-								<li>
-									<a href="#show5">Game of life</a>
-								</li>
-							</ul>
-						</li>
-					</ol>
+			<div id="languageAndMenu">
+				<div class="menu">
+					<h3>Menu</h3>
+					<div>
+						<ol>
+							<li>
+								<a href="#">Intro</a>
+							</li>
+							<li>
+								<a>Buyer apps</a>
+								<ul>
+									<li>
+										<a href="#">Buyer v.1</a>
+									</li>
+									<li>
+										<a href="#">Buyer v.2</a>
+									</li>
+								</ul>
+							</li>
+							<li>
+								<a>Ball apps</a>
+								<ul>
+									<li>
+										<a href="#show4">Ball v.1</a>
+									</li>
+									<li>
+										<a href="#show2">Ball v.2</a>
+									</li>
+								</ul>
+							</li>
+							<li>
+								<a>Other apps</a>
+								<ul>
+									<li>
+										<a href="#show3">Chess</a>
+									</li>
+									<li>
+										<a href="#show5">Game of life</a>
+									</li>
+								</ul>
+							</li>
+						</ol>
+					</div>
+				</div>
+				<div class="menu2">
+					<p id="lightTheme">Ligh theme</p>
+					<p id="darkTheme" style="margin-right: 2%; color: white; background: black; overflow:hidden;">Dark theme</p>
+					<p id="pl" style="background-color:lightgray; display:flex; align-items: center;" onclick="changeLanguage('pl');"> PL 
+						<span style="padding-left: 5px; display:flex; align-items: center;"><img alt="PL language" id="pl" src="./images/pl30x20.png" width="15" height="10"/></span>
+					</p>
+					<p id="en" style="background-color:lightgray; display:flex; align-items: center;"  onclick="changeLanguage('en');"> EN 
+						<span style="padding-left: 5px; display:flex; align-items: center;"><img alt="EN language" id="en" src="./images/en30x20.png" width="15" height="10"/></span>
+					</p>
 				</div>
 			</div>
-		
-			<div class="menu2">
-				<p id="lightTheme">Ligh theme</p>
-				<p id="darkTheme" style="margin-right: 2%; color: white; background: black;">Dark theme</p>
-				<p id="pl" style="background-color:lightgray; display:flex; align-items: center;" onclick="changeLanguage('pl');"> PL 
-					<span style="padding-left: 5px; display:flex; align-items: center;"><img alt="PL language" id="pl" src="./images/pl30x20.png" width="15" height="10"/></span>
-				</p>
-				<p id="en" style="background-color:lightgray; display:flex; align-items: center;"  onclick="changeLanguage('en');"> EN 
-					<span style="padding-left: 5px; display:flex; align-items: center;"><img alt="EN language" id="en" src="./images/en30x20.png" width="15" height="10"/></span>
-				</p>
-			</div>
-		</span>
 
           <div style="background-image: linear-gradient(rgb(255, 255, 255), rgb(156, 156, 156), rgb(255, 255, 255));">
             <div id="intro">
@@ -96,12 +95,12 @@
 		<hr class="hr">
 		  <div class="part1">
 			  <div class="img-container">
-				<img class="img" alt="Tomasz Janiszta photo"
-				  id="imgMe"
-				  src="./images/me.jpg"
-				  width="300vw" 
-				  height="300vw"
-				/>
+					<img class="img" alt="Tomasz Janiszta photo"
+					id="imgMe"
+					src="./images/me.jpg"
+					width="80%"
+					height:auto
+					/>
 			  </div>
 
 			  <div class="content-container">
