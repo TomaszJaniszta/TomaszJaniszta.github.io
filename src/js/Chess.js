@@ -53,7 +53,7 @@ const updateBoardChess = () => {
           divContainer.appendChild(boardElement);
         } else if (element === 'X') {
         let boardElement = document.createElement("span");
-          boardElement.innerHTML = '<img src="./images/chess/red100.gif" alt="Red field" width="80%" height:auto/>'
+          boardElement.innerHTML = '<img src="./images/chess/red100.gif" alt="Red field" width="100%" height:auto/>'
         let divContainer = document.getElementById("divRowChess"+divRow);
           divContainer.appendChild(boardElement);
         }

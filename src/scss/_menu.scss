@@ -1,7 +1,7 @@
 $linear2: linear-gradient(0.25turn, #b4b4b4, 10%, #caf9ff, #5599ff, 0.3);
 
 #languageAndMenu {
-    // z-index: 2;
+    z-index: 2;
     // the same place
 	position: fixed;
     left: 0;
@@ -32,7 +32,7 @@ $linear2: linear-gradient(0.25turn, #b4b4b4, 10%, #caf9ff, #5599ff, 0.3);
 
 .menu {
     // on top
-    z-index: 3;
+    // z-index: 3;
 
     // opacity: none;
     // opacity: 1;
