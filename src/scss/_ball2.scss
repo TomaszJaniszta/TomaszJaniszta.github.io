@@ -4,6 +4,11 @@ $--rg: (
   #afffb6
 );
 
+@font-face {
+  font-family: fontBall2;
+  src: url(../fonts/webdings.ttf);
+}
+
 @keyframes spinning {
   from {
     transform: rotate(0deg);
@@ -85,7 +90,8 @@ $--rg: (
   margin-bottom: 2%;
   width: auto;
   height: auto;
-  font-family: Webdings;
+  font-family: fontBall2;
+  // font-family: Webdings;
   font-size: 2em;
   // margin-bottom: 5%;
 }

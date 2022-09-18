@@ -32,7 +32,7 @@ $linear2: linear-gradient(0.25turn, #b4b4b4, 10%, #caf9ff, #5599ff, 0.3);
 
 .menu {
     // on top
-    // z-index: 3;
+    z-index: 2;
 
     // opacity: none;
     // opacity: 1;
@@ -109,7 +109,7 @@ $linear2: linear-gradient(0.25turn, #b4b4b4, 10%, #caf9ff, #5599ff, 0.3);
     ol>li>ul>li {
         //lists
         //on top
-        z-index: 2;
+        z-index: 3;
         border: 3px outset rgb(155, 155, 155);
         // border-top-width: 100%;
         //----
@@ -152,6 +152,6 @@ $linear2: linear-gradient(0.25turn, #b4b4b4, 10%, #caf9ff, #5599ff, 0.3);
     display: flex;
     align-items: center;
     justify-content: flex-end;
-    width:25%;
+    width:auto;
     margin-right: 1%;
 }
