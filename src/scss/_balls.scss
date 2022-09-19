@@ -47,6 +47,34 @@ $--rg: (
   background-image: radial-gradient($--rg);
 }
 
+.Ball1 {
+  border-radius: 33px;
+  animation-name: spinning;
+  animation-duration: 3s;
+  animation-iteration-count: infinite;
+  animation-timing-function: ease-in, ease-out;
+  img{
+    border-radius: 33px;
+    box-shadow: inset 0px 0px 7px 2px red, 0px 0px 7px 2px red;
+  }
+  img:hover{
+    transform: scale(1.5);
+  }
+}
+
+.BallRunning1 {
+  animation-name: spinning, op;
+  border-radius: 33px;
+  animation-duration: 1s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+  img{
+    border-radius: 33px;
+    box-shadow: inset 0px 0px 7px 2px red, 0px 0px 7px 2px red;
+  }
+}
+
+
 .Ball:hover {
   cursor: pointer;
   animation-name: none;
@@ -81,6 +109,22 @@ $--rg: (
 	}
 }
 
+.boardBall1 {
+  display: flex;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  margin-top: 1%;
+  margin-bottom: 2%;
+  width: auto;
+  height: auto;
+  font-family: fontBall2;
+  border: 5px double;
+  font-size: 2em;
+  background-image: linear-gradient(#ffffff, #40e291, #ffffff);
+  line-height:70%;
+}
+
 .boardBall2 {
   display: flex;
   text-align: center;
@@ -91,13 +135,16 @@ $--rg: (
   width: auto;
   height: auto;
   font-family: fontBall2;
-  // font-family: Webdings;
+  border: 5px double;
   font-size: 2em;
+  background-image: linear-gradient(#ffffff, #636363, #ffffff);
+  transform: scale(1.2);
   // margin-bottom: 5%;
 }
 
 .Air {
-  background-color: #afffb6;
+  // background-color: #afffb6;
+  background-color: none;
 }
 
 .y {
@@ -105,6 +152,16 @@ $--rg: (
   background-color: #fff347;
 }
 
+.y1{
+  img{
+    box-shadow: 0px 0px 2px 2px yellow;
+  }
+}
+
 .Wall {
   background-color: #ce9980;
+}
+
+.Wall1 {
+  background-color: none;
 }

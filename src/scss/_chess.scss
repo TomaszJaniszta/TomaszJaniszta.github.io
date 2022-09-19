@@ -1,0 +1,10 @@
+.boardChess{
+	line-height:70%;
+	border: double 5px black;
+    
+    img:hover{
+        // border:1px red;
+        //background-color: red;
+        box-shadow: inset 0px 0px 7px 2px red, 0px 0px 7px 2px red;
+    }
+}

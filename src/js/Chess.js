@@ -323,8 +323,3 @@ let resetBtnChess = document.getElementById('resetBtnChess');
 resetBtnChess.addEventListener('click', () => {gameResetChess()});
 
 updateBoardChess();
-// <div className={styles.board}>
-// <div className={styles.content}>
-
-// <button id="myBtnChess" onClick={gameStart} className={styles.button}> Add figure </button>
-// <button id="myBtnReset" onClick={gameReset} className={styles.button}> Reset game </button>

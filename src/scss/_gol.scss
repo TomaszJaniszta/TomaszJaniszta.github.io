@@ -1,0 +1,15 @@
+.boardGol{
+    display: flex;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    margin-top: 1%;
+    margin-bottom: 2%;
+    width: auto;
+    height: auto;
+    border: 5px double;
+    background-image: linear-gradient(#ffffff, #adadad, #ffffff);
+    transform: scale(0.9);
+    // margin-bottom: 5%;
+    line-height:70%;
+}

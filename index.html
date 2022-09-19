@@ -12,11 +12,17 @@
         <link rel="icon" type="image/png" sizes="16x16" href="./images/favicon-32x32.png">
         <script defer src="src/js/elements.js"></script>
         <script defer src="src/js/functionsAndVariables.js"></script>
+		
         <script defer src="src/js/boardBall.js"></script>
-        <script defer src="src/js/ball2.js"></script>
+        <script defer src="src/js/balls.js"></script>
+		
 	    <script defer src="src/js/boardChess.js"></script>
 		<script defer src="src/js/Chess.js"></script>
+		
 		<script defer src="src/js/language.js"></script>
+		
+		<script defer src="src/js/boardGOL.js"></script>
+		<script defer src="src/js/Gol.js"></script>
         <noscript> No JavaScript support. Content will not display correctly :( </noscript>    
     </head>
     <body onload="initFunction()">
@@ -34,10 +40,10 @@
 								<a>Buyer apps</a>
 								<ul>
 									<li>
-										<a href="#">Buyer v.1</a>
+										<a href="#show6" onclick="showHide('part6')">FS/KLG</a>
 									</li>
 									<li>
-										<a href="#">Buyer v.2</a>
+										<a href="#">Buyer 1-2</a>
 									</li>
 								</ul>
 							</li>
@@ -45,10 +51,10 @@
 								<a>Ball apps</a>
 								<ul>
 									<li>
-										<a href="#show4">Ball v.1</a>
+										<a href="#show4" onclick="showHide('part4')">Ball v.1</a>
 									</li>
 									<li>
-										<a href="#show2">Ball v.2</a>
+										<a href="#show2" onclick="showHide('part2')">Ball v.2</a>
 									</li>
 								</ul>
 							</li>
@@ -56,10 +62,10 @@
 								<a>Other apps</a>
 								<ul>
 									<li>
-										<a href="#show3">Chess</a>
+										<a href="#show3" onclick="showHide('part3')">Chess</a>
 									</li>
 									<li>
-										<a href="#show5">G.O.L.</a>
+										<a href="#show5" onclick="showHide('part5')">G.O.L.</a>
 									</li>
 								</ul>
 							</li>
@@ -86,7 +92,7 @@
                 <p id="introText">Hello, my name is Tomasz Janiszta. I program in JavaScript. Front-end: React, Angular. Back-end: Node.js.
                     The page contains examples of code I made as a quick presentation.
                     You can familiarize yourself with the end/usage layers of the code visible here.
-                    Enjoy watching, but... I also invite you to take a look at the js files :)
+                    Enjoy watching, but... I also invite you to take a look at the js files :) (Content still in progress... )
                 </p>
               </div>
             </div>
@@ -128,11 +134,32 @@
 		  </div>
 		  
 		<hr class="hr">
+		
+		  <div class="showAndHideMenu"><p><b>FS/KLG</b></p><button id="show6" class="button"> Show \ Hide </button></div>
+			<div id="part6" style="display:none;">
+				<hr class="hr">
+				<div class="part2">
+				  <h2> FS/KLG </h2>
+				  <p>
+					...
+				  </p>
+				<div class="boardBall2" id="fsKlg"></div>
+				<!-- to be edit -->
+				<span style="display:flex;flex-direction:row; white-space: nowrap; width:auto; align-items:center; margin-inline: 2%;">
+					<button id="golButton" style="disabled: false">Start</button><button id="resetGolBtn" class="button">Reset</button>
+					<span style="padding-inline:10px">Time (s): </span><span id="timeGol"></span>
+				</span>
+				<br/>
+				<p> ... </p>
+			  </div>
+			</div>
+
+        <hr class="hr">
 			
 		  <div class="showAndHideMenu"><p><b>Chess (simple)</b></p><button id="show3" class="button"> Show \ Hide </button></div>
 			<div id="part3" style="display:none;">
 				<hr class="hr">
-			  <div class="part2">
+			  	<div class="part2">
 			
 				<div class=".introBall2">
 				  <h2> Chess (simple) </h2>
@@ -163,10 +190,10 @@
 					The program is to end when object comes back to original position.
 					Ball v.1 version based on images.
 				  </p>
-				<div class="boardBall2" id="boardContainer1"></div> <!-- aaa -->
+				<div class="boardBall1" id="boardContainer1"></div> <!-- aaa -->
 				<span><button id="ball1button" class="button">Start</button><button id="resetBtnBall1" class="button">Reset</button></span> <!-- aaa -->
 				<br/>
-				<div>Time (s): <p id="timeBall1"></p></div> <!-- aaa -->
+				<div>Time (s): <p id="timeBall_1"></p></div> <!-- aaa -->
 			  </div>
 			</div>
 			
@@ -183,27 +210,39 @@
 					The program is to end when object comes back to original position.
 					Ball v.2 version based on Webdings font.
 				  </p>
-				<div class="boardBall2" id="boardContainer"></div>
+				  <br/>
+				<div class="boardBall2" id="boardContainer2"></div>
+				<br/>
 				<span><button id="ball2button" class="button">Start</button><button id="resetBtnBall2" class="button">Reset</button></span>
 				<br/>
-				<div>Time (s): <p id="timeBall2"></p></div>
+				<div>Time (s): <p id="timeBall_2"></p></div>
 			  </div>
 			</div>
 
         <hr class="hr">
 		
-		  <div class="showAndHideMenu" s><p><b>Game of life</b></p><button id="show5" class="button"> Show \ Hide </button></div> <!-- aaa -->
-			<div id="part5" style="display:none;"> <!-- aaa -->
+		  <div class="showAndHideMenu"><p><b>Game of life</b></p><button id="show5" class="button"> Show \ Hide </button></div>
+			<div id="part5" style="display:none;">
 				<hr class="hr">
 				<div class="part2">
 				  <h2> Game of life </h2>
-				  <p> <!-- aaa -->
-					...
+				  <p>
+					The game of life - one of the first and most famous examples of a cellular automaton, invented in 1970 by the British mathematician John Conway.
+					The game is played on a board divided into square cells. Each cell has eight "neighbors" (the so-called Moore's neighborhood),
+					i.e. cells adjacent to it with sides and corners. Each cell can be in one of two states: it can be either "alive" (on) or "dead".
+					Cell states change over time. The state of all cells in one unit of time is used to calculate the state of all cells in the next unit.
+					After the calculation, all cells change their state at exactly the same time. The state of a cell depends only on the number of its living neighbors.
+					There are no players in the game in the literal sense of the word. Human participation comes down to establishing the initial state of cells.
+					A dead cell that has exactly 3 living neighbors becomes alive in the next unit of time (is born). A living cell with 2 or 3 living neighbors remains alive,
+					and with a different number of neighbors it dies (from "loneliness" or "crowding").
 				  </p>
-				<div class="boardBall2" id="boardGolContainer"></div> <!-- aaa -->
-				<span><button id="golButton" class="button">Start</button><button id="resetGolBtn" class="button">Reset</button></span> <!-- aaa -->
-				<br/>
-				<div>Time (s): <p id="timeGol"></p></div> <!-- aaa -->
+				<span style="display:flex;flex-direction:row; white-space: nowrap; width:auto; align-items:center; margin-inline: 2%;">
+					<button id="golButton" style="disabled: false">Start</button><button id="resetGolBtn" class="button">Reset</button>
+					<span style="padding-inline:10px">Time (s): </span><span id="timeGol"></span>
+				</span>
+				<p>You can edit the \src\js\boardGOL.js file and check the new result.</p>
+				<div class="boardGol" id="boardGolContainer"></div>
+				
 			  </div>
 			</div>
 
