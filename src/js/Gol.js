@@ -1,10 +1,10 @@
 // copy orginal board
-let boardGOLtemp = [].concat(boardGOL); 
+// let boardGOLtemp = [].concat(boardGOL); 
+let boardGOLtemp = JSON.parse(JSON.stringify(boardGOL));
 let timeGol = 0;
 let timeGolHtml = document.getElementById('timeGol');
-	
-// <img src={cell} alt="" className={styles.Ball} />
-// <img src={air} alt="" className={styles.Air} />
+let playGol;
+// let disabled=true;
 
 const updateBoardGol = () => {
 	let divRow = 0;
@@ -92,30 +92,12 @@ class GameGOL {
 				else { tempBoard[x][y] = 0 };
 			};
 		};
-		boardGOLtemp = [].concat(tempBoard);
+		boardGOLtemp = JSON.parse(JSON.stringify(tempBoard));
 		updateBoardGol();
 	};
 };
 
-let playGol;
-let gameGolStart = () => {
-	playGol = setInterval(() => {
-		let game = new GameGOL(boardGOLtemp).start();
-		timeGol++;
-		timeGolHtml.innerHTML = timeGol;
-	}, 1000)
-	document.getElementById("golButton").disabled = true;
-};
-
-let gameGolReset = () => {
-	clearInterval(playGol);
-	alert('Game reset');
-	timeGol = 0;
-	boardGOLtemp = JSON.parse(JSON.stringify(boardGOL));
-	updateBoardGol();
-	document.getElementById("golButton").disabled = false;
-	timeGolHtml.innerHTML = timeGol;
-};
+updateBoardGol();
 
 let golButton = document.getElementById('golButton');
 golButton.addEventListener('click', () => {gameGolStart()});
@@ -123,8 +105,25 @@ golButton.addEventListener('click', () => {gameGolStart()});
 let resetGolBtn = document.getElementById('resetGolBtn');
 resetGolBtn.addEventListener('click', () => {gameGolReset()});
 
-updateBoardGol();
+function gameGolStart(){
+	golButton.setAttribute("disabled", null);
+	resetGolBtn.removeAttribute('disabled');
+    
+	playGol = setInterval(() => {
+		let game = new GameGOL(boardGOLtemp).start();
+		timeGol++;
+		timeGolHtml.innerHTML = timeGol;
+    }, 1000);
+};
 
-// <div className={styles.board} >
-// <button id="Btn1" disabled={false} onClick={gameStart} > Start life! </button>
-// <div className={styles.board1}>
+function gameGolReset(){
+	clearInterval(playGol);
+	alert('Game reset');
+	timeGol = 0;
+	timeGolHtml.innerHTML = timeGol;
+	boardGOLtemp = JSON.parse(JSON.stringify(boardGOL));
+	updateBoardGol();
+	
+	golButton.removeAttribute('disabled');
+	resetGolBtn.setAttribute("disabled", null);
+};

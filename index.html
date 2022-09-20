@@ -13,8 +13,12 @@
         <script defer src="src/js/elements.js"></script>
         <script defer src="src/js/functionsAndVariables.js"></script>
 		
+		<script defer src="src/js/data.js"></script>
+		<script defer src="src/js/table.js"></script>
+		
         <script defer src="src/js/boardBall.js"></script>
-        <script defer src="src/js/balls.js"></script>
+        <script defer src="src/js/ball1.js"></script>
+		<script defer src="src/js/ball2.js"></script>
 		
 	    <script defer src="src/js/boardChess.js"></script>
 		<script defer src="src/js/Chess.js"></script>
@@ -37,10 +41,10 @@
 								<a href="#">Intro</a>
 							</li>
 							<li>
-								<a>Buyer apps</a>
+								<a>Data apps</a>
 								<ul>
 									<li>
-										<a href="#show6" onclick="showHide('part6')">FS/KLG</a>
+										<a href="#show6" onclick="showHide('part6')">Data table</a>
 									</li>
 									<li>
 										<a href="#">Buyer 1-2</a>
@@ -135,22 +139,22 @@
 		  
 		<hr class="hr">
 		
-		  <div class="showAndHideMenu"><p><b>FS/KLG</b></p><button id="show6" class="button"> Show \ Hide </button></div>
+		  <div class="showAndHideMenu"><p><b>Work with data table</b></p><button id="show6" class="button"> Show \ Hide </button></div>
 			<div id="part6" style="display:none;">
 				<hr class="hr">
 				<div class="part2">
-				  <h2> FS/KLG </h2>
-				  <p>
-					...
-				  </p>
-				<div class="boardBall2" id="fsKlg"></div>
-				<!-- to be edit -->
-				<span style="display:flex;flex-direction:row; white-space: nowrap; width:auto; align-items:center; margin-inline: 2%;">
-					<button id="golButton" style="disabled: false">Start</button><button id="resetGolBtn" class="button">Reset</button>
-					<span style="padding-inline:10px">Time (s): </span><span id="timeGol"></span>
-				</span>
-				<br/>
-				<p> ... </p>
+					<h2>Work with data table</h2>
+					<p>
+						Sample data table using the power of JavaScript. Imitation of data download via the "Load" button, and then the possibility of sorotowania, filtering, categorizing.
+					</p>
+
+					<span style="display:flex;flex-direction:row; white-space: nowrap; width:auto; align-items:center; margin-inline: 2%;">
+						<button id="loadBtn" class="button" onclick="loadData()">Load</button>
+						<button id="loadReset" class="button" onclick="resetData()">Reset</button>
+					</span>
+					<br/>
+					<table id="tableContainer"></table>
+
 			  </div>
 			</div>
 
@@ -237,7 +241,8 @@
 					and with a different number of neighbors it dies (from "loneliness" or "crowding").
 				  </p>
 				<span style="display:flex;flex-direction:row; white-space: nowrap; width:auto; align-items:center; margin-inline: 2%;">
-					<button id="golButton" style="disabled: false">Start</button><button id="resetGolBtn" class="button">Reset</button>
+					<button id="golButton" style="display:visible;">Start</button>
+					<button id="resetGolBtn" class="button" disabled">Reset</button>
 					<span style="padding-inline:10px">Time (s): </span><span id="timeGol"></span>
 				</span>
 				<p>You can edit the \src\js\boardGOL.js file and check the new result.</p>
