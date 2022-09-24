@@ -1,4 +1,4 @@
-$blue1: #7abfff;
+$blue1: #0485ff;
 $blue2: #56adff;
 $red: #8b0000;
 
@@ -28,6 +28,16 @@ button {
 		color: $red;
 		background: rgb(255, 139, 139);
 		transform: scale(1.30);
+	}
+	&:disabled{
+		cursor: not-allowed;
+		background: radial-gradient(white 10%, 70%, $gray);
+		box-shadow: none;
+		color: gray;
+		&:hover {
+			color: gray;
+			transform: none;
+		}
 	}
 }
 

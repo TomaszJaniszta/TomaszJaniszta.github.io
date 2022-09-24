@@ -8,34 +8,59 @@ let playGol;
 
 const updateBoardGol = () => {
 	let divRow = 0;
+	
 	let boardGolContainer = document.getElementById('boardGolContainer');
 	boardGolContainer.innerHTML = '';
 	
     boardGOLtemp.map((indexTable) => {	
-      divRow++;
+	  //number of element in array
+	  if (divRow===17) {divRow = 0} else {divRow+=1};  
       let boardRow = document.createElement("div");
       boardRow.setAttribute("id", "divRowGOL"+divRow);
 	  boardRow.setAttribute("style", "display: flex; flex-direction: column;");
       boardGolContainer.appendChild(boardRow);
 
+	  let elementNr = 0;
       indexTable.map((element) => {
+			elementNr+=1;  
 			if (element === 1) {
 				let boardElement = document.createElement("span");
-				boardElement.innerHTML = '<img src="./images/gol/cell2.gif" alt="Cell field" width="100%" height:auto/>';
+				boardElement.setAttribute("id", (elementNr-1)+"."+(divRow-1));
+				boardElement.innerHTML = '<img src="./images/gol/cell2.gif" alt="Cell field" width="100%" height:auto class="cell">';
 				let divContainer = document.getElementById("divRowGOL"+divRow);
 				divContainer.appendChild(boardElement);
+				
+				boardElement.addEventListener('click', () => {
+					changeCell(
+						boardElement.id
+					);
+				});
 			} else {
 				let boardElement = document.createElement("span");
-				boardElement.innerHTML = '<img src="./images/gol/air3.jpg" alt="Air field" width="100%" height:auto/>';
+				boardElement.setAttribute("id", (elementNr-1)+"."+(divRow-1));
+				boardElement.innerHTML = '<img src="./images/gol/air3.jpg" alt="Air field" width="100%" height:auto class="air">';
 				let divContainer = document.getElementById("divRowGOL"+divRow);
 				divContainer.appendChild(boardElement);
+
+				boardElement.addEventListener('click', () => {
+					changeCell(
+						boardElement.id
+					);
+				});
 			}
       });
 	  
       boardGolContainer.appendChild(boardRow);
     });
 };
-	//-------------------------------------
+
+const changeCell =(id) => {
+	let y=id.split(".")[0];
+	let x=id.split(".")[1];
+	console.log(x, y);
+	if(boardGOLtemp[x][y]===1){boardGOLtemp[x][y]=0}else{boardGOLtemp[x][y]=1};
+	updateBoardGol();
+};
 
 class LifeCounter {
 	constructor(board, x, y) {
@@ -44,7 +69,7 @@ class LifeCounter {
 		this.y = y;
 		this.range = this.cellRange();
 		this.count = this.count();
-	}
+	};
 	cellRange() {
 		let range = [];
 		for (let x = -1; x < 2; x += 1) {

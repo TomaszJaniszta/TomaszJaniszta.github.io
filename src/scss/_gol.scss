@@ -8,8 +8,52 @@
     width: auto;
     height: auto;
     border: 5px double;
-    background-image: linear-gradient(#ffffff, #adadad, #ffffff);
-    transform: scale(0.9);
+    background-image: linear-gradient(#fbff00, #9fff9b, #fbff00);
+    //transform: scale(0.9);
     // margin-bottom: 5%;
     line-height:70%;
 }
+
+@keyframes spinning {
+  from {
+    transform: rotate(0deg)
+  }
+
+  to {
+    transform: rotate(360deg)
+  }
+}
+
+.cell {
+  animation-name: spinning;
+  animation-duration: 5s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+  border-radius: 33px;
+}
+
+.air {
+  border-radius: 5px;
+}
+
+.board {
+  // letter-spacing: 5px;
+  background-color: rgb(255, 255, 255);
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  // height: 50px;
+  height: 100%;
+  font-size: calc(10px + 1vmin);
+  // font-size: calc(10px + 1vmin);
+  // padding-right: 3px;
+}
+
+// .air {
+//   box-sizing: border-box;
+//   display: block;
+//   width: 50px;
+//   height: 50px;
+//   border: 2px solid rgb(201, 201, 201);
+// }

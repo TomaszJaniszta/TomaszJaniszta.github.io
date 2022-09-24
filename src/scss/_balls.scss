@@ -136,10 +136,17 @@ $--rg: (
   height: auto;
   font-family: fontBall2;
   border: 5px double;
-  font-size: 2em;
+  font-size: min(max(22px, 6vw), 32px);
   background-image: linear-gradient(#ffffff, #636363, #ffffff);
-  transform: scale(1.2);
+  //transform: scale(1.2);
   // margin-bottom: 5%;
+}
+
+@media only screen and (max-width: 970px) {
+  .boardBall2 {
+    font-size: min(max(22px, 6vw), 32px);
+    //font-size: min(max(1rem, 4vw), 24px);
+  }
 }
 
 .Air {
