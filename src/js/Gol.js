@@ -4,31 +4,29 @@ let boardGOLtemp = JSON.parse(JSON.stringify(boardGOL));
 let timeGol = 0;
 let timeGolHtml = document.getElementById('timeGol');
 let playGol;
-// let disabled=true;
+let boardGolContainer = document.getElementById('boardGolContainer');
 
 const updateBoardGol = () => {
-	let divRow = 0;
-	
-	let boardGolContainer = document.getElementById('boardGolContainer');
 	boardGolContainer.innerHTML = '';
-	
-    boardGOLtemp.map((indexTable) => {	
-	  //number of element in array
-	  if (divRow===17) {divRow = 0} else {divRow+=1};  
+
+	let col = -1;
+    boardGOLtemp.forEach(indexTable => {
+	  //number array
+	  col++;  
       let boardRow = document.createElement("div");
-      boardRow.setAttribute("id", "divRowGOL"+divRow);
-	  boardRow.setAttribute("style", "display: flex; flex-direction: column;");
+      boardRow.setAttribute("id", ("col"+col));
+	  boardRow.setAttribute("style", "display:   ");
+
       boardGolContainer.appendChild(boardRow);
 
-	  let elementNr = 0;
-      indexTable.map((element) => {
-			elementNr+=1;  
+	  let elementNr = -1;
+      indexTable.forEach(element => {
+			elementNr++;  
 			if (element === 1) {
 				let boardElement = document.createElement("span");
-				boardElement.setAttribute("id", (elementNr-1)+"."+(divRow-1));
+				boardElement.setAttribute("id", (elementNr)+"."+(col));
 				boardElement.innerHTML = '<img src="./images/gol/cell2.gif" alt="Cell field" width="100%" height:auto class="cell">';
-				let divContainer = document.getElementById("divRowGOL"+divRow);
-				divContainer.appendChild(boardElement);
+				boardRow.appendChild(boardElement);
 				
 				boardElement.addEventListener('click', () => {
 					changeCell(
@@ -37,10 +35,9 @@ const updateBoardGol = () => {
 				});
 			} else {
 				let boardElement = document.createElement("span");
-				boardElement.setAttribute("id", (elementNr-1)+"."+(divRow-1));
+				boardElement.setAttribute("id", (elementNr)+"."+(col));
 				boardElement.innerHTML = '<img src="./images/gol/air3.jpg" alt="Air field" width="100%" height:auto class="air">';
-				let divContainer = document.getElementById("divRowGOL"+divRow);
-				divContainer.appendChild(boardElement);
+				boardRow.appendChild(boardElement);
 
 				boardElement.addEventListener('click', () => {
 					changeCell(
@@ -50,7 +47,6 @@ const updateBoardGol = () => {
 			}
       });
 	  
-      boardGolContainer.appendChild(boardRow);
     });
 };
 
@@ -107,9 +103,9 @@ class GameGOL {
 	};
 	start() {
 		let tempBoard = [];
-		for (let x = 0; x < board.length; x += 1) {
+		for (let x = 0; x < board.length+1; x += 1) {
 			tempBoard.push([0]);
-			for (let y = 0; y < board.length; y += 1) {
+			for (let y = 0; y < board.length+1; y += 1) {
 				let lifeConditionCount = new LifeCounter(this.board, x, y).count;
 				// life conditions for cells
 				if (lifeConditionCount === 3) { tempBoard[x][y] = 1 }
@@ -129,6 +125,32 @@ golButton.addEventListener('click', () => {gameGolStart()});
 
 let resetGolBtn = document.getElementById('resetGolBtn');
 resetGolBtn.addEventListener('click', () => {gameGolReset()});
+
+let fillAll = document.getElementById('fillAllBtn');
+fillAll.addEventListener('click', () => {fillAllBoard()});
+
+function fillAllBoard(){
+	boardGOLtemp = [
+		[1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1],
+		[1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1],
+		[1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1],
+		[1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1],
+		[1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1],
+		[1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1],
+		[1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1],
+		[1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1],
+		[1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1],
+		[1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1],
+		[1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1],
+		[1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1],
+		[1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1],
+		[1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1],
+		[1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1],
+		[1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1],
+		[1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1],
+	  ];
+	updateBoardGol();
+};
 
 function gameGolStart(){
 	golButton.setAttribute("disabled", null);
