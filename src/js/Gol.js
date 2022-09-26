@@ -1,4 +1,4 @@
-// copy orginal board
+// copy orginal board 
 // let boardGOLtemp = [].concat(boardGOL); 
 let boardGOLtemp = JSON.parse(JSON.stringify(boardGOL));
 let timeGol = 0;
@@ -8,24 +8,25 @@ let boardGolContainer = document.getElementById('boardGolContainer');
 
 const updateBoardGol = () => {
 	boardGolContainer.innerHTML = '';
-
-	let col = -1;
-    boardGOLtemp.forEach(indexTable => {
+	
+   let col = -1;
+    boardGOLtemp.forEach(indexTable => {	
 	  //number array
-	  col++;  
+     col++;
       let boardRow = document.createElement("div");
       boardRow.setAttribute("id", ("col"+col));
 	  boardRow.setAttribute("style", "display:   ");
 
       boardGolContainer.appendChild(boardRow);
 
-	  let elementNr = -1;
+     let elementNr = -1;
       indexTable.forEach(element => {
 			elementNr++;  
 			if (element === 1) {
 				let boardElement = document.createElement("span");
 				boardElement.setAttribute("id", (elementNr)+"."+(col));
-				boardElement.innerHTML = '<img src="./images/gol/cell2.gif" alt="Cell field" width="100%" height:auto class="cell">';
+				boardElement.innerHTML = '<img src="./images/gol/cell2.gif" alt="Cell field" width="100%" height:auto class="cell"/>';
+
 				boardRow.appendChild(boardElement);
 				
 				boardElement.addEventListener('click', () => {
@@ -47,6 +48,7 @@ const updateBoardGol = () => {
 			}
       });
 	  
+      boardGolContainer.appendChild(boardRow);
     });
 };
 
@@ -57,6 +59,7 @@ const changeCell =(id) => {
 	if(boardGOLtemp[x][y]===1){boardGOLtemp[x][y]=0}else{boardGOLtemp[x][y]=1};
 	updateBoardGol();
 };
+	//-------------------------------------
 
 class LifeCounter {
 	constructor(board, x, y) {
@@ -65,7 +68,7 @@ class LifeCounter {
 		this.y = y;
 		this.range = this.cellRange();
 		this.count = this.count();
-	};
+	}
 	cellRange() {
 		let range = [];
 		for (let x = -1; x < 2; x += 1) {
@@ -125,33 +128,44 @@ golButton.addEventListener('click', () => {gameGolStart()});
 
 let resetGolBtn = document.getElementById('resetGolBtn');
 resetGolBtn.addEventListener('click', () => {gameGolReset()});
+//-------------------------------------------
+let randomGolBtn = document.getElementById('randomGol');
+randomGolBtn.addEventListener('click', () => {randomGol()});
 
-let fillAll = document.getElementById('fillAllBtn');
-fillAll.addEventListener('click', () => {fillAllBoard()});
+let clearGolBtn = document.getElementById('clearGol');
+clearGolBtn.addEventListener('click', () => {clearGol()});
 
-function fillAllBoard(){
-	boardGOLtemp = [
-		[1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1],
-		[1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1],
-		[1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1],
-		[1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1],
-		[1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1],
-		[1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1],
-		[1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1],
-		[1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1],
-		[1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1],
-		[1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1],
-		[1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1],
-		[1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1],
-		[1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1],
-		[1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1],
-		[1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1],
-		[1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1],
-		[1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1],
-	  ];
+const randomGol = () => {
+	function randomGOLcell(){
+		if (Math.random() < 0.5){return 0}else{return 1};
+	};
+	let newBoard = [];
+	boardGOLtemp.forEach((indexTable) => {
+	  let array = [];
+      indexTable.forEach((element) => {
+		array.push(randomGOLcell());
+      });
+	  newBoard.push(array);
+	});
+	
+	boardGOLtemp = newBoard;
 	updateBoardGol();
 };
 
+const clearGol = () => {
+	let newBoard = [];
+	boardGOLtemp.forEach((indexTable) => {
+	  let array = [];
+      indexTable.forEach((element) => {
+		array.push(0);
+      });
+	  newBoard.push(array);
+	});
+	
+	boardGOLtemp = newBoard;
+	updateBoardGol();
+};
+//-----------------------------------------
 function gameGolStart(){
 	golButton.setAttribute("disabled", null);
 	resetGolBtn.removeAttribute('disabled');

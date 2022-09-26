@@ -24,5 +24,5 @@ show4.addEventListener('click', () => {showHide('part4')});
 show5.addEventListener('click', () => {showHide('part5')});
 show6.addEventListener('click', () => {showHide('part6')});
 
-const imgMe = document.getElementById('imgMe');
-imgMe.addEventListener('click', () => {counterButtonClick()});
+const imgMountain = document.getElementById('imgMountain');
+imgMountain.addEventListener('click', () => {counterButtonClick()});

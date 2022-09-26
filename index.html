@@ -13,7 +13,8 @@
         <script defer src="src/js/elements.js"></script>
         <script defer src="src/js/functionsAndVariables.js"></script>
 		
-		<script defer src="src/js/data.js"></script>
+		<!-- without defer, need to load data -->
+		<script src="src/js/data.js"></script>
 		<script defer src="src/js/table.js"></script>
 		
         <script defer src="src/js/boardBall.js"></script>
@@ -27,10 +28,12 @@
 		
 		<script defer src="src/js/boardGOL.js"></script>
 		<script defer src="src/js/Gol.js"></script>
+
+		<script defer src="src/js/colorTheme.js"></script>
         <noscript> No JavaScript support. Content will not display correctly :( </noscript>    
     </head>
     <body onload="initFunction()">
-      <main>
+		<main  id="main" style="background-image: linear-gradient(rgb(255, 255, 255), rgb(156, 156, 156), rgb(255, 255, 255));">
 	  
 			<div id="languageAndMenu">
 				<div class="menu">
@@ -38,38 +41,38 @@
 					<div>
 						<ol>
 							<li>
-								<a href="#">Intro</a>
+								<a href="#" id="menuIntro">Intro</a>
 							</li>
 							<li>
-								<a>Data apps</a>
+								<a id="menuDataApps">Data apps</a>
 								<ul>
 									<li>
-										<a href="#show6" onclick="showHide('part6')">Data table</a>
+										<a href="#show6" onclick="showHide('part6')" id="menuDataTable">Data table</a>
 									</li>
 									<li>
-										<a href="#">Buyer 1-2</a>
+										<a href="#">Will be soon...</a>
 									</li>
 								</ul>
 							</li>
 							<li>
-								<a>Ball apps</a>
+								<a id="menuBallApps">Ball apps</a>
 								<ul>
 									<li>
-										<a href="#show4" onclick="showHide('part4')">Ball v.1</a>
+										<a href="#show4" onclick="showHide('part4')" id="menuBall_1">Ball v.1</a>
 									</li>
 									<li>
-										<a href="#show2" onclick="showHide('part2')">Ball v.2</a>
+										<a href="#show2" onclick="showHide('part2')" id="menuBall_2">Ball v.2</a>
 									</li>
 								</ul>
 							</li>
 							<li>
-								<a>Other apps</a>
+								<a id="menuOtherApps">Other apps</a>
 								<ul>
 									<li>
-										<a href="#show3" onclick="showHide('part3')">Chess</a>
+										<a href="#show3" onclick="showHide('part3')" id="menuChess">Chess</a>
 									</li>
 									<li>
-										<a href="#show5" onclick="showHide('part5')">G.O.L.</a>
+										<a href="#show5" onclick="showHide('part5')" id="menuGOL">G.O.L.</a>
 									</li>
 								</ul>
 							</li>
@@ -77,8 +80,8 @@
 					</div>
 				</div>
 				<div class="menu2">
-					<p id="lightTheme" style="white-space: nowrap; padding-inline: 3px;">Ligh theme</p>
-					<p id="darkTheme" style="white-space: nowrap; margin-right: 5px; color: white; background: black; overflow:hidden; padding-inline: 3px;">Dark theme</p>
+					<p id="lightTheme" style="white-space: nowrap; padding-inline: 3px;border:1px solid white;color:white;background:gray;">Ligh theme</p>
+					<p id="darkTheme" style="white-space: nowrap; margin-right: 5px; color: white; background: black; overflow:hidden; padding-inline: 3px;border:1px solid white;">Dark theme</p>
 					<p id="pl" style="background-color:lightgray; display:flex; align-items: center;" onclick="changeLanguage('pl');"> PL 
 						<span style="padding-left: 5px; display:flex; align-items: center;"><img alt="PL language" id="pl" src="./images/pl30x20.png" width="15" height="10"/></span>
 					</p>
@@ -88,10 +91,17 @@
 				</div>
 			</div>
 
-          <div style="background-image: linear-gradient(rgb(255, 255, 255), rgb(156, 156, 156), rgb(255, 255, 255));">
-            <div id="intro">
-              <div class="center">
-                <h1 id="introTitle">Intro</h1>
+			<div id="intro" style="background-image: linear-gradient(rgb(255, 255, 255), rgb(156, 156, 156), rgb(255, 255, 255));display:flex;flex-direction:column;">
+
+				<div style="display:flex;flex-direction:row;justify-content:space-between;padding:3%;margin-inline:10%;">
+					<h1 id="introTitle">Intro</h1>
+					<!-- keep aspect ratio -->
+					<img alt="Tomasz Janiszta photo" id="imgMeSmall" style="
+						object-fit: contain;
+						width: 50%;
+						height: 50%;"
+						src="./images/me.jpg"/>
+				</div>
                 <hr class="hr">
                 <p id="introText">Hello, my name is Tomasz Janiszta. I program in JavaScript. Front-end: React, Angular. Back-end: Node.js.
                     The page contains examples of code I made as a quick presentation.
@@ -100,16 +110,16 @@
                 </p>
               </div>
             </div>
-          </div>
 
 		<div class="showAndHideMenu"><p><b>Example pop-up counter</b></p><button id="show1" class="button"> Show \ Hide </button></div>
-		<div id="part1" style="display:block">
+		<div id="part1" style="display:none">
+		<!-- <div id="part1" style="display:block"> -->
 		<hr class="hr">
 		  <div class="part1">
 			  <div class="img-container">
-					<img class="img" alt="Tomasz Janiszta photo"
-					id="imgMe"
-					src="./images/me.jpg"
+					<img class="img" alt="mountain photo"
+					id="imgMountain"
+					src="./images/mountain.jpg"
 					/>
 			  </div>
 
@@ -132,7 +142,7 @@
 				  <button type="button" class="reset" id="reset">Reset counter</button>
 				</p>
 			  </div>
-		
+			</br>
 			  <div class="overl" id="overlay"></div>
 			</div>
 		  </div>
@@ -146,15 +156,44 @@
 					<h2>Work with data table</h2>
 					<p>
 						Sample data table using the power of JavaScript. Imitation of data download via the "Load" button, and then the possibility of sorotowania, filtering, categorizing.
+						You can change file with data (data.js) and refresh to work with your data.
 					</p>
-
+					<p> To be added: sorting by order id, filter by description, sorting by date, filter by person name, status, priority.
+						Columns: cost, cost multiplier, total cost.
+					</p>
 					<span style="display:flex;flex-direction:row; white-space: nowrap; width:auto; align-items:center; margin-inline: 2%;">
 						<button id="loadBtn" class="button" onclick="loadData()">Load</button>
-						<button id="loadReset" class="button" onclick="resetData()">Reset</button>
+						<button id="loadReset" class="button" onclick="resetData()" style="display:none;">Reset</button>
+						<button id="sortById" class="button" onclick="sortById()" style="display:none;">Sort by ID</button>
+						<button id="sortByDate" class="button" onclick="sortByDate()" style="display:none;">Sort by date</button>
 					</span>
-					<br/>
-					<table id="tableContainer"></table>
+					</br>
+					
+					<div id="noTableData" style="color:red;">No data. Please press load button.</div>
 
+					<div id="tableFilters" style="display:none;">
+						<span style="white-space: nowrap;">
+							<label for="searchByDesc">Search by description:</label>
+						 	<input id="searchByDesc"
+						    	type="text"
+						    	placeholder="Enter searched phrase"
+								oninput="filterDesc(this.value)"
+						    />
+						</span>
+						<!-- <button id="btnSearch" type="button" (onclick)="ordersFilter(searchPhrase)">Search</button> -->
+ 						<span>
+						    <label for="selectPriotity">Select priority:</label>
+						    <select id="selectPriotity" onchange="filterPriority(this.value)">
+								<option value="All" selected="selected">All</option>
+								<option value="Low">Low</option>
+								<option value="Normal">Normal</option>
+								<option value="High">High</option>
+						    </select>
+						</span>
+					</div>
+					<br/>
+					<table id="tableContainer" style="max-width:100vw; border-collapse: collapse;background:white"> </table>
+				</br>
 			  </div>
 			</div>
 
@@ -167,9 +206,9 @@
 			
 				<div class=".introBall2">
 				  <h2> Chess (simple) </h2>
-				  <p>Program is to choose at random one of the chess piece (except the pawn) and place it at the random spot on the board.
+				  <p>It's not a classic chess game. Program is to choose at random one of the chess piece (except the pawn) and place it at the random spot on the board.
 					After placing any piece (except first one) check all present pieces move ranges and see if any can reach other piece.
-					If so Give that pieces position and quit program. FACTORY (with class hierarhy) + SINGLETON pattern in code.
+					If so Give that pieces position and quit program. App made for use FACTORY (with class hierarhy) + SINGLETON pattern in code.
 				  </p>
 				<br/>
 				</div>
@@ -178,13 +217,14 @@
 				<br/>
 				<span><button id="chessButton" class="button">Add figure</button><button id="resetBtnChess" class="button">Reset</button></span>
 			  <div id="resultChess" style="width: 100%;"></div>
+			</br>
 			</div>
 		  </div>
 
         <hr class="hr">
 		
-		  <div class="showAndHideMenu"><p><b>Ball bouncy simulator v.1.</b></p><button id="show4" class="button"> Show \ Hide </button></div> <!-- aaa -->
-			<div id="part4" style="display:none;"> <!-- aaa -->
+		  <div class="showAndHideMenu"><p><b>Ball bouncy simulator v.1.</b></p><button id="show4" class="button"> Show \ Hide </button></div>
+			<div id="part4" style="display:none;">
 				<hr class="hr">
 				<div class="part2">
 				  <h2> Ball bouncy simulator v.1.</h2>
@@ -194,8 +234,8 @@
 					The program is to end when object comes back to original position.
 					Ball v.1 version based on images.
 				  </p>
-				<div class="boardBall1" id="boardContainer1"></div> <!-- aaa -->
-				<span><button id="ball1button" class="button">Start</button><button id="resetBtnBall1" class="button">Reset</button></span> <!-- aaa -->
+				<div class="boardBall1" id="boardContainer1"></div>
+				<span><button id="ball1button" class="button">Start</button><button id="resetBtnBall1" class="button">Reset</button></span>
 				<br/>
 				<div>Time (s): <p id="timeBall_1"></p></div> <!-- aaa -->
 			  </div>
@@ -238,12 +278,13 @@
 					After the calculation, all cells change their state at exactly the same time. The state of a cell depends only on the number of its living neighbors.
 					There are no players in the game in the literal sense of the word. Human participation comes down to establishing the initial state of cells.
 					A dead cell that has exactly 3 living neighbors becomes alive in the next unit of time (is born). A living cell with 2 or 3 living neighbors remains alive,
-					and with a different number of neighbors it dies (from "loneliness" or "crowding").
+					and with a different number of neighbors it dies (from "loneliness" or "crowding"). More information: <a href="https://en.wikipedia.org/wiki/Conway%27s_Game_of_Life" target="_blank">wikipedia.org</a>
 				  </p>
 				<span style="display:flex;flex-direction:row; white-space: nowrap; width:auto; align-items:center; margin-inline: 2%;">
 					<button id="golButton" class="button" style="display:visible;">Start</button>
 					<button id="resetGolBtn" class="button" disabled>Reset</button>
-					<button id="fillAllBtn" class="button">Fill all</button>
+					<button id="randomGol" class="button">Random cells</button>
+					<button id="clearGol" class="button">Clear cells</button>
 					<span style="padding-inline:10px">Time (s): </span><span id="timeGol"></span>
 				</span>
 				<p id="p_red">You can edit the board by clicking on the fields and than check the new result.</p>
