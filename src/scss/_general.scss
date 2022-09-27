@@ -2,7 +2,7 @@ $pink: #E4C1AE;
 $red: #8b0000;
 $white: #FFFFFF; 
 $shadow: 5px 5px 5px 1px gray;
-$gray: rgb(153, 153, 153);
+$gray: rgb(129, 129, 129);
 $introShadow: inset 0px 0px 7px 2px $gray, 0px 0px 7px 2px $gray;
 $introShadow2: inset 0px 0px 5px 1px $gray, 0px 0px 5px 1px $gray;
 $linear: linear-gradient(0.25turn, #b4b4b4, 10%, #ebf8e1, #616161);
@@ -80,7 +80,7 @@ html {
 .img {
     width: 80%;
     height: auto;
-
+	margin-block: 3%;
 	display: inline-block;
 	position: relative;
 	top: 1%;
