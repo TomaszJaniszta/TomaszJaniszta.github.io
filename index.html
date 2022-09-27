@@ -50,7 +50,7 @@
 										<a href="#show6" onclick="showHide('part6')" id="menuDataTable">Data table</a>
 									</li>
 									<li>
-										<a href="#">Will be soon...</a>
+										<a href="#show7" onclick="showHide('part7')" id="menuInvGen">Invoice</a>
 									</li>
 								</ul>
 							</li>
@@ -94,7 +94,7 @@
 			<div id="intro" style="background-image: linear-gradient(rgb(255, 255, 255), rgb(156, 156, 156), rgb(255, 255, 255));display:flex;flex-direction:column;">
 
 				<div style="display:flex;flex-direction:row;justify-content:space-between;padding:3%;margin-inline:10%;">
-					<h1 id="introTitle">Intro</h1>
+					<h1 id="introTitle" style="display:flex;align-items:center;">Intro</h1>
 					<!-- keep aspect ratio -->
 					<img alt="Tomasz Janiszta photo" id="imgMeSmall" style="
 						object-fit: contain;
@@ -106,14 +106,14 @@
                 <p id="introText">Hello, my name is Tomasz Janiszta. I program in JavaScript. Front-end: React, Angular. Back-end: Node.js.
                     The page contains examples of code I made as a quick presentation.
                     You can familiarize yourself with the end/usage layers of the code visible here.
-                    Enjoy watching, but... I also invite you to take a look at the js files :) (Content still in progress... )
+                    Enjoy watching, but... I also invite you to take a look at the js files :)
                 </p>
               </div>
             </div>
+			</br>
 
-		<div class="showAndHideMenu"><p><b>Example pop-up counter</b></p><button id="show1" class="button"> Show \ Hide </button></div>
+		<div class="showAndHideMenu"><p id="popupHeader"><b>Example pop-up counter</b></p><button id="show1" class="button"> Show \ Hide </button></div>
 		<div id="part1" style="display:none">
-		<!-- <div id="part1" style="display:block"> -->
 		<hr class="hr">
 		  <div class="part1">
 			  <div class="img-container">
@@ -124,8 +124,8 @@
 			  </div>
 
 			  <div class="content-container">
-				<h2>Example pop-up counter</h2>
-				<p>
+				<h2 id="popupHeader2">Example pop-up counter</h2>
+				<p id="popupP">
 				  Example pop-up counter. Made during one of the small projects. Click on the button or my image. 
 					After the 6th click, the counter can be reset.
 				</p>
@@ -134,13 +134,14 @@
     
 			  <div class="popup" id="popup">
 				<button type="button" class="btnX" id="btnX">&#10005</button>
-				<h2>Alert!</h2>
-				<p>
-				  You have clicked this button
-				  <span id="counter"></span>
-				  time(s).
-				  <button type="button" class="reset" id="reset">Reset counter</button>
-				</p>
+				<h2 id="alert">Alert!</h2>
+				<span>
+					<span id="popupText">You have clicked this button </span>
+					<span id="counter"></span>
+					<span id="popupTimes"> time(s).</span>
+				</span>
+				</br>
+				<button type="button" class="reset" id="reset">Reset counter</button>
 			  </div>
 			</br>
 			  <div class="overl" id="overlay"></div>
@@ -149,17 +150,14 @@
 		  
 		<hr class="hr">
 		
-		  <div class="showAndHideMenu"><p><b>Work with data table</b></p><button id="show6" class="button"> Show \ Hide </button></div>
-			<div id="part6" style="display:none;">
+		  <div class="showAndHideMenu"><p id="tableHeader"><b>Work with data table</b></p><button id="show2" class="button"> Show \ Hide </button></div>
+			<div id="part2" style="display:none;">
 				<hr class="hr">
 				<div class="part2">
 					<h2>Work with data table</h2>
 					<p>
-						Sample data table using the power of JavaScript. Imitation of data download via the "Load" button, and then the possibility of sorotowania, filtering, categorizing.
+						Sample data table using the power of JavaScript. Imitation of data download via the "Load" button, and then the possibility of sorting, filtering.
 						You can change file with data (data.js) and refresh to work with your data.
-					</p>
-					<p> To be added: sorting by order id, filter by description, sorting by date, filter by person name, status, priority.
-						Columns: cost, cost multiplier, total cost.
 					</p>
 					<span style="display:flex;flex-direction:row; white-space: nowrap; width:auto; align-items:center; margin-inline: 2%;">
 						<button id="loadBtn" class="button" onclick="loadData()">Load</button>
@@ -198,8 +196,32 @@
 			</div>
 
         <hr class="hr">
+		
+		<div class="showAndHideMenu"><p id="invHeader"><b>Invoice generator</b></p><button id="show7" class="button"> Show \ Hide </button></div>
+			<div id="part7" style="display:none;">
+				<hr class="hr">
+				<div class="part2">
+					<h2>Invoice generator</h2>
+					<p>
+						An application that imitates entering items on an invoice.
+						You can add items and delete items. Data validation added.
+						Name - required field, the minimum number of characters is 3, the maximum number of characters is 30. The field accepts any characters.
+						Count - required field, minimum 1, maximum 100. The field accepts only integers.
+						Price - required field, minimum 1, maximum 1000000. The field accepts only integers.
+
+						At the bottom there is a "Submit" button, which when clicked:
+						- if the form contains errors - displays them
+						- in the case of an empty form - it will show the message "Please add items"
+						- if the form is without errors - it will calculate sum of items
+					</p>
+					<p style="color: darkred; text-align: center;"> Content in progress... </p>
+				</br>
+			    </div>
+			</div>
+
+        <hr class="hr">
 			
-		  <div class="showAndHideMenu"><p><b>Chess (simple)</b></p><button id="show3" class="button"> Show \ Hide </button></div>
+		  <div class="showAndHideMenu"><p id="chessHeader"><b>Chess (simple)</b></p><button id="show3" class="button"> Show \ Hide </button></div>
 			<div id="part3" style="display:none;">
 				<hr class="hr">
 			  	<div class="part2">
@@ -223,7 +245,7 @@
 
         <hr class="hr">
 		
-		  <div class="showAndHideMenu"><p><b>Ball bouncy simulator v.1.</b></p><button id="show4" class="button"> Show \ Hide </button></div>
+		  <div class="showAndHideMenu"><p id="ball_1Header"><b>Ball bouncy simulator v.1.</b></p><button id="show4" class="button"> Show \ Hide </button></div>
 			<div id="part4" style="display:none;">
 				<hr class="hr">
 				<div class="part2">
@@ -243,8 +265,8 @@
 			
 		<hr class="hr">
 
-		  <div class="showAndHideMenu"><p><b>Ball bouncy simulator v.2.</b></p><button id="show2" class="button"> Show \ Hide </button></div>
-			<div id="part2" style="display:none;">
+		  <div class="showAndHideMenu"><p id="ball_2Header"><b>Ball bouncy simulator v.2.</b></p><button id="show5" class="button"> Show \ Hide </button></div>
+			<div id="part5" style="display:none;">
 				<hr class="hr">
 				<div class="part2">
 				  <h2> Ball bouncy simulator v.2.</h2>
@@ -265,8 +287,8 @@
 
         <hr class="hr">
 		
-		  <div class="showAndHideMenu"><p><b>Game of life</b></p><button id="show5" class="button"> Show \ Hide </button></div>
-			<div id="part5" style="display:none;">
+		  <div class="showAndHideMenu"><p id="golHeader"><b>Game of life</b></p><button id="show6" class="button"> Show \ Hide </button></div>
+			<div id="part6" style="display:none;">
 				<hr class="hr">
 				<div class="part2">
 				  <h2> Game of life </h2>
@@ -296,9 +318,9 @@
         <hr class="hr">
 		
         <p style="color: darkred; text-align: center;"> Content still in progress... </p>
-		<p style="color: gray; text-align: center;"> In idea to be added: theme change, buyer app v.1 and v.2, FS app, KLG app, tetris, Ads-board, To-do-list-app ...  </p>
+		<!-- <p style="color: gray; text-align: center;"> In idea to be added: buyer app v.1 and v.2, KLG app, tetris, Ads-board, To-do-list-app ...  </p> -->
         <br/>
-        <p class="end">Tomasz Janiszta, 2022r. ©</p>
+        <p class="end"><a href="mailto:janisztat@gmail.com">janisztat@gmail.com</a>  /  Tomasz Janiszta, 2022r. ©</p>
 
       </main>
     </body>
