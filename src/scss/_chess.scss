@@ -1,10 +1,16 @@
 .boardChess{
+    //margin-inline:auto;
+    //align-content:center;
+    //align-items:center;
 	line-height:70%;
-	border: double 5px black;
-    
+    border: double 5px black;
+	//border: double 5px black;
+    //justify-content:center;
+    //justify-items:center;
+    font-size:1em;
     img:hover{
-        // border:1px red;
+        //border:1px red;
         //background-color: red;
-        box-shadow: inset 0px 0px 7px 2px red, 0px 0px 7px 2px red;
+        box-shadow: inset 0px 0px 7px 2px rgb(0, 38, 255), 0px 0px 7px 2px rgb(0, 38, 255);
     }
 }
