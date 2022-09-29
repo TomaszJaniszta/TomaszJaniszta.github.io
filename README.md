@@ -1,10 +1,10 @@
-# Strona prezentacyjna - Tomasz Janiszta
+# Presentation page - Tomasz Janiszta
 
-## Witam serdecznie,
+## Hello,
 
-Programuję w JavaScript. Front-end: React, Angular. Back-end: Node.js.
+I program in JavaScript. Front-end: React, Angular. Backend: Node.js.
 
-Strona zawiera przykłady wykonanego przeze mnie kodu jako szybką prezentację.
-Można zapoznać się z widocznymi tu warstwami końcowymi/użytkowymi kodu.
+The website includes some code examples made by me as a quick presentation.
+You can see the code ending / usage layers shown here.
 
-### Miłego oglądania, ale... zapraszam też do zerknięcia w pliki js :)
+### Have a nice watch.
