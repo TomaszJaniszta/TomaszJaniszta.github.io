@@ -9,10 +9,10 @@ const updateBoardChess = () => {
 	chessBoardContainer.innerHTML = '';
 
     boardChess.forEach((indexTable) => {
-
       let boardRow = document.createElement("div");
       boardRow.setAttribute("id", "divRowChess"+x);
-	  boardRow.setAttribute("style", "display: flex; flex-direction: row;justify-content:center;");
+	  //boardRow.setAttribute("style", "display: flex; flex-direction: row;justify-content:center;");
+	  boardRow.setAttribute("style", "display: inline-table");
       chessBoardContainer.appendChild(boardRow);
 	  
 	  let y = -1;
@@ -24,7 +24,7 @@ const updateBoardChess = () => {
           boardElement.innerHTML = '<img src="./images/chess/black100.gif" alt="Black field" width="100%" height:auto/>';
 		let boardCoords = document.createElement("div");
 		  boardCoords.innerHTML = "x="+(x-1)+" y="+y;
-		  boardCoords.setAttribute("style", "position:relative;top:10px;left:1%;color:white;width:0%;z-index:10;white-space:nowrap;");
+		  boardCoords.setAttribute("style", "position:relative;top:1vw;left:10px;color:white;width:0%;height:0%;white-space:nowrap;");
 		  boardRow.appendChild(boardCoords);
 		  boardRow.appendChild(boardElement);
         } else if (element === 'W') {
@@ -32,58 +32,58 @@ const updateBoardChess = () => {
           boardElement.innerHTML = '<img src="./images/chess/white100.gif" alt="White field" width="100%" height:auto/>';
 		let boardCoords = document.createElement("div");
 		  boardCoords.innerHTML = "x="+(x-1)+" y="+y;
-		  boardCoords.setAttribute("style", "position:relative;top:10px;left:1%;color:black;width:0%;z-index:10;white-space:nowrap;");
+		  boardCoords.setAttribute("style", "position:relative;top:1vw;left:10px;color:black;width:0%;height:0%;white-space:nowrap;");
+		  boardRow.appendChild(boardCoords);
+		  boardRow.appendChild(boardElement);
+		} else if (element === 'X') {
+        let boardElement = document.createElement("span");
+          boardElement.innerHTML = '<img src="./images/chess/red100.gif" alt="Red field" width="100%" height:auto/>';
+		let boardCoords = document.createElement("div");
+		  boardCoords.innerHTML = "x="+(x-1)+" y="+y;
+		  boardCoords.setAttribute("style", "position:relative;top:1vw;left:10px;color:black;width:0%;height:0%;white-space:nowrap;");
 		  boardRow.appendChild(boardCoords);
 		  boardRow.appendChild(boardElement);
         } else if (element === 'T') {
         let boardElement = document.createElement("span");
-          boardElement.innerHTML = '<img src="./images/chess/tower100.gif" alt="Tower" width="100%" height:auto/>';
-		  /*let boardCoords = document.createElement("div");
+          boardElement.innerHTML = '<img src="./images/chess/tower100.gif" alt="Tower" width="100%" height:auto style="background-color:yellow;"/>';
+		let boardCoords = document.createElement("div");
 		  boardCoords.innerHTML = "x="+(x-1)+" y="+y;
-		  boardCoords.setAttribute("style", "position:relative;top:10px;left:1%;color:black;width:0%;font-size:8px;z-index:10;white-space:nowrap;");
-		  boardRow.appendChild(boardCoords);*/
+		  boardCoords.setAttribute("style", "position:relative;top:1vw;left:10px;color:black;width:0%;height:0%;white-space:nowrap;opacity:0.5;");
+		  boardRow.appendChild(boardCoords);
 		  boardRow.appendChild(boardElement);
         } else if (element === 'H') {
         let boardElement = document.createElement("span");
-          boardElement.innerHTML = '<img src="./images/chess/horse.gif" alt="Horse" width="100%" height:auto/>';
-		  /*let boardCoords = document.createElement("div");
+          boardElement.innerHTML = '<img src="./images/chess/horse.gif" alt="Horse" width="100%" height:auto style="background-color:yellow;"/>';
+		let boardCoords = document.createElement("div");
 		  boardCoords.innerHTML = "x="+(x-1)+" y="+y;
-		  boardCoords.setAttribute("style", "position:relative;top:10px;left:1%;color:black;width:0%;font-size:8px;z-index:10;white-space:nowrap;");
-		  boardRow.appendChild(boardCoords);*/
+		  boardCoords.setAttribute("style", "position:relative;top:1vw;left:10px;color:black;width:0%;height:0%;white-space:nowrap;opacity:0.5;");
+		  boardRow.appendChild(boardCoords);
 		  boardRow.appendChild(boardElement);
         } else if (element === 'L') {
         let boardElement = document.createElement("span");
-          boardElement.innerHTML = '<img src="./images/chess/laufer.gif" alt="Laufer" width="100%" height:auto/>';
-		  /*let boardCoords = document.createElement("div");
+          boardElement.innerHTML = '<img src="./images/chess/laufer.gif" alt="Laufer" width="100%" height:auto style="background-color:yellow;"/>';
+		let boardCoords = document.createElement("div");
 		  boardCoords.innerHTML = "x="+(x-1)+" y="+y;
-		  boardCoords.setAttribute("style", "position:relative;top:10px;left:1%;color:black;width:0%;font-size:8px;z-index:10;white-space:nowrap;");
-		  boardRow.appendChild(boardCoords);*/
+		  boardCoords.setAttribute("style", "position:relative;top:1vw;left:10px;color:black;width:0%;height:0%;white-space:nowrap;opacity:0.5;");
+		  boardRow.appendChild(boardCoords);
 		  boardRow.appendChild(boardElement);
         } else if (element === 'K') {
         let boardElement = document.createElement("span");
-          boardElement.innerHTML = '<img src="./images/chess/king.gif" alt="King" width="100%" height:auto/>';
-		  /*let boardCoords = document.createElement("div");
+          boardElement.innerHTML = '<img src="./images/chess/king.gif" alt="King" width="100%" height:auto style="background-color:yellow;"/>';
+		let boardCoords = document.createElement("div");
 		  boardCoords.innerHTML = "x="+(x-1)+" y="+y;
-		  boardCoords.setAttribute("style", "position:relative;top:10px;left:1%;color:black;width:0%;font-size:8px;z-index:10;white-space:nowrap;");
-		  boardRow.appendChild(boardCoords);*/
+		  boardCoords.setAttribute("style", "position:relative;top:1vw;left:10px;color:black;width:0%;height:0%;white-space:nowrap;opacity:0.5;");
+		  boardRow.appendChild(boardCoords);
 		  boardRow.appendChild(boardElement);
         } else if (element === 'Q') {
         let boardElement = document.createElement("span");
-          boardElement.innerHTML = '<img src="./images/chess/queen.gif" alt="Queen" width="100%" height:auto/>';
-		  /*let boardCoords = document.createElement("div");
+          boardElement.innerHTML = '<img src="./images/chess/queen.gif" alt="Queen" width="100%" height:auto style="background-color:yellow;"/>';
+		let boardCoords = document.createElement("div");
 		  boardCoords.innerHTML = "x="+(x-1)+" y="+y;
-		  boardCoords.setAttribute("style", "position:relative;top:10px;left:1%;color:black;width:0%;font-size:8px;z-index:10;white-space:nowrap;");
-		  boardRow.appendChild(boardCoords);*/
-		  boardRow.appendChild(boardElement);
-        } else if (element === 'X') {
-        let boardElement = document.createElement("span");
-          boardElement.innerHTML = '<img src="./images/chess/red100.gif" alt="Red field" width="100%" height:auto/>';
-		  let boardCoords = document.createElement("div");
-		  boardCoords.innerHTML = "x="+(x-1)+" y="+y;
-		  boardCoords.setAttribute("style", "position:relative;top:10px;left:1%;color:black;width:0%;z-index:10;white-space:nowrap;");
+		  boardCoords.setAttribute("style", "position:relative;top:1vw;left:10px;color:black;width:0%;height:0%;white-space:nowrap;opacity:0.5;");
 		  boardRow.appendChild(boardCoords);
 		  boardRow.appendChild(boardElement);
-        }
+        } 
       });
 
       chessBoardContainer.appendChild(boardRow);
@@ -95,35 +95,23 @@ const updateBoardChess = () => {
             this.boardChess = boardChess;
         };
         generateChess() {
-            let randomNumber = (min, max) => {
-                return Math.floor(Math.random() * (max - min + 1) + min);
-            };
+            const randomNumber = (min, max) => {return Math.floor(Math.random() * (max - min + 1) + min)};
             let randomPawn = gamePawns[randomNumber(0, gamePawns.length - 1)];
             let y = randomNumber(0, 7);
             let x = randomNumber(0, 7);
 			
-            let checkBoardForNewPawn = (value, gamePawns) => {
-                let status = false;
-                for (let i = 0; i < gamePawns.length; i++) {
-                    let pawn = gamePawns[i];
-                    if (pawn == value) {
-                        status = true;
-                        break
-                    };
-                } return status;
-            };
+			const checkForBusyField = () => {
+				if( boardChess[x][y] !== 'W' && boardChess[x][y] !== 'B' ) {
+					x = randomNumber(0, 7);
+					y = randomNumber(0, 7);
+					checkForBusyField();
+				};
+			};
 			
-            let chessOnBoard = (x, y, gamePawns) => {
-                let pawnExist = checkBoardForNewPawn(boardChess[x][y], gamePawns);
-                if (pawnExist !== true) {
-                } else {
-                    y = randomNumber(0, 7);
-                    x = randomNumber(0, 7);
-                    chessOnBoard();
-                };
-            };
-            boardChess[x][y] = randomPawn;
-            return { figureType: randomPawn, x: x, y: y }
+			checkForBusyField();
+			boardChess[x][y] = randomPawn;
+			let chess = {figureType:randomPawn, x:x, y:y};
+			return chess;
         };
     };
 
@@ -239,20 +227,8 @@ const updateBoardChess = () => {
 		
         gameStart() {
             chess = new ChessOnBoardGenerator(boardChess).generateChess();
-            // add information on site
-            let tag = document.createElement("p");
-            let text = document.createTextNode(
-                `${chess.figureType == 'K' ? 'King' :
-                    chess.figureType == 'Q' ? 'Queen' :
-                        chess.figureType == 'L' ? 'Laufer' :
-                            chess.figureType == 'H' ? 'Horse' :
-                                'Tower'
-                } appear on x=${chess.x}, y=${chess.y}`);
-            tag.appendChild(text);
-            let element = document.getElementById("resultChess");
-            element.appendChild(tag);
-			
-            // checking whole board for figures and their moves, if figure can be beaten than sending the result
+			//console.log(chess);
+            //checking whole board for figures and their moves, if figure can be beaten than sending the result
             let checkBoardForExistingPawn = (x, y, boardChess, pawnArray) => {
                 let status = false;
                 for (let i = 0; i < pawnArray.length; i += 1) {
@@ -262,12 +238,19 @@ const updateBoardChess = () => {
                     if (pawn === boardChess[x][y]) {
                         status = true;
                         break;
-                    }
+                    };
                 }
                 return status;
             };
 			
-            let markMovesOnBoard = (x, y, boardChess) => {
+			//add information on site
+            let tag = document.createElement("div");
+            let text = `${chess.figureType == 'K' ? 'King' : chess.figureType == 'Q' ? 'Queen' :  chess.figureType == 'L' ? 'Laufer' : chess.figureType == 'H' ? 'Horse' : 'Tower' }
+				appear on x=${chess.x}, y=${chess.y}`;
+            tag.innerHTML=text;
+            document.getElementById("resultChess").appendChild(tag);
+			
+            let markMovesOnBoard = (x, y, boardChess, ) => {
                 for (let i = 0; i < moves.length; i += 1) {
                     let j = Number(x) + moves[i][0];
                     let k = Number(y) + moves[i][1];
@@ -290,16 +273,39 @@ const updateBoardChess = () => {
 											boardChess[x + moves[i][0]][y + moves[i][1]] == 'Q' ? 'Queen' : 
 												boardChess[x + moves[i][0]][y + moves[i][1]] == 'L' ? 'Laufer' : 
 													boardChess[x + moves[i][0]][y + moves[i][1]] == 'H' ? 'Horse' : 'Tower';
-							//console.log(figure1 + ", " + figure2);
-                            let text = document.createTextNode(`Checkmate! The ${figure1} on x=${x}, y=${y} beating ${figure2} on x=${x + moves[i][0]}, y=${y + moves[i][1]}`);
-                            tag.appendChild(text);
+
+							let text = `Checkmate! The ${figure1} on x=${x}, y=${y} beating ${figure2} on x=${x + moves[i][0]}, y=${y + moves[i][1]}`;
+                            document.getElementById("gameOverChess").innerHTML = text;
 							//add popup
-                            let element = document.getElementById("resultChess");
-                            element.appendChild(tag);
+							popUpChessOn(text);
                         };
                     };
                 };
             };
+
+			const popUpChessOn = (text) => {
+				let popUpChess = document.getElementById('popupChess');
+				let buttonPopUpChess = document.createElement("button");
+					buttonPopUpChess.setAttribute("type", "button");
+					buttonPopUpChess.setAttribute("class", "btnX");
+					buttonPopUpChess.setAttribute("id", "btnPopupChess");
+					buttonPopUpChess.innerHTML = '&#10005';
+					popUpChess.appendChild(buttonPopUpChess);
+					popUpChess.appendChild(document.createElement("br"));
+					popUpChess.appendChild(document.createElement("br"));
+				let spanPopUpChess = document.createElement("div");
+					spanPopUpChess.setAttribute("id", "spanPopupChess");
+					spanPopUpChess.innerHTML = text;
+					popUpChess.appendChild(spanPopUpChess);
+					popUpChess.classList.toggle('active');
+				btnPopupChess.onclick = function(){
+					popUpChess.innerHTML = '';
+					popUpChess.classList.remove('active');
+					//popUpChess.removeAttribute("class", "active");
+					//document.getElementById('popupChess').classList.toggle('active');
+				};
+			};
+			
             for (let x = 0; x < 8; x += 1) {
                 for (let y = 0; y < 8; y += 1) {
                     // check for figure exist
@@ -313,13 +319,11 @@ const updateBoardChess = () => {
 
                         for (let i = 0; i < moves.length; i += 1) {
                             let mate = checkBoardForExistingPawn(x + moves[i][0], y + moves[i][1], boardChess, gamePawns);
-                            // if (mate === true) {
-                                // return (console.log(`The ${boardChess[x][y]} on ${x}, ${y} beating ${boardChess[x + moves[i][0]][y + moves[i][1]]} on ${x + moves[i][0]}, ${y + moves[i][1]}`))
-                            // };
                         };
                     };
                 };
             };
+		updateBoardChess();
         };
     };
 
@@ -327,20 +331,18 @@ const updateBoardChess = () => {
 
     let gameStartChess = () => {
         gameChess.gameStart();
-        updateBoardChess();
     };
 
     let gameResetChess = () => {
-		alert('Game reset');
+		//alert('Game reset');
 		boardChess = JSON.parse(JSON.stringify(boardChessCopy));
-		
-		updateBoardChess();
-		let btn = document.getElementById('chessButton');
-		btn.setAttribute("style", "display: visible");
-		
-		let element = document.getElementById("resultChess");
-		element.innerHTML = '';
+		document.getElementById('chessButton').setAttribute("style", "display: visible");
+		document.getElementById("resultChess").innerHTML = '';
+        document.getElementById("gameOverChess").innerHTML = '';
+		document.getElementById('popupChess').innerHTML = '';
+		if(document.getElementById('popupChess').classList.length > 1){document.getElementById('popupChess').classList.remove('active')};
         //window.location.reload();
+		updateBoardChess();
     };
 
 let chessButton = document.getElementById('chessButton');

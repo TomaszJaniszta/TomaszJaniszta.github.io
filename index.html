@@ -190,7 +190,7 @@
 						</span>
 					</div>
 					<br/>
-					<table id="tableContainer" style="max-width:100vw; border-collapse: collapse;background:white"> </table>
+					<table id="tableContainer" style="max-width:100%; border-collapse: collapse;background:white"> </table>
 				</br>
 			  </div>
 			</div>
@@ -214,9 +214,11 @@
 						- in the case of an empty form - it will show the message "Please add items"
 						- if the form is without errors - it will calculate sum of items
 					</p>
+					<div>Form</div>
 					<p style="color: darkred; text-align: center;"> Content in progress... </p>
 				</br>
 			    </div>
+				<table id="invoiceContainer" style="max-width:100%; border-collapse: collapse;background:white"></table>
 			</div>
 
         <hr class="hr">
@@ -232,14 +234,16 @@
 					After placing any piece (except first one) check all present pieces move ranges and see if any can reach other piece.
 					If so Give that pieces position and quit program. App made for use FACTORY (with class hierarhy) + SINGLETON pattern in code.
 				  </p>
-				<br/>
 				</div>
-
-				<div class="boardChess" id="chessBoardContainer"></div>
-				<br/>
+				</br>
+				<div class="boardChess" id="chessBoardContainer" style="font-size:1vw;display:inline-flex;line-height:0%;"></div>
+				</br>
 				<span><button id="chessButton" class="button">Add figure</button><button id="resetBtnChess" class="button">Reset</button></span>
+				</br>
 			  <div id="resultChess" style="width: 100%;"></div>
-			</br>
+			  <div id="gameOverChess" style="width: 100%;"></div>
+			  <div class="popup" id="popupChess"></div>
+			  </br>
 			</div>
 		  </div>
 
