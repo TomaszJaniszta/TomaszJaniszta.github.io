@@ -19,7 +19,7 @@ $--rg: (
   }
 }
 
-@keyframes op {
+@keyframes opacity {
   from {
     opacity: 0;
   }
@@ -39,7 +39,7 @@ $--rg: (
 }
 
 .BallRunning {
-  animation-name: spinning, op;
+  animation-name: spinning, opacity;
   border-radius: 80%;
   animation-duration: 1s;
   animation-iteration-count: infinite;

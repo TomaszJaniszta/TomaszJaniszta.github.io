@@ -226,3 +226,21 @@ let gameReset2 = () => {
 	updateBoard2();
 	ball2button.innerHTML = "Start";
 };
+
+//slider
+const slider = document.getElementById('slider');
+const sliderFunc = (value) => {
+	value=parseInt(value/10-5);
+	document.getElementById('sliderValue').innerHTML=value;
+	// function sleep(ms) {
+	  // return new Promise(resolve => setTimeout(resolve, ms));
+	// };
+	console.log(value);
+	let scale1 = 0.1*value;
+	console.log(scale1.toFixed(1));
+	let scaleDiv = document.getElementById('scaleDiv');
+	scaleDiv.setAttribute("transform", `scale(${scale1})`);
+	console.log(scaleDiv.attributes);
+	updateBoard2();
+	//slider.value=50;
+};
