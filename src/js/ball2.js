@@ -150,11 +150,16 @@
 	  boardRow.setAttribute("style", "display: flex; flex-direction: column;"); // row/column
 	  boardContainer2.appendChild(boardRow);
 
+
+
 	  indexTable.map((element) => {
 		if (element === 'X') {
 			let boardElement = document.createElement("span"); // span/div
 			boardElement.innerHTML ='C'; // g, C
 			boardElement.setAttribute("class", "Wall");
+			//boardElement.setAttribute("font-size", "32px");
+			//font-size: min(32px);
+			//font-size: max(32px);
 			let divContainer = document.getElementById("divRow2"+divRow);
 			divContainer.appendChild(boardElement);
 		} else if (element === '1') {

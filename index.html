@@ -10,8 +10,9 @@
         <title>Tomasz Janiszta - presentation page</title>
         <link rel="stylesheet" href="dist/main.css">       
         <link rel="icon" type="image/png" sizes="16x16" href="./images/favicon-32x32.png">
-        <script defer src="src/js/elements.js"></script>
-        <script defer src="src/js/functionsAndVariables.js"></script>
+
+        <script defer src="src/js/siteElements.js"></script>
+        <script defer src="src/js/popupCounter.js"></script>
 		
 		<!-- without defer, need to load data -->
 		<script src="src/js/data.js"></script>
@@ -326,16 +327,15 @@
 				  	<!-- <div> -5 <input type="range" name="a" value="50" id="slider" oninput="sliderFunc(value)"> +5 </div> -->
 					<div id=sliderValue> 0 </div>
 				  <br/>
-				<div id="scaleDiv">
-					<div class="boardBall2" id="boardContainer2"></div>
 				</div>
+				<!-- <div id="scaleDiv"> -->
+				<div class="boardBall2" id="boardContainer2"></div>
+				<!-- </div> -->
 				<br/>
 				<span><button id="ball2button" class="button">Start</button><button id="resetBtnBall2" class="button">Reset</button></span>
 				<br/>
 				<div>Time (s): <p id="timeBall_2"></p></div>
-			  </div>
 			</div>
-
         <hr class="hr">
 		
 		  <div class="showAndHideMenu"><p id="golHeader"><b>Game of life</b></p><button id="show6" class="button"> Show \ Hide </button></div>

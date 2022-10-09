@@ -118,9 +118,9 @@ $--rg: (
   margin-bottom: 2%;
   width: auto;
   height: auto;
-  font-family: fontBall2;
+  //font-family: fontBall2;
   border: 5px double;
-  font-size: 2em;
+  //font-size: 2em;
   background-image: linear-gradient(#ffffff, #40e291, #ffffff);
   line-height:70%;
 }
@@ -132,22 +132,24 @@ $--rg: (
   justify-content: center;
   margin-top: 1%;
   margin-bottom: 2%;
-  width: auto;
-  height: auto;
+  //width: auto;
+  //height: auto;
   font-family: fontBall2;
-  border: 5px double;
-  font-size: min(max(22px, 6vw), 32px);
+  //border: 5px double;
+  font-size: min(4px);
+  font-size: max(8px);
+  //font-size: min(max(22px, 6vw), 32px);
   background-image: linear-gradient(#ffffff, #636363, #ffffff);
   //transform: scale(1.2);
   // margin-bottom: 5%;
 }
 
-@media only screen and (max-width: 970px) {
-  .boardBall2 {
-    font-size: min(max(22px, 6vw), 32px);
-    //font-size: min(max(1rem, 4vw), 24px);
-  }
-}
+// @media only screen and (max-width: 970px) {
+//   .boardBall2 {
+//     font-size: min(max(22px, 6vw), 32px);
+//     //font-size: min(max(1rem, 4vw), 24px);
+//   }
+// }
 
 .Air {
   // background-color: #afffb6;
