@@ -7,6 +7,9 @@
   
   // board for ball_2 = board
   let board2 = JSON.parse(JSON.stringify(board));
+  let boardContainer2 = document.getElementById('boardContainer2');
+  const fontSizeForBall2 = 150;
+  boardContainer2.setAttribute("style", `font-size: ${fontSizeForBall2}%`);
     
   class BallGenerator2 {
     constructor(board) {
@@ -138,9 +141,7 @@
 
   const updateBoard2 = () => {
 	let divRow = 0;
-	
 	timeBall_2.innerHTML = time2;
-	let boardContainer2 = document.getElementById('boardContainer2');
 	boardContainer2.innerHTML = '';
 	
 	board2.map((indexTable) => {
@@ -150,16 +151,11 @@
 	  boardRow.setAttribute("style", "display: flex; flex-direction: column;"); // row/column
 	  boardContainer2.appendChild(boardRow);
 
-
-
 	  indexTable.map((element) => {
 		if (element === 'X') {
 			let boardElement = document.createElement("span"); // span/div
 			boardElement.innerHTML ='C'; // g, C
 			boardElement.setAttribute("class", "Wall");
-			//boardElement.setAttribute("font-size", "32px");
-			//font-size: min(32px);
-			//font-size: max(32px);
 			let divContainer = document.getElementById("divRow2"+divRow);
 			divContainer.appendChild(boardElement);
 		} else if (element === '1') {
@@ -235,17 +231,8 @@ let gameReset2 = () => {
 //slider
 const slider = document.getElementById('slider');
 const sliderFunc = (value) => {
-	value=parseInt(value/10-5);
-	document.getElementById('sliderValue').innerHTML=value;
-	// function sleep(ms) {
-	  // return new Promise(resolve => setTimeout(resolve, ms));
-	// };
-	console.log(value);
-	let scale1 = 0.1*value;
-	console.log(scale1.toFixed(1));
-	let scaleDiv = document.getElementById('scaleDiv');
-	scaleDiv.setAttribute("transform", `scale(${scale1})`);
-	console.log(scaleDiv.attributes);
+	value=parseInt(value);
+	document.getElementById('sliderValue').innerHTML=value+'%';
+	boardContainer2.setAttribute("style", `font-size: ${fontSizeForBall2+value*2}%`);
 	updateBoard2();
-	//slider.value=50;
 };

@@ -279,7 +279,7 @@
 				  </p>
 				</div>
 				</br>
-				<div class="boardChess" id="chessBoardContainer" style="font-size:1vw;display:inline-flex;line-height:0%;"></div>
+				<div class="boardChess" id="chessBoardContainer" style="font-size:1em;display:inline-flex;line-height:0%;"></div>
 				</br>
 				<span><button id="chessButton" class="button">Add figure</button><button id="resetBtnChess" class="button">Reset</button></span>
 				</br>
@@ -323,19 +323,16 @@
 					The program is to end when object comes back to original position.
 					Ball v.2 version based on Webdings font.
 				  </p>
-				  	<div> -5 <input type="range" name="a" value="50" id="slider" onmouseup="sliderFunc(value)"> +5 </div>
-				  	<!-- <div> -5 <input type="range" name="a" value="50" id="slider" oninput="sliderFunc(value)"> +5 </div> -->
-					<div id=sliderValue> 0 </div>
+				  	<div> zoom 0% <input type="range" name="a" value="50" id="slider" onmouseup="sliderFunc(value)"> 100% </div>
+					<div id=sliderValue>50%</div>
 				  <br/>
-				</div>
-				<!-- <div id="scaleDiv"> -->
 				<div class="boardBall2" id="boardContainer2"></div>
-				<!-- </div> -->
 				<br/>
 				<span><button id="ball2button" class="button">Start</button><button id="resetBtnBall2" class="button">Reset</button></span>
 				<br/>
 				<div>Time (s): <p id="timeBall_2"></p></div>
 			</div>
+		  </div>
         <hr class="hr">
 		
 		  <div class="showAndHideMenu"><p id="golHeader"><b>Game of life</b></p><button id="show6" class="button"> Show \ Hide </button></div>
