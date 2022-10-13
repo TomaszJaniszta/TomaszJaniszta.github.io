@@ -31,7 +31,7 @@ button {
 	}
 	&:disabled{
 		cursor: not-allowed;
-		background: radial-gradient(white 10%, 70%, $gray);
+		background: radial-gradient(white 10%, 70%, gray);
 		box-shadow: none;
 		color: gray;
 		&:hover {
@@ -69,18 +69,19 @@ button {
 
 .reset {
 	visibility: hidden;
-	-webkit-transform: scale(0);
-	transform: scale(0);
-	border-radius: 15px;
+	//width: 20%;
+	//height: 50px;
+	//-webkit-transform: scale(0);
+	//transform: scale(0);
 	font-weight: 700;
 	font-size: 1rem;
 	background: radial-gradient(white 10%, 70%, $blue1);
-	width: auto;
-	height: 50px;
 	transition: transform 1s;
-	padding-block: auto ;
+	//padding-block: 5px ;
+	padding:10px;
 	box-shadow: 1px 1px 2px 1px gray;
-	margin-left: 3vw;
+	//margin-left: 3vw;
+	border-radius: 15px;
 	border: 3px outset gray;
 }
 

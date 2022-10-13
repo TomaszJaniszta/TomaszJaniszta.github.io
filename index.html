@@ -37,11 +37,8 @@
     </head>
     <body onload="initFunction()">
 		<main  id="main" style="background-image: linear-gradient(rgb(255, 255, 255), rgb(156, 156, 156), rgb(255, 255, 255));">
-	  
-			<div id="languageAndMenu">
+			<div style="display:flex;justify-content:center;width:100%;">
 				<div class="menu">
-					<h3>Menu</h3>
-					<div>
 						<ol>
 							<li>
 								<a href="#" id="menuIntro">Intro</a>
@@ -80,39 +77,38 @@
 								</ul>
 							</li>
 						</ol>
+					
+					<div style="display:flex">
+						<p id="lightTheme" style="color:white;background:gray;">Ligh theme</p>
+						<p id="darkTheme" style="color: white; background: black; ">Dark theme</p>
+						<p id="pl" style="background-color:lightgray; display:flex; align-items: center;" onclick="changeLanguage('pl');"> PL 
+							<span style="padding-left: 5px; display:flex; align-items: center;"><img alt="PL language" id="pl" src="./images/pl30x20.png" width="15" height="10"/></span>
+						</p>
+						<p id="en" style="background-color:lightgray; display:flex; align-items: center;"  onclick="changeLanguage('en');"> EN 
+							<span style="padding-left: 5px; display:flex; align-items: center;"><img alt="EN language" id="en" src="./images/en30x20.png" width="15" height="10"/></span>
+						</p>
 					</div>
 				</div>
-				<div class="menu2">
-					<p id="lightTheme" style="white-space: nowrap; padding-inline: 3px;border:1px solid white;color:white;background:gray;">Ligh theme</p>
-					<p id="darkTheme" style="white-space: nowrap; margin-right: 5px; color: white; background: black; overflow:hidden; padding-inline: 3px;border:1px solid white;">Dark theme</p>
-					<p id="pl" style="background-color:lightgray; display:flex; align-items: center;" onclick="changeLanguage('pl');"> PL 
-						<span style="padding-left: 5px; display:flex; align-items: center;"><img alt="PL language" id="pl" src="./images/pl30x20.png" width="15" height="10"/></span>
-					</p>
-					<p id="en" style="background-color:lightgray; display:flex; align-items: center;"  onclick="changeLanguage('en');"> EN 
-						<span style="padding-left: 5px; display:flex; align-items: center;"><img alt="EN language" id="en" src="./images/en30x20.png" width="15" height="10"/></span>
+				</div>
+					<div id="intro" style="background-image: linear-gradient(rgb(255, 255, 255), rgb(156, 156, 156), rgb(255, 255, 255));display:flex;flex-direction:column;">
+
+					<div style="display:flex;flex-direction:row;justify-content:space-between;padding:3%;margin-inline:10%;">
+						<h1 id="introTitle" style="display:flex;align-items:center;">Intro</h1>
+						<!-- keep aspect ratio -->
+						<img alt="Tomasz Janiszta photo" id="imgMeSmall" style="
+							object-fit: contain;
+							width: 50%;
+							height: 50%;"
+							src="./images/me.jpg"/>
+					</div>
+					<hr class="hr">
+					<p id="introText">Hello, my name is Tomasz Janiszta. I program in JavaScript. Front-end: React, Angular. Back-end: Node.js.
+						The page contains examples of code I made as a quick presentation.
+						You can familiarize yourself with the end/usage layers of the code visible here.
+						Enjoy watching, but... I also invite you to take a look at the js files :)
 					</p>
 				</div>
 			</div>
-
-			<div id="intro" style="background-image: linear-gradient(rgb(255, 255, 255), rgb(156, 156, 156), rgb(255, 255, 255));display:flex;flex-direction:column;">
-
-				<div style="display:flex;flex-direction:row;justify-content:space-between;padding:3%;margin-inline:10%;">
-					<h1 id="introTitle" style="display:flex;align-items:center;">Intro</h1>
-					<!-- keep aspect ratio -->
-					<img alt="Tomasz Janiszta photo" id="imgMeSmall" style="
-						object-fit: contain;
-						width: 50%;
-						height: 50%;"
-						src="./images/me.jpg"/>
-				</div>
-                <hr class="hr">
-                <p id="introText">Hello, my name is Tomasz Janiszta. I program in JavaScript. Front-end: React, Angular. Back-end: Node.js.
-                    The page contains examples of code I made as a quick presentation.
-                    You can familiarize yourself with the end/usage layers of the code visible here.
-                    Enjoy watching, but... I also invite you to take a look at the js files :)
-                </p>
-              </div>
-            </div>
 			</br>
 
 		<div class="showAndHideMenu"><p id="popupHeader"><b>Example pop-up counter</b></p><button id="show1" class="button"> Show \ Hide </button></div>
@@ -133,10 +129,12 @@
 					After the 6th click, the counter can be reset.
 				</p>
 				<div class="center"><button class="button" id="buttonCnt"> Button </button></div>
+			  </br>
 			  </div>
     
 			  <div class="popup" id="popup">
 				<button type="button" class="btnX" id="btnX">&#10005</button>
+				
 				<h2 id="alert">Alert!</h2>
 				<span>
 					<span id="popupText">You have clicked this button </span>
@@ -144,13 +142,13 @@
 					<span id="popupTimes"> time(s).</span>
 				</span>
 				</br>
-				<button type="button" class="reset" id="reset">Reset counter</button>
+				<div style="display: flex;justify-content:center"><button type="button" class="reset" id="reset">Reset counter</button></div> 
 			  </div>
 			</br>
 			  <div class="overl" id="overlay"></div>
 			</div>
 		  </div>
-		  
+
 		<hr class="hr">
 		
 		  <div class="showAndHideMenu"><p id="tableHeader"><b>Work with data table</b></p><button id="show2" class="button"> Show \ Hide </button></div>

@@ -1,7 +1,7 @@
 @media only screen and (max-width: 970px) {
 
 	html {
-		font-size: 12px;
+		font-size: 16px;
 	}
 	
 	#languageAndMenu {
@@ -11,14 +11,14 @@
 		// 	padding-right: 2%;
 		// 	height: 2.5em;
 		// 	margin-top: 1%;
-	// 	p { 
-	// 		font-weight: 700;
-	// 		border: 1px solid;
-	// 		width: auto;
-	// 		padding-inline:5px;
-	// 		 background-color:white;
-	// 		cursor:pointer;
-	// 	}
+		// 	p { 
+		// 		font-weight: 700;
+		// 		border: 1px solid;
+		// 		width: auto;
+		// 		padding-inline:5px;
+		// 		 background-color:white;
+		// 		cursor:pointer;
+		// 	}
 	}
 
 	.menu {
@@ -27,8 +27,8 @@
 		border-style: 3px outset;
 		// }
 		ol>li {
-			width: auto;
-			line-height: auto; 
+			// width: auto;
+			// line-height: auto; 
 			padding-inline: 3px;
 			border: 2px outset rgb(155, 155, 155);
 		}
@@ -36,7 +36,7 @@
 
 	.menu2 {
 		margin-top: 1%;
-		width:auto;
+		// width:auto;
 	}
 
 	#intro {

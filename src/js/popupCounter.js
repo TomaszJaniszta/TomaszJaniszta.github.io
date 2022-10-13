@@ -29,6 +29,7 @@ const resetCounter = () => {
 	counter = 0;
 	spanCounter.innerText = counter;
 	localStorage.clear();
+	
 	resetBtn.classList.toggle('r-active');
 };
 
