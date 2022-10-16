@@ -13,3 +13,11 @@ show4.addEventListener('click', () => {showHide('part4')});
 show5.addEventListener('click', () => {showHide('part5')});
 show6.addEventListener('click', () => {showHide('part6')});
 show7.addEventListener('click', () => {showHide('part7')});
+
+const menu = document.getElementsByClassName("menu")[0];
+
+const sliderM = (value) => {
+	value=(value);
+	console.log(value);
+	menu.setAttribute("style", `left:${value}%`);
+};

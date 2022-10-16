@@ -1,5 +1,7 @@
 @media only screen and (max-width: 970px) {
 
+	$widthMenu: 100px;
+
 	html {
 		font-size: 16px;
 	}
@@ -27,7 +29,7 @@
 		border-style: 3px outset;
 		// }
 		ol>li {
-			// width: auto;
+			width: $widthMenu;
 			// line-height: auto; 
 			padding-inline: 3px;
 			border: 2px outset rgb(155, 155, 155);

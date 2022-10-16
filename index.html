@@ -39,6 +39,7 @@
 		<main  id="main" style="background-image: linear-gradient(rgb(255, 255, 255), rgb(156, 156, 156), rgb(255, 255, 255));">
 			<div style="display:flex;justify-content:center;width:100%;">
 				<div class="menu">
+					<div>
 						<ol>
 							<li>
 								<a href="#" id="menuIntro">Intro</a>
@@ -77,19 +78,27 @@
 								</ul>
 							</li>
 						</ol>
-					
-					<div style="display:flex">
-						<p id="lightTheme" style="color:white;background:gray;">Ligh theme</p>
-						<p id="darkTheme" style="color: white; background: black; ">Dark theme</p>
-						<p id="pl" style="background-color:lightgray; display:flex; align-items: center;" onclick="changeLanguage('pl');"> PL 
-							<span style="padding-left: 5px; display:flex; align-items: center;"><img alt="PL language" id="pl" src="./images/pl30x20.png" width="15" height="10"/></span>
-						</p>
-						<p id="en" style="background-color:lightgray; display:flex; align-items: center;"  onclick="changeLanguage('en');"> EN 
-							<span style="padding-left: 5px; display:flex; align-items: center;"><img alt="EN language" id="en" src="./images/en30x20.png" width="15" height="10"/></span>
-						</p>
 					</div>
 				</div>
+				<div id="langDiv">
+					<p id="lightTheme" style="color:white;background:gray;">Ligh theme</p>
+					<p id="darkTheme" style="color: white; background: black; ">Dark theme</p>
+					<p id="pl" style="background-color:lightgray; display:flex; align-items: center;" onclick="changeLanguage('pl');"> PL 
+						<span style="padding-left: 5px; display:flex; align-items: center;"><img alt="PL language" id="pl" src="./images/pl30x20.png" width="15" height="10"/></span>
+					</p>
+					<p id="en" style="background-color:lightgray; display:flex; align-items: center;"  onclick="changeLanguage('en');"> EN 
+						<span style="padding-left: 5px; display:flex; align-items: center;"><img alt="EN language" id="en" src="./images/en30x20.png" width="15" height="10"/></span>
+					</p>
 				</div>
+				<div id="sliderMenu"><input type="range" min="-50" max="50" value="0" 
+					onchange="sliderM(this.value)"
+					style="margin-inline:5px" id="slidereQty" 
+					name="sliderMenu"
+					id="sliderMenu"
+					>
+				</div>
+			</div>
+				
 					<div id="intro" style="background-image: linear-gradient(rgb(255, 255, 255), rgb(156, 156, 156), rgb(255, 255, 255));display:flex;flex-direction:column;">
 
 					<div style="display:flex;flex-direction:row;justify-content:space-between;padding:3%;margin-inline:10%;">
@@ -237,7 +246,7 @@
 											oninput="invoiceQty.value=slidereQty.value"
 											style="margin-inline:5px" id="slidereQty" 
 											name="slidereQty"> 100+ 
-							    <!-- <output name="output" for="invoiceQty">50</output></td> -->
+							    <!-- <output name="output" for="invoiceQty">50</output></td> -->
 							</tr>
 							<tr>
 							  <span>
@@ -363,10 +372,8 @@
 
         <hr class="hr">
 		
-        <p style="color: darkred; text-align: center;"> Content still in progress... </p>
-		<!-- <p style="color: gray; text-align: center;"> In idea to be added: buyer app v.1 and v.2, KLG app, tetris, Ads-board, To-do-list-app ...  </p> -->
-        <br/>
-        <p class="end"><a href="mailto:janisztat@gmail.com">janisztat@gmail.com</a>  /  Tomasz Janiszta, 2022r. ©</p>
+        <span style="color: darkred; text-align: center;"> Content still in progress... </span>
+        <span class="end"><a href="mailto:janisztat@gmail.com">janisztat@gmail.com</a>  /  Tomasz Janiszta, 2022r. ©</span>
 
       </main>
     </body>

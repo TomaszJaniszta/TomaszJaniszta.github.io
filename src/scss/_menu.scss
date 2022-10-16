@@ -1,33 +1,25 @@
 $linear2: linear-gradient(0.25turn, #b4b4b4, 10%, #caf9ff, #5599ff, 0.3);
+$widthMenu: 150px;
 
 .menu {
     // the same place
     position: fixed;
-    //left:0%;
+    //left:50%;
     top: 1%;
     // on top
-    z-index: 2;
+    z-index: 3;
     display: flex;
-    // display: block;
-    align-items: center;
-    align-content: center;
-    justify-content:space-around;
-    flex-direction: row;
-    background: rgba(255, 255, 255, 0.493);
-    width: 95%;
-    height: auto;
-    box-shadow: 0px 0px 5px 1px rgba(0, 0, 0, 0.514);
-    border-color: black;
+    justify-content: center;
+    //flex-direction: column;
+    //background: rgba(255, 255, 255, 0.493);
+    width: 660px;
+    //box-shadow: 0px 0px 5px 1px rgba(0, 0, 0, 0.514);
+    //border-color: black;
     border-radius: 10px;
     border-style: 5px outset;
     padding-inline: 0.1%;
     //margin-inline: 1%;
-    background-image: linear-gradient(90deg, rgba(180,180,180, .5) 10%, rgba(202,249,255, .5), rgba(85,153,255,  .5));
-    // overflow-x: hidden;
-    // overflow-y: auto;
-    text-align:justify;
-    // overflow: hidden;
-    // white-space: nowrap;
+    //background-image: linear-gradient(90deg, rgba(180,180,180, .5) 10%, rgba(202,249,255, .5), rgba(85,153,255,  .5));
     ol {list-style-type: none;
         padding: 0;
         margin: 0;
@@ -44,13 +36,14 @@ $linear2: linear-gradient(0.25turn, #b4b4b4, 10%, #caf9ff, #5599ff, 0.3);
     }
     ol>li {
         //menu header
-        float: left;
+        float: center;
         background-image: linear-gradient(white, rgb(111, 221, 255));
-        width: 150px;
+        width: $widthMenu;
         margin-left: 2px;
         border-radius: 10px;
         border: 3px outset rgb(155, 155, 155);
         box-shadow: 5px 5px 5px 0px grey;
+        z-index: -1;
     }
     ol>li:first-child {
         margin-left: 0;
@@ -77,9 +70,9 @@ $linear2: linear-gradient(0.25turn, #b4b4b4, 10%, #caf9ff, #5599ff, 0.3);
         padding: 0;
         margin: 0;
     }
-
     // ol > li > ul > li > a {
     ol>li>ul>li {
+        z-index: 4;
         //lists
         border: 3px outset rgb(155, 155, 155);
         // border-top-width: 100%;
@@ -113,15 +106,32 @@ $linear2: linear-gradient(0.25turn, #b4b4b4, 10%, #caf9ff, #5599ff, 0.3);
     ol>li {
         float: left;
         background-color: #fdd700;
-        width: 150px;
+        width: $widthMenu;
         margin-left: 1px;
         height: 2em; 
     }
+}
+
+#langDiv{
+    display:flex;
+    position: fixed;
+    top: 4%;
+    z-index: 2;
     p { 
 		border:1px solid white;
+        border-radius: 5px;
 		padding-inline:5px;
-	 	background-color:white;
 		cursor:pointer;
         white-space: nowrap; 
 	}
+}
+
+#sliderMenu {
+    position: fixed;
+    top: 7.5%;
+    display:flex;
+    align-content: center;
+    z-index: 2;
+    background-color:rgba(255, 255, 255, 0.664);
+    border-radius: 5px;
 }
