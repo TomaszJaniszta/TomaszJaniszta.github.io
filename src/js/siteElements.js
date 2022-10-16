@@ -18,6 +18,6 @@ const menu = document.getElementsByClassName("menu")[0];
 
 const sliderM = (value) => {
 	value=(value);
-	console.log(value);
+	//console.log(value);
 	menu.setAttribute("style", `left:${value}%`);
 };

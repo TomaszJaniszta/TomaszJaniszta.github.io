@@ -1,39 +1,26 @@
 @media only screen and (max-width: 970px) {
-
-	$widthMenu: 100px;
-
 	html {
 		font-size: 16px;
 	}
 	
-	#languageAndMenu {
-		flex-direction:column;
-		// font-size:1em;
-		// 	text-align:center;
-		// 	padding-right: 2%;
-		// 	height: 2.5em;
-		// 	margin-top: 1%;
-		// 	p { 
-		// 		font-weight: 700;
-		// 		border: 1px solid;
-		// 		width: auto;
-		// 		padding-inline:5px;
-		// 		 background-color:white;
-		// 		cursor:pointer;
-		// 	}
-	}
-
 	.menu {
 		// ol {
 		// 	line-height: auto; 
 		border-style: 3px outset;
 		// }
 		ol>li {
-			width: $widthMenu;
+			width: 100px;
 			// line-height: auto; 
 			padding-inline: 3px;
 			border: 2px outset rgb(155, 155, 155);
 		}
+		// ol>li {
+		// 	float: left;
+		// 	background-color: #fdd700;
+		// 	width: 100px;
+		// 	margin-left: 1px;
+		// 	//height: 2em; 
+		// }
 	}
 
 	.menu2 {

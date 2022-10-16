@@ -1,11 +1,11 @@
 $linear2: linear-gradient(0.25turn, #b4b4b4, 10%, #caf9ff, #5599ff, 0.3);
-$widthMenu: 150px;
+$widthMenu: 100px;
 
 .menu {
     // the same place
     position: fixed;
     //left:50%;
-    top: 1%;
+    top: 5%;
     // on top
     z-index: 3;
     display: flex;
@@ -114,9 +114,9 @@ $widthMenu: 150px;
 
 #langDiv{
     display:flex;
-    position: fixed;
-    top: 4%;
-    z-index: 2;
+    justify-content: flex-start;
+    z-index: 1;
+    margin-left: 0px;
     p { 
 		border:1px solid white;
         border-radius: 5px;
@@ -128,9 +128,9 @@ $widthMenu: 150px;
 
 #sliderMenu {
     position: fixed;
-    top: 7.5%;
-    display:flex;
-    align-content: center;
+    top: 9%;
+    //display:flex;
+    //align-content: center;
     z-index: 2;
     background-color:rgba(255, 255, 255, 0.664);
     border-radius: 5px;
