@@ -2,7 +2,19 @@
 	html {
 		font-size: 16px;
 	}
-	
+	main > div > .sliderMenu {
+		visibility: visible;
+		position: fixed;
+		top: 10%;
+		z-index: 2;
+		background-color:rgba(255, 255, 255, 0.664);
+		border-radius: 5px;
+	}
+	main > div > .menu {
+		position: fixed;
+		top: 6%;
+	}
+
 	.menu {
 		// ol {
 		// 	line-height: auto; 
@@ -51,10 +63,6 @@
 			justify-items: center;
 		}
 	}
-
-	// #boardContainer2 {
-	// 	font-size:2vw;
-	// }
 
 }
 

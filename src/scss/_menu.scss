@@ -5,7 +5,7 @@ $widthMenu: 100px;
     // the same place
     position: fixed;
     //left:50%;
-    top: 5%;
+    top: 6%;
     // on top
     z-index: 3;
     display: flex;
@@ -126,11 +126,10 @@ $widthMenu: 100px;
 	}
 }
 
-#sliderMenu {
+.sliderMenu {
+    visibility: hidden;
     position: fixed;
-    top: 9%;
-    //display:flex;
-    //align-content: center;
+    top: 13%;
     z-index: 2;
     background-color:rgba(255, 255, 255, 0.664);
     border-radius: 5px;

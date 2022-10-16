@@ -17,7 +17,7 @@ show7.addEventListener('click', () => {showHide('part7')});
 const menu = document.getElementsByClassName("menu")[0];
 
 const sliderM = (value) => {
-	value=(value);
+	if(value < 0){value = value * -1.1}
 	//console.log(value);
 	menu.setAttribute("style", `left:${value}%`);
 };
