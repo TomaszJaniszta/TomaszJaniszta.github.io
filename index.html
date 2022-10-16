@@ -37,25 +37,8 @@
     </head>
     <body onload="initFunction()">
 		<main  id="main" style="background-image: linear-gradient(rgb(255, 255, 255), rgb(156, 156, 156), rgb(255, 255, 255));">
-			<div id="langDiv">
-				<p id="lightTheme" style="color:white;background:gray;">Ligh theme</p>
-				<p id="darkTheme" style="color: white; background: black; ">Dark theme</p>
-				<p id="pl" style="background-color:lightgray; display:flex; align-items: center;" onclick="changeLanguage('pl');"> PL 
-					<span style="padding-left: 5px; 
-								 display:flex; align-items: center;">
-								 <img alt="PL language" id="pl" src="./images/pl30x20.png" width="15" height="10"/>
-					</span>
-				</p>
-				<p id="en" style="background-color:lightgray; display:flex; align-items: center;"  onclick="changeLanguage('en');"> EN 
-					<span style="padding-left: 5px; 
-								 display:flex; align-items: center;">
-								 <img alt="EN language" id="en" src="./images/en30x20.png" width="15" height="10"/>
-					</span>
-				</p>
-			</div>
-			<div style="display:flex;justify-content:center;width:100%;">
-				<div class="menu">
-					<div>
+				<div style="display:flex;justify-content:center;width:100%;">
+					<div class="menu">
 						<ol>
 							<li>
 								<a href="#" id="menuIntro">Intro</a>
@@ -95,14 +78,30 @@
 							</li>
 						</ol>
 					</div>
+					<!-- <div class="menu"><input type="range" min="-50" max="50" value="0" 
+						onchange="sliderM(this.value)"
+						style="margin-inline:5px" id="slidereQty" 
+						name="sliderMenu"
+						id="sliderMenu"
+						>
+					</div> -->
 				</div>
-				<div class="sliderMenu"><input type="range" min="-50" max="50" value="0" 
-					onchange="sliderM(this.value)"
-					style="margin-inline:5px" id="slidereQty" 
-					name="sliderMenu"
-					id="sliderMenu"
-					>
-				</div>
+			</br>
+			<div id="langDiv">
+				<p id="lightTheme" style="color:white;background:gray;">Ligh theme</p>
+				<p id="darkTheme" style="color: white; background: black; ">Dark theme</p>
+				<p id="pl" style="background-color:lightgray; display:flex; align-items: center;" onclick="changeLanguage('pl');"> PL 
+					<span style="padding-left: 5px; 
+								 display:flex; align-items: center;">
+								 <img alt="PL language" id="pl" src="./images/pl30x20.png" width="15" height="10"/>
+					</span>
+				</p>
+				<p id="en" style="background-color:lightgray; display:flex; align-items: center;"  onclick="changeLanguage('en');"> EN 
+					<span style="padding-left: 5px; 
+								 display:flex; align-items: center;">
+								 <img alt="EN language" id="en" src="./images/en30x20.png" width="15" height="10"/>
+					</span>
+				</p>
 			</div>
 				
 				<div id="intro" style="background-image: linear-gradient(rgb(255, 255, 255), rgb(156, 156, 156), rgb(255, 255, 255));display:flex;flex-direction:column;">				
@@ -135,20 +134,16 @@
 					src="./images/mountain.jpg"
 					/>
 			  </div>
-
 			  <div class="content-container">
 				<h2 id="popupHeader2">Example pop-up counter</h2>
-				<p id="popupP">
+				<span id="popupP">
 				  Example pop-up counter. Made during one of the small projects. Click on the button or my image. 
 					After the 6th click, the counter can be reset.
-				</p>
+				</span>
 				<div class="center"><button class="button" id="buttonCnt"> Button </button></div>
-			  </br>
 			  </div>
-    
 			  <div class="popup" id="popup">
 				<button type="button" class="btnX" id="btnX">&#10005</button>
-				
 				<h2 id="alert">Alert!</h2>
 				<span>
 					<span id="popupText">You have clicked this button </span>

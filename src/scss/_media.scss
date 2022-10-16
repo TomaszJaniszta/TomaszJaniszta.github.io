@@ -5,14 +5,15 @@
 	main > div > .sliderMenu {
 		visibility: visible;
 		position: fixed;
-		top: 10%;
+		top: 0%;
 		z-index: 2;
 		background-color:rgba(255, 255, 255, 0.664);
 		border-radius: 5px;
 	}
 	main > div > .menu {
 		position: fixed;
-		top: 6%;
+		top: 0%;
+		scale: 0.8;
 	}
 
 	.menu {
@@ -55,12 +56,11 @@
 	.part1 {
 		flex-direction: column;
 		>.content-container {
+			position: relative;
+			top:-50px;
 			text-align: center;
-			width: 100%;
 			width: 80%;
 			margin-inline: auto;
-			justify-content: center;
-			justify-items: center;
 		}
 	}
 

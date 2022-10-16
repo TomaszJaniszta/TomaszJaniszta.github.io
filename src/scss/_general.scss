@@ -87,7 +87,6 @@ body{
 		width: 50%;
 		display: flex;
 		justify-content: center;
-        // justify-items: center;
 		align-items: center;
 	}
 	>.content-container {
@@ -110,7 +109,7 @@ body{
 
 .end {
 	text-align: right;
-	font-size: 1em;
+	font-size: 1rem;
 	background: $linear2;
 	padding-right: 4%;
 	color: rgb(0, 0, 0);
