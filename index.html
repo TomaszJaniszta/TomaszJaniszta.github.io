@@ -104,10 +104,9 @@
 				</p>
 			</div>
 				
-				<div id="intro" style="background-image: linear-gradient(rgb(255, 255, 255), rgb(156, 156, 156), rgb(255, 255, 255));display:flex;flex-direction:column;">				
+				<div class="intro">				
 					<div style="display:flex;flex-direction:row;justify-content:space-between;padding:3%;margin-inline:10%;">
 						<h1 id="introTitle" style="display:flex;align-items:center;">Intro</h1>
-						<!-- keep aspect ratio -->
 						<img alt="Tomasz Janiszta photo" id="imgMeSmall" style="
 							object-fit: contain;
 							width: 50%;
@@ -163,7 +162,7 @@
 		  <div class="showAndHideMenu"><p id="tableHeader"><b>Work with data table</b></p><button id="show2" class="button"> Show \ Hide </button></div>
 			<div id="part2" style="display:none;">
 				<hr class="hr">
-				<div class="part2">
+				<div class="partTable" style="overflow-x:auto">
 					<h2>Work with data table</h2>
 					<p>
 						Sample data table using the power of JavaScript. Imitation of data download via the "Load" button, and then the possibility of sorting, filtering.
@@ -199,10 +198,9 @@
 						    </select>
 						</span>
 					</div>
-					<br/>
-					<table id="tableContainer" style="max-width:100%; border-collapse: collapse;background:white"> </table>
-				</br>
-			  </div>
+					</br>
+					<table id="tableContainer" class="table"> </table>
+			    </div>
 			</div>
 
         <hr class="hr">
