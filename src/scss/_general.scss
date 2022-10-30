@@ -45,9 +45,11 @@ html {
 .intro {
 	display: flex;
 	flex-direction:column;
+	// background: linear-gradient(rgb(255, 255, 255), rgb(139, 255, 249), rgb(255, 255, 255));
+	background:radial-gradient(#b9b9b9,#fff,#97fdff);
 	// background-color: rgb(230, 249, 255);
-	background-image: radial-gradient(rgb(255, 255, 255), rgb(255, 255, 255), rgb(173, 211, 255), rgb(255, 255, 255),
-	rgb(116, 181, 255));
+	// background-image: radial-gradient(rgb(255, 255, 255), rgb(255, 255, 255), rgb(173, 211, 255), rgb(255, 255, 255),
+	// rgb(116, 181, 255));
 	align-items: center;
 	margin-top: 5%;
 	margin-bottom: 1%;

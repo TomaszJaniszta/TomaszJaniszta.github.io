@@ -160,7 +160,7 @@ const loadData = () => {
 						let tableElement = document.createElement("td");
 
 						if(element[0] == 'description'){
-							console.log(element[1]);
+							//console.log(element[1]);
 							tableElement.setAttribute("style", "width:auto; white-space:normal; text-align:left");
 						};
 

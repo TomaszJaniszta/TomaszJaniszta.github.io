@@ -7,16 +7,16 @@ darkTheme.addEventListener('click', () => {colorTheme('darkTheme')});
 
 const colorTheme = (theme) => {
 	if(theme !== currentTheme){
-	 //document.body.classList.toggle('light-theme');
-	 //document.body.classList.toggle('dark-theme');
+	//document.body.classList.toggle('light-theme');
+	//document.body.classList.toggle('dark-theme');
 		 if(theme === 'lightTheme'){
 			currentTheme = theme;
 			let main = document.getElementById('main');
 				main.style.background = 'linear-gradient(rgb(255, 255, 255), rgb(156, 156, 156), rgb(255, 255, 255))';
 			
-		 	let intro = document.getElementById('intro');
+			let intro = document.getElementById('intro');
 				intro.style.color = 'black';
-				intro.style.background='linear-gradient(rgb(255, 255, 255), rgb(156, 156, 156), rgb(255, 255, 255))';
+				intro.style.background='radial-gradient(#b9b9b9,#fff,#97fdff)';
 
 		 };
 
