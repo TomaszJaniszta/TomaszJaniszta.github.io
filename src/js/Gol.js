@@ -15,8 +15,7 @@ const updateBoardGol = () => {
      col++;
       let boardRow = document.createElement("div");
       boardRow.setAttribute("id", ("col"+col));
-	  boardRow.setAttribute("style", "display:   ");
-
+	  boardRow.setAttribute("style", "display:flex; flex-direction:row");
       boardGolContainer.appendChild(boardRow);
 
      let elementNr = -1;
@@ -26,7 +25,6 @@ const updateBoardGol = () => {
 				let boardElement = document.createElement("span");
 				boardElement.setAttribute("id", (elementNr)+"."+(col));
 				boardElement.innerHTML = '<img src="./images/gol/cell2.gif" alt="Cell field" width="100%" height:auto class="cell"/>';
-
 				boardRow.appendChild(boardElement);
 				
 				boardElement.addEventListener('click', () => {
@@ -34,6 +32,7 @@ const updateBoardGol = () => {
 						boardElement.id
 					);
 				});
+
 			} else {
 				let boardElement = document.createElement("span");
 				boardElement.setAttribute("id", (elementNr)+"."+(col));
