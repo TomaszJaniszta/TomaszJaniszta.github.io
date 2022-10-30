@@ -151,26 +151,30 @@ const loadData = () => {
 		dataTable.forEach((indexTable) => {
 			//tableRow++;
 			let trTable = document.createElement("tr");
-			
 			Object.entries(indexTable).map((element) => {
-				// value parameter to take values without description
-				let value = 0
-				
+				// value parameter to take values without header
+				let value = 0;
 				element.forEach((e) => {
+					//console.log(element);
 					if( value > 0 ){ 
 						let tableElement = document.createElement("td");
-							tableElement.setAttribute("style", "border: 1px solid");
-							
+
+						if(element[0] == 'description'){
+							console.log(element[1]);
+							tableElement.setAttribute("style", "width:auto; white-space:normal; text-align:left");
+						};
+
 						if(typeof(e) === 'object' && e.length > 0){
-							let tableManyElements = document.createElement("td");
-							tableManyElements.setAttribute("style", "display:flex; flex-direction:column; border-collapse:collapse; border-spacing:0; border: 1px solid;");
-							
+							let tableManyElements = document.createElement("tr");
+							tableManyElements.setAttribute("style", "display:flex; flex-direction:column");
+
 							e.forEach((x) => {
 								//console.log(e);
 								//console.log(x);
 								let xManyElements = document.createElement("td");
-								xManyElements.setAttribute("style", "border-collapse:collapse; border-spacing:0; border: none; border-block:1px solid black;");
+								//xManyElements.setAttribute("style", "border-collapse:collapse; border-spacing:0; border: none; border-bottom: 1px solid black");
 								xManyElements.innerHTML = JSON.stringify(x).replace('{', '').replace('}', '').replace(',', ', ').replaceAll(':', ': ').replaceAll('"', '');
+								//xManyElements.innerHTML = x;
 								tableManyElements.appendChild(xManyElements);
 							});
 

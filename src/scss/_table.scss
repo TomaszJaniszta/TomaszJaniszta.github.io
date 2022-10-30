@@ -1,7 +1,21 @@
+#tableFilters{
+    display:flex;
+    flex-direction: column;
+}
+
+.tableContainer {
+  display:flex;
+  justify-content:flex-start;
+  overflow:auto;
+}
+
 .table {
+    position: sticky;
+    left: 0;
     // display:flex;
     // justify-content: center;
-    width: auto; 
+
+    width: 100%; 
     // overflow:visible;
     border-collapse:collapse; 
     border-spacing: 0;
@@ -11,6 +25,10 @@
     th, td {
         text-align: center;
         //padding: 8px;
+        //border-block:1px solid black;
+        border-collapse:collapse; 
+        border-spacing: 0;
+        border:1px solid black;
       }
     
     tr:nth-child(even){background-color: #f2f2f2}
@@ -33,7 +51,7 @@
           margin-inline: 10%;
           text-justify: distribute;
       }
-      .table {
-        position: inherit;
-    }
+    //   .table {
+    //     position: inherit;
+    // }
   }
