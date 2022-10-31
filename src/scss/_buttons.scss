@@ -2,6 +2,14 @@ $blue1: #00f7ff;
 $blue2: #56adff;
 $red: #8b0000;
 
+#en:hover, #pl:hover, #lightTheme:hover, #darkTheme:hover{
+	border: 1px solid red;
+}
+
+#en:active, #pl:active, #lightTheme:active, #darkTheme:active{
+	scale: 1.5;
+}
+
 button {
 	color: rgb(77, 77, 77);
 	cursor: pointer;

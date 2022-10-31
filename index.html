@@ -93,13 +93,13 @@
 				<p id="pl" style="background-color:lightgray; display:flex; align-items: center;" onclick="changeLanguage('pl');"> PL 
 					<span style="padding-left: 5px; 
 								 display:flex; align-items: center;">
-								 <img alt="PL language" id="pl" src="./images/pl30x20.png" width="15" height="10"/>
+								 <img alt="PL language" src="./images/pl30x20.png" width="15" height="10"/>
 					</span>
 				</p>
 				<p id="en" style="background-color:lightgray; display:flex; align-items: center;"  onclick="changeLanguage('en');"> EN 
 					<span style="padding-left: 5px; 
 								 display:flex; align-items: center;">
-								 <img alt="EN language" id="en" src="./images/en30x20.png" width="15" height="10"/>
+								 <img alt="EN language" src="./images/en30x20.png" width="15" height="10"/>
 					</span>
 				</p>
 			</div>
@@ -126,22 +126,25 @@
 		<div class="showAndHideMenu"><p id="popupHeader"><b>Example pop-up counter</b></p><button id="show1" class="button"> Show \ Hide </button></div>
 		<div id="part1" style="display:none">
 		<hr class="hr">
-		  <div class="part1">
-			  <div class="img-container">
+		  	<div class="part1">
+			  	<div class="img-container">
 					<img class="img" alt="mountain photo"
 					id="imgMountain"
 					src="./images/mountain.jpg"
 					/>
-			  </div>
-			  <div class="content-container">
-				<h2 id="popupHeader2">Example pop-up counter</h2>
-				<span id="popupP">
-				  Example pop-up counter. Made during one of the small projects. Click on the button or my image. 
-					After the 6th click, the counter can be reset.
-				</span>
-				<div class="center"><button class="button" id="buttonCnt"> Button </button></div>
-			  </div>
-			  <div class="popup" id="popup">
+			  	</div>
+			  	<div class="content-container">
+					<h2 id="popupHeader2">Example pop-up counter</h2>
+					<span id="popupP">
+				  		Example pop-up counter. Made during one of the small projects. Click on the button or my image. 
+						After the 6th click, the counter can be reset.
+					</span>
+					</br>
+					<div class="center"><button class="button" id="buttonCnt"> Button </button></div>
+			  	</div>
+				</br>
+			</div>
+			<div class="popup" id="popup">
 				<button type="button" class="btnX" id="btnX">&#10005</button>
 				<h2 id="alert">Alert!</h2>
 				<span>
@@ -150,12 +153,14 @@
 					<span id="popupTimes"> time(s).</span>
 				</span>
 				</br>
-				<div style="display: flex;justify-content:center"><button type="button" class="reset" id="reset">Reset counter</button></div> 
-			  </div>
-			</br>
-			  <div class="overl" id="overlay"></div>
+				<div style="display: flex;justify-content:center;">
+					<button type="button" class="reset" id="reset">
+						Reset counter
+					</button>
+				</div> 
 			</div>
-		  </div>
+			<div class="overl" id="overlay"></div>
+		</div>
 
 		<hr class="hr">
 		
@@ -168,12 +173,12 @@
 						Sample data table using the power of JavaScript. Imitation of data download via the "Load" button, and then the possibility of sorting, filtering.
 						You can change file with data (data.js) and refresh to work with your data.
 					</p>
-					<span style="display:flex;flex-direction:row; white-space: nowrap; width:auto; align-items:center; margin-inline: 2%;">
+					<div class="tableBtns">
 						<button id="loadBtn" class="button" onclick="loadData()">Load</button>
 						<button id="loadReset" class="button" onclick="resetData()" style="display:none;">Reset</button>
 						<button id="sortById" class="button" onclick="sortById()" style="display:none;">Sort by ID</button>
 						<button id="sortByDate" class="button" onclick="sortByDate()" style="display:none;">Sort by date</button>
-					</span>
+					</div>
 					</br>
 					
 					<div id="noTableData" style="color:red;">No data. Please press load button.</div>

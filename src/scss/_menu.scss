@@ -4,7 +4,7 @@ $widthMenu: 100px;
 .menu {
     // the same place
     position: fixed;
-    top: 0%;
+    top: 1%;
     // on top
     z-index: 3;
     display: flex;
@@ -115,6 +115,7 @@ $widthMenu: 100px;
     display:flex;
     justify-content: flex-start;
     z-index: 1;
+    margin-top: 10px;
     margin-left: 10px;
     p { 
 		border:1px solid white;

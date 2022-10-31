@@ -1,6 +1,6 @@
 let language = 'en';
 
-function changeLanguage(newLanguage) {
+function changeLanguage(newLanguage){
   if(newLanguage !== language){
 	language = newLanguage;
 

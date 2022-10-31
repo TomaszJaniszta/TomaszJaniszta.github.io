@@ -16,7 +16,7 @@ const colorTheme = (theme) => {
 			
 			let intro = document.getElementById('intro');
 				intro.style.color = 'black';
-				intro.style.background='radial-gradient(#b9b9b9,#fff,#97fdff)';
+				intro.style.background='radial-gradient(#fff, #e0e0e0,#97fdff, #4e6eff)';
 
 		 };
 

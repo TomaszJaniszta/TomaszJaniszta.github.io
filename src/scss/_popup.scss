@@ -1,3 +1,50 @@
+.part1 {
+	display: flex;
+	flex-direction: row;
+	width: 100%;
+	justify-content: center;
+	background-image: linear-gradient(white, lightblue, white);
+	&.img-container {
+		width: 50%;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+	}
+	>.content-container {
+		margin-left: 10%;
+		width: 50%;
+		height: 100%;
+		display: flex;
+		flex-direction: column;
+		justify-content: flex-start;
+		justify-items: flex-start;
+		>p {
+			font-size: 1rem;
+			margin-bottom: 2vh;
+		}
+	}
+}
+
+.img {
+    width: 80%;
+    height: auto;
+	margin-block: 3%;
+	display: inline-block;
+	position: relative;
+	top: 1%;
+	left: 25%;
+	box-shadow: $introShadow;
+	border-radius: 10px;
+	cursor: pointer;
+	&:hover {
+		opacity: 0.5;
+		transform: scaleX(-1);
+	}
+	&:active {
+		transform: scale(1.30);
+	}
+}
+
 .popup {
 	visibility: hidden;
 	width: 40vw;
