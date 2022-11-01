@@ -12,7 +12,7 @@ const updateBoardChess = () => {
       let boardRow = document.createElement("div");
       boardRow.setAttribute("id", "divRowChess"+x);
 	  //boardRow.setAttribute("style", "display: flex; flex-direction: row;justify-content:center;");
-	  boardRow.setAttribute("style", "display: inline-table");
+	  boardRow.setAttribute("style", "display: inline-table");
       chessBoardContainer.appendChild(boardRow);
 	  
 	  let y = -1;
@@ -24,7 +24,7 @@ const updateBoardChess = () => {
           boardElement.innerHTML = '<img src="./images/chess/black100.gif" alt="Black field" width="100%" height:auto/>';
 		let boardCoords = document.createElement("div");
 		  boardCoords.innerHTML = "x="+(x-1)+" y="+y;
-		  boardCoords.setAttribute("style", "position:relative;top:1vw;left:10px;color:white;width:0%;height:0%;white-space:nowrap;");
+		  boardCoords.setAttribute("style", "position:relative;top:10px;left:3px;color:white;width:0%;height:0%;white-space:nowrap;");
 		  boardRow.appendChild(boardCoords);
 		  boardRow.appendChild(boardElement);
         } else if (element === 'W') {
@@ -32,7 +32,7 @@ const updateBoardChess = () => {
           boardElement.innerHTML = '<img src="./images/chess/white100.gif" alt="White field" width="100%" height:auto/>';
 		let boardCoords = document.createElement("div");
 		  boardCoords.innerHTML = "x="+(x-1)+" y="+y;
-		  boardCoords.setAttribute("style", "position:relative;top:1vw;left:10px;color:black;width:0%;height:0%;white-space:nowrap;");
+          boardCoords.setAttribute("style", "position:relative;top:10px;left:3px;color:black;width:0%;height:0%;white-space:nowrap;");
 		  boardRow.appendChild(boardCoords);
 		  boardRow.appendChild(boardElement);
 		} else if (element === 'X') {
@@ -40,7 +40,7 @@ const updateBoardChess = () => {
           boardElement.innerHTML = '<img src="./images/chess/red100.gif" alt="Red field" width="100%" height:auto/>';
 		let boardCoords = document.createElement("div");
 		  boardCoords.innerHTML = "x="+(x-1)+" y="+y;
-		  boardCoords.setAttribute("style", "position:relative;top:1vw;left:10px;color:black;width:0%;height:0%;white-space:nowrap;");
+          boardCoords.setAttribute("style", "position:relative;top:10px;left:3px;color:black;width:0%;height:0%;white-space:nowrap;");
 		  boardRow.appendChild(boardCoords);
 		  boardRow.appendChild(boardElement);
         } else if (element === 'T') {
@@ -48,7 +48,7 @@ const updateBoardChess = () => {
           boardElement.innerHTML = '<img src="./images/chess/tower100.gif" alt="Tower" width="100%" height:auto style="background-color:yellow;"/>';
 		let boardCoords = document.createElement("div");
 		  boardCoords.innerHTML = "x="+(x-1)+" y="+y;
-		  boardCoords.setAttribute("style", "position:relative;top:1vw;left:10px;color:black;width:0%;height:0%;white-space:nowrap;opacity:0.5;");
+		  boardCoords.setAttribute("style", "position:relative;top:10px;left:3px;color:black;width:0%;height:0%;white-space:nowrap;opacity:0.5;");
 		  boardRow.appendChild(boardCoords);
 		  boardRow.appendChild(boardElement);
         } else if (element === 'H') {
@@ -56,7 +56,7 @@ const updateBoardChess = () => {
           boardElement.innerHTML = '<img src="./images/chess/horse.gif" alt="Horse" width="100%" height:auto style="background-color:yellow;"/>';
 		let boardCoords = document.createElement("div");
 		  boardCoords.innerHTML = "x="+(x-1)+" y="+y;
-		  boardCoords.setAttribute("style", "position:relative;top:1vw;left:10px;color:black;width:0%;height:0%;white-space:nowrap;opacity:0.5;");
+		  boardCoords.setAttribute("style", "position:relative;top:10px;left:3px;color:black;width:0%;height:0%;white-space:nowrap;opacity:0.5;");
 		  boardRow.appendChild(boardCoords);
 		  boardRow.appendChild(boardElement);
         } else if (element === 'L') {
@@ -64,7 +64,7 @@ const updateBoardChess = () => {
           boardElement.innerHTML = '<img src="./images/chess/laufer.gif" alt="Laufer" width="100%" height:auto style="background-color:yellow;"/>';
 		let boardCoords = document.createElement("div");
 		  boardCoords.innerHTML = "x="+(x-1)+" y="+y;
-		  boardCoords.setAttribute("style", "position:relative;top:1vw;left:10px;color:black;width:0%;height:0%;white-space:nowrap;opacity:0.5;");
+		  boardCoords.setAttribute("style", "position:relative;top:10px;left:3px;color:black;width:0%;height:0%;white-space:nowrap;opacity:0.5;");
 		  boardRow.appendChild(boardCoords);
 		  boardRow.appendChild(boardElement);
         } else if (element === 'K') {
@@ -72,7 +72,7 @@ const updateBoardChess = () => {
           boardElement.innerHTML = '<img src="./images/chess/king.gif" alt="King" width="100%" height:auto style="background-color:yellow;"/>';
 		let boardCoords = document.createElement("div");
 		  boardCoords.innerHTML = "x="+(x-1)+" y="+y;
-		  boardCoords.setAttribute("style", "position:relative;top:1vw;left:10px;color:black;width:0%;height:0%;white-space:nowrap;opacity:0.5;");
+		  boardCoords.setAttribute("style", "position:relative;top:10px;left:3px;color:black;width:0%;height:0%;white-space:nowrap;opacity:0.5;");
 		  boardRow.appendChild(boardCoords);
 		  boardRow.appendChild(boardElement);
         } else if (element === 'Q') {
@@ -80,7 +80,7 @@ const updateBoardChess = () => {
           boardElement.innerHTML = '<img src="./images/chess/queen.gif" alt="Queen" width="100%" height:auto style="background-color:yellow;"/>';
 		let boardCoords = document.createElement("div");
 		  boardCoords.innerHTML = "x="+(x-1)+" y="+y;
-		  boardCoords.setAttribute("style", "position:relative;top:1vw;left:10px;color:black;width:0%;height:0%;white-space:nowrap;opacity:0.5;");
+		  boardCoords.setAttribute("style", "position:relative;top:10px;left:3px;color:black;width:0%;height:0%;white-space:nowrap;opacity:0.5;");
 		  boardRow.appendChild(boardCoords);
 		  boardRow.appendChild(boardElement);
         } 

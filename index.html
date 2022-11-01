@@ -215,7 +215,7 @@
 				<hr class="hr">
 				<div class="part2">
 					<h2>Invoice generator</h2>
-					<p>
+					<p style="padding:5px; max-height:200px; overflow:auto; border:1px solid black;">
 						An application that imitates entering items on an invoice.
 						You can add items and delete items. Data validation added.
 						Name - required field, the minimum number of characters is 3, the maximum number of characters is 30. The field accepts any characters.
@@ -230,48 +230,56 @@
 					
 					<form style="display:flex;justify-content:flex-start;text-align:left;flex-direction:column;margin-inline:10%">
 						<!-- <form action="#show7" oninput="invoiceFunc(invoiceQty.value); x.value=invoiceQty.value+a.value"> -->
-						<table>
-							<tr>
-								<td><label for="invoiceName"><b>Enter or select item name: </b></label></td>
-								<td><input type="text" id="invoiceName" name="invoiceName" value="" onchange=""></td>
-								<td><select id="invoiceNameSelect" onchange="invSelectName(this.value)">
-									<option value="Select item name" selected="selected">Select item name: </option>
-									<option value="Bananas">Bananas</option>
-									<option value="Tomatoes">Tomatoes</option>
-									<option value="Cherries">Cherries</option>
-								</select></td>
-							<tr>
-							<tr>
-								<td><label for="invoiceQty"><b>Enter or choose item quantity: </b></label></td>
-								<td><input type="number" id="invoiceQty" name="invoiceQty" value="0"></td>
-								<!-- <td> 0 <input type="range"  id="slidereQty" name="slidereQty" value="50" onmouseup="x.value=slidereQty.value;" style="margin-inline:"5px"> 100+ -->
-								<td> 0 <input type="range"  min="0" max="100" value="0" 
-											oninput="invoiceQty.value=slidereQty.value"
-											style="margin-inline:5px" id="slidereQty" 
-											name="slidereQty"> 100+ 
-							    <!-- <output name="output" for="invoiceQty">50</output></td> -->
-							</tr>
-							<tr>
-							  <span>
-								<td><label for="invoicePrice"><b>Enter item price: </b></label></td>
-								<td><input type="number" id="invoicePrice" name="invoicePrice" value="0"></td>
-								<td>Select VAT % <select id="invoiceVat">
+						<div class="invoiceEnters">
+							<label for="invoiceName"><b>Enter or select item name: </b></label>
+							<input type="text" id="invoiceName" name="invoiceName" value="" onchange="">
+							<select id="invoiceNameSelect" onchange="invSelectName(this.value)">
+								<option value="Select item name" selected="selected">Select item name: </option>
+								<option value="Bananas">Bananas</option>
+								<option value="Tomatoes">Tomatoes</option>
+								<option value="Cherries">Cherries</option>
+							</select>
+						</div>
+
+						</br>
+						<div class="invoiceEnters">
+							<label for="invoiceQty"><b>Enter or choose item quantity: </b></label>
+							<input type="number" id="invoiceQty" name="invoiceQty" value="0">
+							<!-- <td> 0 <input type="range"  id="slidereQty" name="slidereQty" value="50" onmouseup="x.value=slidereQty.value;" style="margin-inline:"5px"> 100+ -->
+							<span> 0 <input type="range"  min="0" max="100" value="0" 
+										oninput="invoiceQty.value=slidereQty.value"
+										style="margin-inline:5px" id="slidereQty" 
+										name="slidereQty"> 100+ 
+							</span>
+						</div>
+
+						</br>
+						<!-- <output name="output" for="invoiceQty">50</output> -->
+						<div class="invoiceEnters">
+							<label for="invoicePrice"><b>Enter item price: </b></label>
+							<input type="number" id="invoicePrice" name="invoicePrice" value="0">
+							<span>Select VAT % 
+								<select id="invoiceVat">
 									<option value="0.23" selected="selected">23%</option>
 									<option value="0.08">8%</option>
 									<option value="0.05">5%</option>
 									<option value="0">0%</option>
-								</select></td>
-							  </span>
-							</tr>
-						</table>
+								</select>
+							</span>
+						</div>
+
 						</br>
-						<input type="submit" id="submitForm" onclick="addItem(invoiceName.value, invoiceQty.value, invoicePrice.value, invoiceVat.value)" style="width:auto;margin-inline:auto;" value="Add item">
+						<input type="submit" 
+							id="submitForm" 
+							onclick="addItem(invoiceName.value, invoiceQty.value, invoicePrice.value, invoiceVat.value)" 
+							class="button" 
+							style="width:auto;margin-inline:auto;" value="Add item">
+						</br>
 					</form>
 					
 					<table id="invoiceItems" style="width: 90%; background-color:white; border:1px solid gray"></table>
 				</br>
 			    </div>
-				<!-- <table id="invoiceContainer" style="max-width:100%; border-collapse: collapse;background:white"></table> -->
 			</div>
 
         <hr class="hr">
@@ -283,13 +291,14 @@
 			
 				<div class=".introBall2">
 				  <h2> Chess (simple) </h2>
-				  <p>It's not a classic chess game. Program is to choose at random one of the chess piece (except the pawn) and place it at the random spot on the board.
+				  <p style="padding:5px; max-height:200px; overflow:auto; border:1px solid black;">
+					It's not a classic chess game. Program is to choose at random one of the chess piece (except the pawn) and place it at the random spot on the board.
 					After placing any piece (except first one) check all present pieces move ranges and see if any can reach other piece.
 					If so Give that pieces position and quit program. App made for use FACTORY (with class hierarhy) + SINGLETON pattern in code.
 				  </p>
 				</div>
 				</br>
-				<div class="boardChess" id="chessBoardContainer" style="font-size:1em;display:inline-flex;line-height:0%;"></div>
+				<div class="boardChess" id="chessBoardContainer"></div>
 				</br>
 				<span><button id="chessButton" class="button">Add figure</button><button id="resetBtnChess" class="button">Reset</button></span>
 				</br>
@@ -350,7 +359,7 @@
 				<hr class="hr">
 				<div class="part2">
 				  <h2> Game of life </h2>
-				  <p style="padding:5px; height:200px; overflow:auto; border:1px solid black;">
+				  <p style="padding:5px; max-height:200px; overflow:auto; border:1px solid black;">
 					The game of life - one of the first and most famous examples of a cellular automaton, invented in 1970 by the British mathematician John Conway.
 					The game is played on a board divided into square cells. Each cell has eight "neighbors" (the so-called Moore's neighborhood),
 					i.e. cells adjacent to it with sides and corners. Each cell can be in one of two states: it can be either "alive" (on) or "dead".

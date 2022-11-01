@@ -54,7 +54,7 @@ const updateBoardGol = () => {
 const changeCell =(id) => {
 	let y=id.split(".")[0];
 	let x=id.split(".")[1];
-	console.log(x, y);
+	// console.log(x, y);
 	if(boardGOLtemp[x][y]===1){boardGOLtemp[x][y]=0}else{boardGOLtemp[x][y]=1};
 	updateBoardGol();
 };
