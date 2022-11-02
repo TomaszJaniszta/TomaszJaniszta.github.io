@@ -37,9 +37,10 @@
 	.tableBtns{
 		display:flex;
 		flex-direction:column; 
-		button{
-			margin-bottom: 5px;
-		}
+		scale: 0.8;
+		// button{
+		// 	margin-bottom: 5px;
+		// }
 	  }
 
 	  #tableFilters{
@@ -53,9 +54,15 @@
 		transform: scaleX(1);
 	  }
 
+	  //invoice
 	  .invoiceEnters{
 		flex-direction:column;
-	}
+	  }
+
+	  #submitForm,#chessButton,#resetBtnChess{
+		scale: 0.8;
+	  }
+
 
 	.boardChess{
 		text-align: left;

@@ -316,7 +316,7 @@
 				<hr class="hr">
 				<div class="part2">
 				  <h2> Ball bouncy simulator v.1.</h2>
-				  <p>
+				  <p style="padding:5px; max-height:200px; overflow:auto; border:1px solid black;">
 					The program is to show how the ball would travel and bounce against the walls.
 					"?" blocks change the direction of the ball to random. 
 					The program is to end when object comes back to original position.
@@ -325,7 +325,7 @@
 				<div class="boardBall1" id="boardContainer1"></div>
 				<span><button id="ball1button" class="button">Start</button><button id="resetBtnBall1" class="button">Reset</button></span>
 				<br/>
-				<div>Time (s): <p id="timeBall_1"></p></div> <!-- aaa -->
+				<span>Time (s): <span id="timeBall_1"></span></span>
 			  </div>
 			</div>
 			
@@ -336,20 +336,22 @@
 				<hr class="hr">
 				<div class="part2">
 				  <h2> Ball bouncy simulator v.2.</h2>
-				  <p>
+				  <p style="padding:5px; max-height:200px; overflow:auto; border:1px solid black;">
 					Like a v.1 the program is to show how the ball would travel and bounce against the walls.
 					"?" blocks change the direction of the ball to random. 
 					The program is to end when object comes back to original position.
 					Ball v.2 version based on Webdings font.
 				  </p>
-				  	<div> zoom 0% <input type="range" name="a" value="50" id="slider" onmouseup="sliderFunc(value)"> 100% </div>
+				  	<!-- <div> zoom 0% 
+						<input type="range" name="a" value="50" id="slider" onmouseup="sliderFunc(value)"> 100% 
+					</div>
 					<div id=sliderValue>50%</div>
-				  <br/>
+				  <br/> -->
 				<div class="boardBall2" id="boardContainer2"></div>
 				<br/>
 				<span><button id="ball2button" class="button">Start</button><button id="resetBtnBall2" class="button">Reset</button></span>
 				<br/>
-				<div>Time (s): <p id="timeBall_2"></p></div>
+				<span>Time (s): <span id="timeBall_2"></span></span>
 			</div>
 		  </div>
         <hr class="hr">

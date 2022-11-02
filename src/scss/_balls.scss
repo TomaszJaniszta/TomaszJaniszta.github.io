@@ -130,15 +130,15 @@ $--rg: (
   text-align: center;
   align-items: center;
   justify-content: center;
-  margin-top: 1%;
-  margin-bottom: 2%;
+  margin-top: 0.5%;
+  margin-bottom: 0.5%;
   //width: auto;
   //height: auto;
   font-family: fontBall2;
-  //border: 5px double;
-  font-size: min(4px);
-  font-size: max(8px);
-  //font-size: min(max(22px, 6vw), 32px);
+  border: 5px double;
+  font-size: max(min(5vw,50px), 14px);
+  //That way the font-size will be 1em (if 1em > 12px), but at least 12px.
+  // font-size: min(max(22px, 6vw), 32px);
   background-image: linear-gradient(#ffffff, #636363, #ffffff);
   //transform: scale(1.2);
   // margin-bottom: 5%;

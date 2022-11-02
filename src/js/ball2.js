@@ -8,8 +8,8 @@
   // board for ball_2 = board
   let board2 = JSON.parse(JSON.stringify(board));
   let boardContainer2 = document.getElementById('boardContainer2');
-  const fontSizeForBall2 = 150;
-  boardContainer2.setAttribute("style", `font-size: ${fontSizeForBall2}%`);
+  // const fontSizeForBall2 = 150;
+  // boardContainer2.setAttribute("style", `font-size: ${fontSizeForBall2}%`);
     
   class BallGenerator2 {
     constructor(board) {
@@ -162,7 +162,10 @@
 			let boardElement = document.createElement("span");
 			boardElement.innerHTML ='y';
 			boardElement.setAttribute("id", "ball_2");
-			if(started2){boardElement.setAttribute("class", "BallRunning")}else{boardElement.setAttribute("class", "Ball")};
+			if(started2){
+        boardElement.setAttribute("class", "BallRunning")}
+          else{
+            boardElement.setAttribute("class", "Ball")};
 			let divContainer = document.getElementById("divRow2"+divRow);
 			divContainer.appendChild(boardElement);
 		} else if (element === '0') {
@@ -229,10 +232,11 @@ let gameReset2 = () => {
 };
 
 //slider
-const slider = document.getElementById('slider');
+// const slider = document.getElementById('slider');
 const sliderFunc = (value) => {
 	value=parseInt(value);
 	document.getElementById('sliderValue').innerHTML=value+'%';
-	boardContainer2.setAttribute("style", `font-size: ${fontSizeForBall2+value*2}%`);
+  // console.log();
+	boardContainer2.setAttribute("style", `font-size: ${150+value*2}%`);
 	updateBoard2();
 };
