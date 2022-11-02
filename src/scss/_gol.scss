@@ -62,3 +62,12 @@
 //   height: 50px;
 //   border: 2px solid rgb(201, 201, 201);
 // }
+
+.golBtns{
+  display:flex;
+  flex-direction:row;
+  white-space: nowrap;
+  width:auto;
+  align-items:center;
+  margin-inline: 2%;
+}

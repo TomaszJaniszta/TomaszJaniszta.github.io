@@ -63,11 +63,15 @@
 		scale: 0.8;
 	  }
 
-
 	.boardChess{
 		text-align: left;
 		font-size:2vw;
 	}
+
+	.golBtns{
+		flex-direction:column;
+		scale: 0.8;
+	  }
 }
 
 // @media only screen and (max-width: 400px) {

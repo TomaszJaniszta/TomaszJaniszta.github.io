@@ -371,13 +371,18 @@
 					A dead cell that has exactly 3 living neighbors becomes alive in the next unit of time (is born). A living cell with 2 or 3 living neighbors remains alive,
 					and with a different number of neighbors it dies (from "loneliness" or "crowding"). More information: <a href="https://en.wikipedia.org/wiki/Conway%27s_Game_of_Life" target="_blank">wikipedia.org</a>
 				  </p>
-				<span style="display:flex;flex-direction:row; white-space: nowrap; width:auto; align-items:center; margin-inline: 2%;">
-					<button id="golButton" class="button" style="display:visible;">Start</button>
-					<button id="resetGolBtn" class="button" disabled>Reset</button>
-					<button id="randomGol" class="button">Random cells</button>
-					<button id="clearGol" class="button">Clear cells</button>
-					<span style="padding-inline:10px">Time (s): </span><span id="timeGol"></span>
+				<span class="golBtns">
+					<span style="display:flex;flex-direction:row">
+						<button id="golButton" class="button" style="display:visible;">Start</button>
+						<button id="resetGolBtn" class="button" disabled>Reset</button>
+					</span>
+					<span style="display:flex;flex-direction:row">
+						<button id="randomGol" class="button">Random cells</button>
+						<button id="clearGol" class="button">Clear cells</button>
+					</span>
 				</span>
+				</br>
+				<span style="padding-inline:10px">Time (s): <span id="timeGol"></span></span>
 				<p id="p_red">You can edit the board by clicking on the fields and than check the new result.</p>
 				<div class="boardGol" id="boardGolContainer"></div>
 				
