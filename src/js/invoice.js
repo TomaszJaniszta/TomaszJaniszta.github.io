@@ -63,20 +63,68 @@ const updateInvoiceView = () => {
 };
 
 const addItem = (name, quantity, price, vat) => {
-	//next id
-	const newId = () => {
-		if(invoiceItemsArray.length > 0){
-			let itemIds = invoiceItemsArray.map(i => i.id);	
-	    	let maxId = Math.max(...itemIds);
-	    	let newId = maxId + 1;
-			return newId } 
-		else {
-			return 1
-		}
+	let errorName;
+	let errorQuantity;
+	let errorPrice;
+	
+	if (name.length < 3 || name.length > 30){
+		errorName = 'Invalid name length (3-30 characters allowed). '
 	};
 	
-	let object = {id: newId(), name:name, quantity:quantity, price:price, vat:vat};
-	invoiceItemsArray.push(object);
+	quantity=Number(quantity);
+	if (!(quantity > 0 && quantity < 101 && Number.isInteger(quantity))){
+		errorQuantity = 'Invalid quantity (only integers 1-100 allowed). '
+	};
+	
+	price=Number(price);
+	if (!(price > 0 && price < 1000001 && Number.isInteger(price))){
+		errorPrice = 'Invalid price (only integers 1-1000000 allowed). '
+	};
+	
+	const popUpInvoiceOn = (text) => {
+		let popUpInvoice = document.getElementById('popupInvoice');
+		let buttonPopUpInvoice = document.createElement("button");
+			buttonPopUpInvoice.setAttribute("type", "button");
+			buttonPopUpInvoice.setAttribute("class", "btnX");
+			buttonPopUpInvoice.setAttribute("id", "btnPopupInvoice");
+			buttonPopUpInvoice.innerHTML = '&#10005';
+			
+			popUpInvoice.appendChild(buttonPopUpInvoice);
+			popUpInvoice.appendChild(document.createElement("br"));
+			popUpInvoice.appendChild(document.createElement("br"));
+			
+		let spanPopUp = document.createElement("div");
+			spanPopUp.setAttribute("id", "spanPopup");
+			spanPopUp.innerHTML = text;
+			popUpInvoice.appendChild(spanPopUp);
+			popUpInvoice.classList.toggle('active');
+			
+		btnPopupInvoice.onclick = function(){
+			popUpInvoice.innerHTML = '';
+			popUpInvoice.classList.remove('active');
+		};
+	};
+	
+	if(errorName || errorQuantity || errorPrice){
+		let text = (errorName + " " + errorQuantity + " " + errorPrice).replaceAll('undefined','');
+		popUpInvoiceOn(text);
+	} else {
+		//next id
+		const newId = () => {
+			if(invoiceItemsArray.length > 0){
+				let itemIds = invoiceItemsArray.map(i => i.id);	
+		    	let maxId = Math.max(...itemIds);
+		    	let newId = maxId + 1;
+				return newId } 
+			else {
+				return 1
+			}
+		};
+		
+		let object = {id: newId(), name:name, quantity:quantity, price:price, vat:vat};
+		invoiceItemsArray.push(object);
+	};
+	
 	updateInvoiceView();
 	selectUpdate();
 };
