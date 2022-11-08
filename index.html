@@ -124,8 +124,8 @@
 			</br>
 
 		<div class="showAndHideMenu"><p id="popupHeader"><b>Example pop-up counter</b></p><button id="show1" class="button"> Show \ Hide </button></div>
-		<div id="part1" style="display:none">
-		<hr class="hr">
+		  <div id="part1" style="max-height:0px;overflow:auto;transform:scaleY(0);transform-origin:down;opacity:0.0;transition:max-height 2s,transform 2s,opacity 2s;">
+			<hr class="hr">
 		  	<div class="part1">
 			  	<div class="img-container">
 					<img class="img" alt="mountain photo"
@@ -165,11 +165,11 @@
 		<hr class="hr">
 		
 		  <div class="showAndHideMenu"><p id="tableHeader"><b>Work with data table</b></p><button id="show2" class="button"> Show \ Hide </button></div>
-			<div id="part2" style="display:none;">
+		    <div id="part2" style="max-height:0px;overflow:auto;transform:scaleY(0);transform-origin:down;opacity:0.0;transition:max-height 2s,transform 2s,opacity 2s;">
 				<hr class="hr">
 				<div class="partTable">
-					<h2>Work with data table</h2>
-					<p>
+					<h2 id="tableHeaderH">Work with data table</h2>
+					<p id="tableP">
 						Sample data table using the power of JavaScript. Imitation of data download via the "Load" button, and then the possibility of sorting, filtering.
 						You can change file with data (data.js) and refresh to work with your data.
 					</p>
@@ -180,12 +180,9 @@
 						<button id="sortByDate" class="button" onclick="sortByDate()" style="display:none;">Sort by date</button>
 					</div>
 					</br>
-					
-					<div id="noTableData" style="color:red;">No data. Please press load button.</div>
-
 					<div id="tableFilters" style="display:none;">
 						<span style="white-space: nowrap;">
-							<label for="searchByDesc">Search by description:</label>
+							<label for="searchByDesc" id="searchByDescLabel">Search by description:</label>
 						 	<input id="searchByDesc"
 						    	type="text"
 						    	placeholder="Enter searched phrase"
@@ -194,15 +191,16 @@
 						</span>
 						<!-- <button id="btnSearch" type="button" (onclick)="ordersFilter(searchPhrase)">Search</button> -->
  						<span>
-						    <label for="selectPriotity">Select priority:</label>
+						    <label for="selectPriotity" id="searchByPriorLabel">Select priority:</label>
 						    <select id="selectPriotity" onchange="filterPriority(this.value)">
-								<option value="All" selected="selected">All</option>
-								<option value="Low">Low</option>
-								<option value="Normal">Normal</option>
-								<option value="High">High</option>
+								<option value="All" selected="selected" id="selectAll">All</option>
+								<option value="Low" id="selectLow">Low</option>
+								<option value="Normal" id="selectNormal">Normal</option>
+								<option value="High" id="selectHigh">High</option>
 						    </select>
 						</span>
 					</div>
+					<div id="noTableData" style="color:red;"></div>
 					</br>
 			    </div>
 				<div class="tableContainer"><table id="tableContainer" class="table"> </table></div>
@@ -211,27 +209,26 @@
         <hr class="hr">
 		
 		<div class="showAndHideMenu"><p id="invHeader"><b>Invoice generator</b></p><button id="show7" class="button"> Show \ Hide </button></div>
-			<div id="part7" style="display:none;">
+		  <div id="part7" style="max-height:0px;overflow:auto;transform:scaleY(0);transform-origin:down;opacity:0.0;transition:max-height 2s,transform 2s,opacity 2s;">
 				<hr class="hr">
 				<div class="part2">
-					<h2>Invoice generator</h2>
-					<p style="padding:5px; max-height:200px; overflow:auto; border:1px solid black;">
-						An application that imitates entering items on an invoice.
-						You can add items and delete items. Data validation added.
-						Name - required field, the minimum number of characters is 3, the maximum number of characters is 30. The field accepts any characters.
-						Count - required field, minimum 1, maximum 100. The field accepts only integers.
-						Price - required field, minimum 1, maximum 1000000. The field accepts only integers.
-
-						At the bottom there is a "Submit" button, which when clicked:
-						- if the form contains errors - displays them
-						- in the case of an empty form - it will show the message "Please add items"
-						- if the form is without errors - it will calculate sum of items
+					<h2 id="invHeaderH">Invoice generator</h2>
+					<p style="padding:5px; max-height:200px; overflow:auto; border:1px solid black;" id="invP">
+						An application that imitates entering items on an invoice. 
+						You can add items and delete items. Data validation added. 
+						Name - required field, the minimum number of characters is 3, the maximum number of characters is 30. The field accepts any characters. 
+						Count - required field, minimum 1, maximum 100. The field accepts only integers. 
+						Price - required field, minimum 1, maximum 1000000. The field accepts only integers. 
+						At the bottom there is a "Add item" button, which when clicked: 
+						if the form contains errors - displays them, 
+						in the case of an empty form - it will show the message "Please add data", 
+						if the form is without errors - it will calculate sum of items.
 					</p>
 					
 					<form style="display:flex;justify-content:flex-start;text-align:left;flex-direction:column;margin-inline:10%">
 						<!-- <form action="#show7" oninput="invoiceFunc(invoiceQty.value); x.value=invoiceQty.value+a.value"> -->
 						<div class="invoiceEnters">
-							<label for="invoiceName"><b>Enter or select item name: </b></label>
+							<label for="invoiceName" id="invNameInputLabel"><b>Enter or select item name: </b></label>
 							<input type="text" id="invoiceName" name="invoiceName" value="" onchange="">
 							<select id="invoiceNameSelect" onchange="invSelectName(this.value)">
 								<option value="Select item name" selected="selected">Select item name: </option>
@@ -243,7 +240,7 @@
 
 						</br>
 						<div class="invoiceEnters">
-							<label for="invoiceQty"><b>Enter or choose item quantity: </b></label>
+							<label for="invoiceQty" id="invQtyInputLabel"><b>Enter or choose item quantity: </b></label>
 							<input type="number" id="invoiceQty" name="invoiceQty" value="0">
 							<!-- <td> 0 <input type="range"  id="slidereQty" name="slidereQty" value="50" onmouseup="x.value=slidereQty.value;" style="margin-inline:"5px"> 100+ -->
 							<span> 0 <input type="range"  min="0" max="100" value="0" 
@@ -256,16 +253,16 @@
 						</br>
 						<!-- <output name="output" for="invoiceQty">50</output> -->
 						<div class="invoiceEnters">
-							<label for="invoicePrice"><b>Enter item price: </b></label>
+							<label for="invoicePrice" id="invPriceInputLabel"><b>Enter item price: </b></label>
 							<input type="number" id="invoicePrice" name="invoicePrice" value="0">
-							<span>Select VAT % 
+							<div style="display:flex;justify-content:flex-start;align-items:center;gap:5px"><b><span id="invoiceVatDsc" >Select VAT % </span></b>
 								<select id="invoiceVat">
 									<option value="0.23" selected="selected">23%</option>
 									<option value="0.08">8%</option>
 									<option value="0.05">5%</option>
 									<option value="0">0%</option>
 								</select>
-							</span>
+							</div>
 						</div>
 
 						</br>
@@ -285,13 +282,13 @@
         <hr class="hr">
 			
 		  <div class="showAndHideMenu"><p id="chessHeader"><b>Chess (simple)</b></p><button id="show3" class="button"> Show \ Hide </button></div>
-			<div id="part3" style="display:none;">
+		  	<div id="part3" style="max-height:0px;overflow:auto;transform:scaleY(0);transform-origin:down;opacity:0.0;transition:max-height 2s,transform 2s,opacity 2s;">
 				<hr class="hr">
 			  	<div class="part2">
 			
 				<div class=".introBall2">
-				  <h2> Chess (simple) </h2>
-				  <p style="padding:5px; max-height:200px; overflow:auto; border:1px solid black;">
+				  <h2 id="chessHeaderH"> Chess (simple) </h2>
+				  <p style="padding:5px; max-height:200px; overflow:auto; border:1px solid black;" id="chessP">
 					It's not a classic chess game. Program is to choose at random one of the chess piece (except the pawn) and place it at the random spot on the board.
 					After placing any piece (except first one) check all present pieces move ranges and see if any can reach other piece.
 					If so Give that pieces position and quit program. App made for use FACTORY (with class hierarhy) + SINGLETON pattern in code.
@@ -312,11 +309,11 @@
         <hr class="hr">
 		
 		  <div class="showAndHideMenu"><p id="ball_1Header"><b>Ball bouncy simulator v.1.</b></p><button id="show4" class="button"> Show \ Hide </button></div>
-			<div id="part4" style="display:none;">
+		    <div id="part4" style="max-height:0px;overflow:auto;transform:scaleY(0);transform-origin:down;opacity:0.0;transition:max-height 2s,transform 2s,opacity 2s;">
 				<hr class="hr">
 				<div class="part2">
-				  <h2> Ball bouncy simulator v.1.</h2>
-				  <p style="padding:5px; max-height:200px; overflow:auto; border:1px solid black;">
+				  <h2 id="ball_1HeaderH"> Ball bouncy simulator v.1.</h2>
+				  <p style="padding:5px; max-height:200px; overflow:auto; border:1px solid black;" id="ball_1P">
 					The program is to show how the ball would travel and bounce against the walls.
 					"?" blocks change the direction of the ball to random. 
 					The program is to end when object comes back to original position.
@@ -332,11 +329,11 @@
 		<hr class="hr">
 
 		  <div class="showAndHideMenu"><p id="ball_2Header"><b>Ball bouncy simulator v.2.</b></p><button id="show5" class="button"> Show \ Hide </button></div>
-			<div id="part5" style="display:none;">
+		  	<div id="part5" style="max-height:0px;overflow:auto;transform:scaleY(0);transform-origin:down;opacity:0.0;transition:max-height 2s,transform 2s,opacity 2s;">
 				<hr class="hr">
 				<div class="part2">
-				  <h2> Ball bouncy simulator v.2.</h2>
-				  <p style="padding:5px; max-height:200px; overflow:auto; border:1px solid black;">
+				  <h2 id="ball_2HeaderH"> Ball bouncy simulator v.2.</h2>
+				  <p style="padding:5px; max-height:200px; overflow:auto; border:1px solid black;" id="ball_2P">
 					Like a v.1 the program is to show how the ball would travel and bounce against the walls.
 					"?" blocks change the direction of the ball to random. 
 					The program is to end when object comes back to original position.
@@ -357,11 +354,11 @@
         <hr class="hr">
 		
 		  <div class="showAndHideMenu"><p id="golHeader"><b>Game of life</b></p><button id="show6" class="button"> Show \ Hide </button></div>
-			<div id="part6" style="display:none;">
+		  	<div id="part6" style="max-height:0px;overflow:auto;transform:scaleY(0);transform-origin:down;opacity:0.0;transition:max-height 2s,transform 2s,opacity 2s;">
 				<hr class="hr">
 				<div class="part2">
-				  <h2> Game of life </h2>
-				  <p style="padding:5px; max-height:200px; overflow:auto; border:1px solid black;">
+				  <h2 id="golHeaderH"> Game of life </h2>
+				  <p style="padding:5px; max-height:200px; overflow:auto; border:1px solid black;" id="golP">
 					The game of life - one of the first and most famous examples of a cellular automaton, invented in 1970 by the British mathematician John Conway.
 					The game is played on a board divided into square cells. Each cell has eight "neighbors" (the so-called Moore's neighborhood),
 					i.e. cells adjacent to it with sides and corners. Each cell can be in one of two states: it can be either "alive" (on) or "dead".
@@ -390,7 +387,6 @@
 			</div>
 
         <hr class="hr">
-		
         <!-- <span style="color: darkred; text-align: center;"> Content still in progress... </span> -->
         <span class="end"><a href="mailto:janisztat@gmail.com">janisztat@gmail.com</a>  /  Tomasz Janiszta, 2022r. ©</span>
 

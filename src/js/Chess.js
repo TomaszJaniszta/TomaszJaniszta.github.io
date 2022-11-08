@@ -245,8 +245,16 @@ const updateBoardChess = () => {
 			
 			//add information on site
             let tag = document.createElement("div");
-            let text = `${chess.figureType == 'K' ? 'King' : chess.figureType == 'Q' ? 'Queen' :  chess.figureType == 'L' ? 'Laufer' : chess.figureType == 'H' ? 'Horse' : 'Tower' }
-				appear on x=${chess.x}, y=${chess.y}`;
+			let text;
+			if(language === 'en'){
+				text = `${chess.figureType == 'K' ? 'King' : chess.figureType == 'Q' ? 'Queen' :  chess.figureType == 'L' ? 'Laufer' : chess.figureType == 'H' ? 'Horse' : 'Tower' }
+					appear on x=${chess.x}, y=${chess.y}`;
+			};
+			if(language === 'pl'){
+				text = `${chess.figureType == 'K' ? 'Król' : chess.figureType == 'Q' ? 'Królowa' :  chess.figureType == 'L' ? 'Laufer' : chess.figureType == 'H' ? 'Konik' : 'Wieża' }
+					pojawił(a) się na x=${chess.x}, y=${chess.y}`;
+			};
+				
             tag.innerHTML=text;
             document.getElementById("resultChess").appendChild(tag);
 			
@@ -265,16 +273,39 @@ const updateBoardChess = () => {
 							btn.setAttribute("style", "display: none");
 
                             let tag = document.createElement("p");
-							let figure1 = boardChess[x][y] == 'K' ? 'King' : 
-											boardChess[x][y] == 'Q' ? 'Queen' :
-												boardChess[x][y] == 'L' ? 'Laufer' : 
-													boardChess[x][y] == 'H' ? 'Horse' : 'Tower';
-							let figure2 = boardChess[x + moves[i][0]][y + moves[i][1]] == 'K' ? 'King' : 
-											boardChess[x + moves[i][0]][y + moves[i][1]] == 'Q' ? 'Queen' : 
-												boardChess[x + moves[i][0]][y + moves[i][1]] == 'L' ? 'Laufer' : 
-													boardChess[x + moves[i][0]][y + moves[i][1]] == 'H' ? 'Horse' : 'Tower';
+							
+							// let figure1 = boardChess[x][y] == 'K' ? 'King' : 
+											// boardChess[x][y] == 'Q' ? 'Queen' :
+												// boardChess[x][y] == 'L' ? 'Laufer' : 
+													// boardChess[x][y] == 'H' ? 'Horse' : 'Tower';
+							// let figure2 = boardChess[x + moves[i][0]][y + moves[i][1]] == 'K' ? 'King' : 
+											// boardChess[x + moves[i][0]][y + moves[i][1]] == 'Q' ? 'Queen' : 
+												// boardChess[x + moves[i][0]][y + moves[i][1]] == 'L' ? 'Laufer' : 
+													// boardChess[x + moves[i][0]][y + moves[i][1]] == 'H' ? 'Horse' : 'Tower';
 
-							let text = `Checkmate! The ${figure1} on x=${x}, y=${y} beating ${figure2} on x=${x + moves[i][0]}, y=${y + moves[i][1]}`;
+							let text;
+							if(language === 'en'){
+								let figure1 = boardChess[x][y] == 'K' ? 'King' : 
+									boardChess[x][y] == 'Q' ? 'Queen' :
+										boardChess[x][y] == 'L' ? 'Laufer' : 
+											boardChess[x][y] == 'H' ? 'Horse' : 'Tower';
+								let figure2 = boardChess[x + moves[i][0]][y + moves[i][1]] == 'K' ? 'King' : 
+									boardChess[x + moves[i][0]][y + moves[i][1]] == 'Q' ? 'Queen' : 
+										boardChess[x + moves[i][0]][y + moves[i][1]] == 'L' ? 'Laufer' : 
+											boardChess[x + moves[i][0]][y + moves[i][1]] == 'H' ? 'Horse' : 'Tower';
+								text = `Checkmate! The ${figure1} on x=${x}, y=${y} beating ${figure2} on x=${x + moves[i][0]}, y=${y + moves[i][1]}`;
+							};
+							if(language === 'pl'){
+								let figure1 = boardChess[x][y] == 'K' ? 'Król' : 
+									boardChess[x][y] == 'Q' ? 'Królowa' :
+										boardChess[x][y] == 'L' ? 'Laufer' : 
+											boardChess[x][y] == 'H' ? 'Konik' : 'Wieża';
+								let figure2 = boardChess[x + moves[i][0]][y + moves[i][1]] == 'K' ? 'Król' : 
+									boardChess[x + moves[i][0]][y + moves[i][1]] == 'Q' ? 'Królowa' : 
+										boardChess[x + moves[i][0]][y + moves[i][1]] == 'L' ? 'Laufer' : 
+											boardChess[x + moves[i][0]][y + moves[i][1]] == 'H' ? 'Konik' : 'Wieża';
+								text = `Szach mat! ${figure1} na x=${x}, y=${y} bije ${figure2} na x=${x + moves[i][0]}, y=${y + moves[i][1]}`;
+							};
                             document.getElementById("gameOverChess").innerHTML = text;
 							//add popup
 							popUpChessOn(text);

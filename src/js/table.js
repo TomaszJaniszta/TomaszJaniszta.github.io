@@ -97,9 +97,15 @@ function updateDescForTable(){
 	if(!filterDescVal && !filterPriorVal){
 		noTableData.innerHTML="";
 	} else {
-		noTableData.innerHTML=
-			(filterDescVal ? "Data filtered by decription containing: " + filterDescVal+". " : "") +
-			(filterPriorVal ? "Data filtered by priority: " + filterPriorVal+"." : "");
+		if(language=='en'){		
+			noTableData.innerHTML=
+				(filterDescVal ? "Data filtered by decription containing: " + filterDescVal+". " : "") +
+				(filterPriorVal ? "Data filtered by priority: " + filterPriorVal+"." : "");
+		} else {
+			noTableData.innerHTML=
+				(filterDescVal ? "Dane filtrowane po opisie zawierającym: " + filterDescVal+". " : "") +
+				(filterPriorVal ? "Dane filtrowane po priorytecie: " + filterPriorVal+"." : "");
+		}
 	};
 };
 		
@@ -113,8 +119,6 @@ const resetData = () => {
 	searchByDesc.value='';
 	filerDescVal = '';
 	
-	document.getElementById('noTableData').innerHTML="Data reset. Please press load button.";
-	
 	sortByIdBtn.setAttribute("style", "display: none");
 	sortByDateBtn.setAttribute("style", "display: none");
 	document.getElementById('loadBtn').setAttribute("style", "display: visible");
@@ -123,7 +127,6 @@ const resetData = () => {
 };
   
 const loadData = () => {
-	document.getElementById('noTableData').innerHTML="";
 	tableFilters.setAttribute("style", "display: visible");
 	//let tableRow = 0;
 	let tableContainer = document.getElementById('tableContainer');

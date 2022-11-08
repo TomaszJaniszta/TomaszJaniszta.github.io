@@ -39,8 +39,3 @@ const counterButtonClick = () => {
 	if(counter > 5 && resetBtn.classList.length === 1){resetBtn.classList.toggle('r-active')};
 	popupOnOff();
 };
-
-const showHide = (obj) => {
-    let x=document.getElementById(obj);
-    if(x.style.display == "none"){x.style.display = "block"} else {x.style.display = "none"};
-};

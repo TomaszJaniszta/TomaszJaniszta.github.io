@@ -16,8 +16,22 @@ show7.addEventListener('click', () => {showHide('part7')});
 
 const menu = document.getElementsByClassName("menu")[0];
 
-// const sliderM = (value) => {
+//const sliderM = (value) => {
 // 	if(value < 0){value = value * 1.1}
 // 	//console.log(value);
 // 	menu.setAttribute("style", `left:${value}%`);
-// };
+//};
+
+const showHide = (obj) => {
+    let x=document.getElementById(obj);
+	// console.log(x.style.maxHeight);
+    if(x.style.maxHeight === "0px"){
+		x.style.maxHeight="1000px";
+		x.style.transform="scaleY(1)";
+		x.style.opacity="1.0";
+			} else {
+				x.style.maxHeight="0px";
+				x.style.transform="scaleY(0)";
+				x.style.opacity="0.0";
+	}
+};

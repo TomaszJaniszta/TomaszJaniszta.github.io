@@ -68,17 +68,17 @@ const addItem = (name, quantity, price, vat) => {
 	let errorPrice;
 	
 	if (name.length < 3 || name.length > 30){
-		errorName = 'Invalid name length (3-30 characters allowed). '
+		language == 'en' ? errorName = 'Invalid name length (3-30 characters allowed). ' : errorName = 'Nieprawidłowa długośc nazwy (dozwolone 3-30 znaków). ';
 	};
 	
 	quantity=Number(quantity);
 	if (!(quantity > 0 && quantity < 101 && Number.isInteger(quantity))){
-		errorQuantity = 'Invalid quantity (only integers 1-100 allowed). '
+		language == 'en' ? errorQuantity = 'Invalid quantity (only integers 1-100 allowed). ' : errorQuantity = 'Nieprawidłowa ilość (tylko liczby całkowite 1-100 dozwolone). ';
 	};
 	
 	price=Number(price);
 	if (!(price > 0 && price < 1000001 && Number.isInteger(price))){
-		errorPrice = 'Invalid price (only integers 1-1000000 allowed). '
+		language == 'en' ? errorPrice = 'Invalid price (only integers 1-1000000 allowed). ' : errorPrice = 'Nieprawidłowa cena (tylko liczby całkowite 1-1000000 dozwolone). ';
 	};
 	
 	const popUpInvoiceOn = (text) => {
@@ -105,9 +105,17 @@ const addItem = (name, quantity, price, vat) => {
 		};
 	};
 	
+	
+	
 	if(errorName || errorQuantity || errorPrice){
-		let text = (errorName + " " + errorQuantity + " " + errorPrice).replaceAll('undefined','');
-		popUpInvoiceOn(text);
+		if(errorName && errorQuantity && errorPrice){
+			let text;
+			language == 'en' ? text = "Please add data" : text = "Proszę dodać dane";
+			popUpInvoiceOn(text);
+		} else {
+			let text = (errorName + " " + errorQuantity + " " + errorPrice).replaceAll('undefined','');
+			popUpInvoiceOn(text);
+		};
 	} else {
 		//next id
 		const newId = () => {
