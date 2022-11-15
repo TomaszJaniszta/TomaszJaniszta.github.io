@@ -9,14 +9,14 @@ $linear: linear-gradient(0.25turn, #7dc0ff, 20%, #ebf8e1, #616161, #004483);
 $linear2: linear-gradient(0.25turn, #b4b4b4, 10%, #caf9ff, #5599ff);
 
 @font-face {
-	font-family: HomemadeSausage;
-	src: url(../fonts/HomemadeSausage.ttf);
+	font-family: Fonts;
+	src: url(../fonts/DeFonarts.otf);
   } 
 
   
 html {
 	// font-family: "Roboto", sans-serif;
-	font-family: HomemadeSausage;
+	font-family: Fonts;
 	font-size: 16px;
 	scroll-behavior: smooth;
 }
