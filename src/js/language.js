@@ -8,8 +8,8 @@ function changeLanguage(newLanguage){
 		//menu
 		document.getElementById("menuIntro").innerHTML = "Wstęp";
 		document.getElementById("menuDataApps").innerHTML = "Apki danych";
+		document.getElementById("menuInvGen").innerHTML = "Faktura";
 		document.getElementById("menuDataTable").innerHTML = "Tabela danych";	
-		document.getElementById('menuBallApps').innerHTML = "Apki piłka";
 		document.getElementById('menuBallApps').innerHTML = "Apki piłka";
 		document.getElementById('menuBall_1').innerHTML = "Piłka 1";
 		document.getElementById('menuBall_2').innerHTML = "Piłka 2";
@@ -127,6 +127,7 @@ function changeLanguage(newLanguage){
 		//menu
 		document.getElementById("menuIntro").innerHTML = "Intro";	
 		document.getElementById("menuDataApps").innerHTML = "Data apps";
+		document.getElementById("menuInvGen").innerHTML = "Invoice";
 		document.getElementById("menuDataTable").innerHTML = "Data table";
 		document.getElementById('menuBallApps').innerHTML = "Ball apps";
 		document.getElementById('menuBall_1').innerHTML = "Ball v.1";
