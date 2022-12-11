@@ -35,3 +35,44 @@ const showHide = (obj) => {
 				x.style.opacity="0.0";
 	}
 };
+
+//intro popup
+imgMeSmall.addEventListener('click', () => {popUpMeFunc("click")});
+
+const popUpMeClose = () => {
+	popUpMe.innerHTML = '';
+	popUpMe.classList.remove('active');
+	overlay1.classList.remove('o-active');
+};
+
+const popUpMeFunc = (text) => {
+	console.log(text);
+	
+	const popUpMe = document.getElementById('popupMe');
+	const overlay1 = document.getElementById('overlay1');
+	overlay1.addEventListener('click', () => {popUpMeClose()});
+	//popUpMe.setAttribute("background", "red");
+	
+	const popUpMeClose = () => {
+		popUpMe.innerHTML = '';
+		popUpMe.classList.remove('active');
+		overlay1.classList.remove('o-active');
+	};
+	
+	let buttonPopUpMe = document.createElement("button");
+		buttonPopUpMe.setAttribute("type", "button");
+		buttonPopUpMe.setAttribute("class", "btnX");
+		buttonPopUpMe.setAttribute("id", "btnPopupMe");
+		buttonPopUpMe.innerHTML = '&#10005';
+		buttonPopUpMe.addEventListener('click', () => {popUpMeClose()});
+	popUpMe.appendChild(buttonPopUpMe);
+	
+	let imgMe = document.createElement("img");
+		imgMe.setAttribute("src", "./images/me.jpg");
+		imgMe.setAttribute("alt", "Tomasz Janiszta photo");
+		imgMe.setAttribute("style", "object-fit: contain; width: 100%; height: 100%; box-shadow: $introShadow; border-radius: 10px");
+	popUpMe.appendChild(imgMe);
+		
+	popUpMe.classList.toggle('active');
+	overlay1.classList.toggle('o-active');
+};

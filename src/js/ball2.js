@@ -231,7 +231,6 @@ let gameReset2 = () => {
 	ball2button.innerHTML = "Start";
 };
 
-//slider
 // const slider = document.getElementById('slider');
 const sliderFunc = (value) => {
 	value=parseInt(value);
