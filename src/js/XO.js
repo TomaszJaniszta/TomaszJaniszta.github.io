@@ -357,7 +357,7 @@ class GameXO{
           boardElement.setAttribute("id", (elementNr)+"."+(col));
           // boardElement.innerHTML = '<img src="./images/gol/cell2.gif" alt="Cell field" width="100%" height:auto class="cell"/>';
           boardElement.innerHTML = 'c';
-		  boardElement.setAttribute("style", "background:white");
+		  boardElement.setAttribute("style", "background:none;border:solid 3px darkred");
           boardRow.appendChild(boardElement);
           boardElement.addEventListener('click', () => {
             changeCellXO(
@@ -369,7 +369,7 @@ class GameXO{
           boardElement.setAttribute("id", (elementNr)+"."+(col));
           // boardElement.innerHTML = '<img src="./images/gol/air3.jpg" alt="Air field" width="100%" height:auto class="air">';
           boardElement.innerHTML = 'r';
-		  boardElement.setAttribute("style", "background:lightgreen");
+		  boardElement.setAttribute("style", "background:lightgreen;border:solid 3px darkred");
           boardRow.appendChild(boardElement);
           boardElement.addEventListener('click', () => {
             changeCellXO(
@@ -381,7 +381,7 @@ class GameXO{
           boardElement.setAttribute("id", (elementNr)+"."+(col));
           // boardElement.innerHTML = '<img src="./images/gol/air3.jpg" alt="Air field" width="100%" height:auto class="air">';
           boardElement.innerHTML = '#';
-		  boardElement.setAttribute("style", "background:yellow");
+		  boardElement.setAttribute("style", "background:yellow;border:solid 3px darkred");
           boardRow.appendChild(boardElement);
           boardElement.addEventListener('click', () => {
             changeCellXO(
