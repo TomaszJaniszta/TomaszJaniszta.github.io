@@ -38,7 +38,8 @@ class GameXO{
             if (o === 2 && blank === 1 && this.gameStatus) {
         	  // row check
         	  boardXO[row].forEach((e, i) => { if(e===''){boardXO[row][i] = 'o'} });
-              alert('O win');
+              // alert('O win');
+			  oxResult.innerHTML = 'O win, 3x O';
               this.gameStatus = false;
               this.moveStatus = false;
 			  return;
@@ -50,7 +51,8 @@ class GameXO{
                   boardXO[i][row] = 'o';
                 };
               });
-              alert('O win');
+              // alert('O win');
+			  oxResult.innerHTML = 'O win, 3x O';
               this.gameStatus = false;
               this.moveStatus = false;
 			  return;
@@ -73,7 +75,8 @@ class GameXO{
 	        };
 	        if (empty && O === 2) {
 	          	boardXO[empty[0]][empty[1]] = 'o';
-	          	alert('O win, 3x O');
+	          	// alert('O win, 3x O');
+				oxResult.innerHTML = 'O win, 3x O';
 	          	this.gameStatus = false;
 	          	this.moveStatus = false;
 				return;
@@ -95,7 +98,8 @@ class GameXO{
 	        };
 	        if (empty && O === 2) {
 	          	boardXO[empty[0]][empty[1]] = 'o';
-				alert('O win, 3x O');
+				// alert('O win, 3x O');
+				oxResult.innerHTML = 'O win, 3x O';
 	            this.gameStatus = false;
 	            this.moveStatus = false;
 				return;
@@ -197,7 +201,8 @@ class GameXO{
 	        }
 
 	        if (X === 3) {
-	          alert('X win. Congratulations!');
+	          // alert('X win. Congratulations!');
+			  oxResult.innerHTML = 'X win. Congratulations!';
 	          this.gameStatus = false;
 			  return;
 	        }
@@ -215,7 +220,8 @@ class GameXO{
 	        }
 
 	        if (X === 3) {
-	          alert('X win. Congratulations!');
+	          // alert('X win. Congratulations!');
+			  oxResult.innerHTML = 'X win. Congratulations!';
 	          this.gameStatus = false;
 			  return;
 	        }
@@ -242,7 +248,8 @@ class GameXO{
 	              blank2++;
 	            };
 	            if (x === 3 || x2 === 3) {
-	              alert('X win. Congratulations!');
+	              // alert('X win. Congratulations!');
+				  oxResult.innerHTML = 'X win. Congratulations!';
 	              this.gameStatus = false;
 				  return;
 	            }
@@ -263,7 +270,8 @@ class GameXO{
     
         if (blankFieldsNr < 1) {
             this.gameStatus = false;
-            alert('Draw, empty fields = ' + blankFieldsNr);
+            // alert('Draw, empty fields = ' + blankFieldsNr);
+			oxResult.innerHTML = 'Draw, empty fields = ' + blankFieldsNr;
         };
       };
 
@@ -330,6 +338,7 @@ class GameXO{
     
   let gameXO = new GameXO(boardXO, gameStatus);
   let boardOxContainer = document.getElementById('boardOxContainer');
+  let oxResult = document.getElementById('OxResult');
   
   const updateBoardOx = () => {
     boardOxContainer.innerHTML = '';
@@ -403,6 +412,7 @@ class GameXO{
     gameXO.moveStatus = true;
     updateBoardOx();
     XObutton.setAttribute("disabled", null);
+	oxResult.innerHTML = '';
   };
   
   let XObutton = document.getElementById('resetXO');
