@@ -31,8 +31,8 @@
 		<script defer src="src/js/Gol.js"></script>
 		
 		<script defer src="src/js/invoice.js"></script>
-
 		<script defer src="src/js/colorTheme.js"></script>
+		<script defer src="src/js/XO.js"></script>
         <noscript> No JavaScript support. Content will not display correctly :( </noscript>    
     </head>
     <body onload="initFunction()">
@@ -389,6 +389,29 @@
 			</div>
 
         <hr class="hr">
+		
+		  <div class="showAndHideMenu"><p id="XOheader"><b>Tic tac toe game</b></p><button id="show8" class="button"> Show \ Hide </button></div>
+		  	<div id="part8" style="max-height:0px;overflow:auto;transform:scaleY(0);transform-origin:down;opacity:0.0;transition:max-height 2s,transform 2s,opacity 2s;">
+				<hr class="hr">
+				<div >
+				<!-- class="part8" -->
+					  <h2 id="XO_2HeaderH" style="text-align:center">Tic tac toe game</h2>
+					  <p style="padding:5px; max-height:200px; overflow:auto; border:0px; text-align:center" id="ball_2P" >
+						Tic tac toe game. I think that there is nothing to add :)
+					  </p>
+					  <!-- <p style="text-align:center">  -->
+						<!-- In progress... -->
+					  <!-- </p> -->
+					  <div  id="boardOxContainer" class="boardBall2" style="margin-inline:auto;display:flex;flex-direction:column;border:0px"></div>
+					<br/>
+					<div style="display:flex;justify-content:center">
+						<button id="resetXO" class="button" style="margin-inline:auto">Reset</button>
+					</div>
+					<br/>
+			     </div>
+		    </div>
+        <hr class="hr">
+		
         <!-- <span style="color: darkred; text-align: center;"> Content still in progress... </span> -->
         <span class="end">
 			<a href="mailto:janisztat@gmail.com">janisztat@gmail.com</a> / 
