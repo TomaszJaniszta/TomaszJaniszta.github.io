@@ -5,6 +5,7 @@ const show4 = document.getElementById('show4');
 const show5 = document.getElementById('show5');
 const show6 = document.getElementById('show6');
 const show7 = document.getElementById('show7');
+const show8 = document.getElementById('show8');
 
 show1.addEventListener('click', () => {showHide('part1')});
 show2.addEventListener('click', () => {showHide('part2')});
@@ -13,6 +14,7 @@ show4.addEventListener('click', () => {showHide('part4')});
 show5.addEventListener('click', () => {showHide('part5')});
 show6.addEventListener('click', () => {showHide('part6')});
 show7.addEventListener('click', () => {showHide('part7')});
+show8.addEventListener('click', () => {showHide('part8')});
 
 const menu = document.getElementsByClassName("menu")[0];
 
