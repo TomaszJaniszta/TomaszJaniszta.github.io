@@ -393,7 +393,7 @@
 		  <div class="showAndHideMenu"><p id="XOheader"><b>Tic tac toe game</b></p><button id="show8" class="button"> Show \ Hide </button></div>
 		  	<div id="part8" style="max-height:0px;overflow:auto;transform:scaleY(0);transform-origin:down;opacity:0.0;transition:max-height 2s,transform 2s,opacity 2s;">
 				<hr class="hr">
-				<div >
+				<div style="width:auto;haight:auto;max-width:80%;margin-inline:auto">
 				<!-- class="part8" -->
 					  <h2 id="XO_2HeaderH" style="text-align:center">Tic tac toe game</h2>
 					  <p style="padding:5px; max-height:200px; overflow:auto; border:0px; text-align:center" id="ball_2P" >
@@ -402,7 +402,17 @@
 					  <!-- <p style="text-align:center">  -->
 						<!-- In progress... -->
 					  <!-- </p> -->
-					  <div  id="boardOxContainer" class="boardBall2" style="margin-inline:auto;display:flex;flex-direction:column;border:0px"></div>
+						<div  id="boardOxContainer" 
+							style="width:auto;
+							max-width:80%;
+							margin-inline:auto;
+							display:flex;
+							flex-direction:column;
+							text-align:center;
+							border:0px;
+							font-family:fontBall2;
+							font-size:calc(32px + (1vw * 5))">
+						</div>
 					<br/>
 					<div style="display:flex;justify-content:center">
 						<button id="resetXO" class="button" style="margin-inline:auto">Reset</button>
