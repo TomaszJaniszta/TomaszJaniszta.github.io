@@ -78,3 +78,7 @@ const popUpMeFunc = (text) => {
 	popUpMe.classList.toggle('active');
 	overlay1.classList.toggle('o-active');
 };
+
+const year = document.getElementById('year');
+let currentYear= new Date().getFullYear();
+year.innerHTML = '/ Tomasz Janiszta, '+currentYear+'r. ©';
