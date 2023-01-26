@@ -36,13 +36,13 @@ class GameXO{
             };
         	// Checking 3x O - win
             if (o === 2 && blank === 1 && this.gameStatus) {
-        	  // row check
-        	  boardXO[row].forEach((e, i) => { if(e===''){boardXO[row][i] = 'o'} });
-              // alert('O win');
-			  oxResult.innerHTML = 'O win, 3x O';
-              this.gameStatus = false;
-              this.moveStatus = false;
-			  return;
+        	// row check
+        	boardXO[row].forEach((e, i) => { if(e===''){boardXO[row][i] = 'o'} });
+	    	if(language === 'pl'){oxResult.innerHTML = 'O wygrywa, 3x O'};
+	    	if(language === 'en'){oxResult.innerHTML = 'O won, 3x O'};
+              	this.gameStatus = false;
+             	this.moveStatus = false;
+		return;
             };
             if (o2 === 2 && blank2 === 1 && this.gameStatus) {
               // column check
@@ -51,11 +51,11 @@ class GameXO{
                   boardXO[i][row] = 'o';
                 };
               });
-              // alert('O win');
-			  oxResult.innerHTML = 'O win, 3x O';
-              this.gameStatus = false;
-              this.moveStatus = false;
-			  return;
+	    	if(language === 'pl'){oxResult.innerHTML = 'O wygrywa, 3x O'};
+	    	if(language === 'en'){oxResult.innerHTML = 'O won, 3x O'};
+              	this.gameStatus = false;
+              	this.moveStatus = false;
+		return;
             };
           }
         };
@@ -75,11 +75,11 @@ class GameXO{
 	        };
 	        if (empty && O === 2) {
 	          	boardXO[empty[0]][empty[1]] = 'o';
-	          	// alert('O win, 3x O');
-				oxResult.innerHTML = 'O win, 3x O';
+	    		if(language === 'pl'){oxResult.innerHTML = 'O wygrywa, 3x O'};
+	    		if(language === 'en'){oxResult.innerHTML = 'O won, 3x O'};
 	          	this.gameStatus = false;
 	          	this.moveStatus = false;
-				return;
+			return;
         	};
 		};
 		//diagonal 2 check
@@ -98,11 +98,11 @@ class GameXO{
 	        };
 	        if (empty && O === 2) {
 	          	boardXO[empty[0]][empty[1]] = 'o';
-				// alert('O win, 3x O');
-				oxResult.innerHTML = 'O win, 3x O';
-	            this.gameStatus = false;
-	            this.moveStatus = false;
-				return;
+	    		if(language === 'pl'){oxResult.innerHTML = 'O wygrywa, 3x O'};
+	    		if(language === 'en'){oxResult.innerHTML = 'O won, 3x O'};
+	            	this.gameStatus = false;
+	            	this.moveStatus = false;
+			return;
       		};
 		};
 	};
@@ -143,7 +143,7 @@ class GameXO{
           };
         };
 
-		//diagonal 1 check
+	//diagonal 1 check
         if (this.moveStatus === true && this.gameStatus === true) {
         	let y = 0;
         	let empty;
@@ -180,9 +180,9 @@ class GameXO{
 	        };
 	        if (empty && X === 2) {
 			// Prevent X win
-	          boardXO[empty[0]][empty[1]] = 'o';
-	            this.moveStatus = false;
-				return;
+	          	boardXO[empty[0]][empty[1]] = 'o';
+	        	this.moveStatus = false;
+			return;
 	      };
 		};
       }
@@ -202,9 +202,10 @@ class GameXO{
 
 	        if (X === 3) {
 	          // alert('X win. Congratulations!');
-			  oxResult.innerHTML = 'X win. Congratulations!';
-	          this.gameStatus = false;
-			  return;
+	    		if(language === 'pl'){oxResult.innerHTML = 'X wygrywa. Gratulacje!'};
+	    		if(language === 'en'){oxResult.innerHTML = 'X win. Congratulations!'};
+	          	this.gameStatus = false;
+			return;
 	        }
 		};
 		//diagonal 2
@@ -221,9 +222,10 @@ class GameXO{
 
 	        if (X === 3) {
 	          // alert('X win. Congratulations!');
-			  oxResult.innerHTML = 'X win. Congratulations!';
-	          this.gameStatus = false;
-			  return;
+	    		if(language === 'pl'){oxResult.innerHTML = 'X wygrywa. Gratulacje!'};
+	    		if(language === 'en'){oxResult.innerHTML = 'X win. Congratulations!'};
+	          	this.gameStatus = false;
+			return;
 	        }
 	    };
 		//check rows and columns
@@ -248,10 +250,10 @@ class GameXO{
 	              blank2++;
 	            };
 	            if (x === 3 || x2 === 3) {
-	              // alert('X win. Congratulations!');
-				  oxResult.innerHTML = 'X win. Congratulations!';
-	              this.gameStatus = false;
-				  return;
+	    		if(language === 'pl'){oxResult.innerHTML = 'X wygrywa. Gratulacje!'};
+	    		if(language === 'en'){oxResult.innerHTML = 'X win. Congratulations!'};
+	              	this.gameStatus = false;
+			return;
 	            }
 	          }
 	        };
@@ -270,13 +272,13 @@ class GameXO{
     
         if (blankFieldsNr < 1) {
             this.gameStatus = false;
-            // alert('Draw, empty fields = ' + blankFieldsNr);
-			oxResult.innerHTML = 'Draw, empty fields = ' + blankFieldsNr;
+	    if(language === 'pl'){oxResult.innerHTML = 'Remis, puste pola = ' + blankFieldsNr};
+	    if(language === 'en'){oxResult.innerHTML = 'Draw, empty fields = ' + blankFieldsNr};
         };
       };
 
     markRandomField(){
-		let marked = false;
+	let marked = false;
         // mark center
 		if (boardXO[1][1] === '') {
 		 	boardXO[1][1] = 'o';
@@ -406,7 +408,8 @@ class GameXO{
   };
   
   function gameXOreset(){
-    alert('Game reset');
+    if(language === 'pl'){alert('Gra restartowana')};
+    if(language === 'en'){alert('Game reset')};
     boardXO = JSON.parse(JSON.stringify(boardXOcopy));
     gameXO.gameStatus = true;
     gameXO.moveStatus = true;
